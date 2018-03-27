@@ -1,0 +1,258 @@
+[
+  {
+    "id": "bitcoin",
+    "name": "Bitcoin",
+    "symbol": "BTC",
+    "market": {
+      "coinMarketCap": {
+        "marketVolumeUSD": "134864154318"
+      }
+    },
+    "social": {
+      "twitter": {},
+      "reddit": {}
+    },
+    "development": {},
+    "network": {}
+  },
+  {
+    "id": "fvgfhnj",
+    "name": "AAAAAA",
+    "symbol": "AAA",
+    "market": {
+      "coinMarketCap": {
+        "marketVolumeUSD": "99999999999"
+      }
+    },
+    "social": {
+      "twitter": {},
+      "reddit": {}
+    },
+    "development": {},
+    "network": {}
+  },
+  {
+    "id": "ethereum",
+    "name": "Ethereum",
+    "symbol": "ETH",
+    "market": {
+      "coinMarketCap": {
+        "marketVolumeUSD": "44980251464.0"
+      }
+    },
+    "social": {
+      "twitter": {},
+      "reddit": {}
+    },
+    "development": {},
+    "network": {}
+  },
+  {
+    "id": "ripple",
+    "name": "Ripple",
+    "symbol": "XRP",
+    "market": {
+      "coinMarketCap": {
+        "marketVolumeUSD": "22586181597.0"
+      }
+    },
+    "social": {
+      "twitter": {},
+      "reddit": {}
+    },
+    "development": {},
+    "network": {}
+  },
+  {
+    "id": "bitcoin-cash",
+    "name": "Bitcoin Cash",
+    "symbol": "BCH",
+    "market": {
+      "coinMarketCap": {
+        "marketVolumeUSD": "15488025233.0"
+      }
+    },
+    "social": {
+      "twitter": {},
+      "reddit": {}
+    },
+    "development": {},
+    "network": {}
+  },
+  {
+    "id": "litecoin",
+    "name": "Litecoin",
+    "symbol": "LTC",
+    "market": {
+      "coinMarketCap": {
+        "marketVolumeUSD": "7889784215.0"
+      }
+    },
+    "social": {
+      "twitter": {},
+      "reddit": {}
+    },
+    "development": {},
+    "network": {}
+  },
+  {
+    "id": "eos",
+    "name": "EOS",
+    "symbol": "EOS",
+    "market": {
+      "coinMarketCap": {
+        "marketVolumeUSD": "4217890073.0"
+      }
+    },
+    "social": {
+      "twitter": {},
+      "reddit": {}
+    },
+    "development": {},
+    "network": {}
+  },
+  {
+    "id": "cardano",
+    "name": "Cardano",
+    "symbol": "ADA",
+    "market": {
+      "coinMarketCap": {
+        "marketVolumeUSD": "4010062219.0"
+      }
+    },
+    "social": {
+      "twitter": {},
+      "reddit": {}
+    },
+    "development": {},
+    "network": {}
+  },
+  {
+    "id": "stellar",
+    "name": "Stellar",
+    "symbol": "XLM",
+    "market": {
+      "coinMarketCap": {
+        "marketVolumeUSD": "3990825878.0"
+      }
+    },
+    "social": {
+      "twitter": {},
+      "reddit": {}
+    },
+    "development": {},
+    "network": {}
+  },
+  {
+    "id": "neo",
+    "name": "NEO",
+    "symbol": "NEO",
+    "market": {
+      "coinMarketCap": {
+        "marketVolumeUSD": "3561954500.0"
+      }
+    },
+    "social": {
+      "twitter": {},
+      "reddit": {}
+    },
+    "development": {},
+    "network": {}
+  },
+  {
+    "id": "iota",
+    "name": "IOTA",
+    "symbol": "MIOTA",
+    "market": {
+      "coinMarketCap": {
+        "marketVolumeUSD": "3272785727.0"
+      }
+    },
+    "social": {
+      "twitter": {},
+      "reddit": {}
+    },
+    "development": {},
+    "network": {}
+  },
+  {
+    "id": "dash",
+    "name": "Dash",
+    "symbol": "DASH",
+    "market": {
+      "coinMarketCap": {
+        "marketVolumeUSD": "2948446282.0"
+      }
+    },
+    "social": {
+      "twitter": {},
+      "reddit": {}
+    },
+    "development": {},
+    "network": {}
+  },
+  {
+    "id": "monero",
+    "name": "Monero",
+    "symbol": "XMR",
+    "market": {
+      "coinMarketCap": {
+        "marketVolumeUSD": "2972500745.0"
+      }
+    },
+    "social": {
+      "twitter": {},
+      "reddit": {}
+    },
+    "development": {},
+    "network": {}
+  },
+  {
+    "id": "tron",
+    "name": "TRON",
+    "symbol": "TRX",
+    "market": {
+      "coinMarketCap": {
+        "marketVolumeUSD": "2769195520.0"
+      }
+    },
+    "social": {
+      "twitter": {},
+      "reddit": {}
+    },
+    "development": {},
+    "network": {}
+  },
+  {
+    "id": "nem",
+    "name": "NEM",
+    "symbol": "XEM",
+    "market": {
+      "coinMarketCap": {
+        "marketVolumeUSD": "2267307000.0"
+      }
+    },
+    "social": {
+      "twitter": {},
+      "reddit": {}
+    },
+    "development": {},
+    "network": {}
+  },
+  {
+    "id": "tether",
+    "name": "Tether",
+    "symbol": "USDT",
+    "market": {
+      "coinMarketCap": {
+        "marketVolumeUSD": "2290434296.0"
+      }
+    },
+    "social": {
+      "twitter": {},
+      "reddit": {}
+    },
+    "development": {},
+    "network": {}
+  }
+]

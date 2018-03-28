@@ -30,9 +30,9 @@ listOfCoins.forEach(function(coin, i) {
   	res.render('singleCoin', coin)
   })
 })
-// app.get('/bitcoin', (req, res) => {
-// 	res.render('singleCoin', listOfCoins[0])
-// })
+app.get('/about', (req, res) => {
+	res.render('about')
+})
 
 app.listen(port, (err) => {
     if (err) {

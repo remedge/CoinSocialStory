@@ -1,1 +1,122 @@
-[{"id":"bitcoin","name":"Bitcoin","symbol":"BTC"},{"id":"ethereum","name":"Ethereum","symbol":"ETH"},{"id":"ripple","name":"Ripple","symbol":"XRP"},{"id":"bitcoin-cash","name":"Bitcoin Cash","symbol":"BCH"},{"id":"litecoin","name":"Litecoin","symbol":"LTC"},{"id":"eos","name":"EOS","symbol":"EOS"},{"id":"cardano","name":"Cardano","symbol":"ADA"},{"id":"stellar","name":"Stellar","symbol":"XLM"},{"id":"neo","name":"NEO","symbol":"NEO"},{"id":"iota","name":"IOTA","symbol":"MIOTA"},{"id":"dash","name":"Dash","symbol":"DASH"},{"id":"monero","name":"Monero","symbol":"XMR"},{"id":"tron","name":"TRON","symbol":"TRX"},{"id":"nem","name":"NEM","symbol":"XEM"},{"id":"tether","name":"Tether","symbol":"USDT"}]
+[
+  {
+    "id": "bitcoin",
+    "name": "Bitcoin",
+    "symbol": "BTC",
+    "twitter": {
+    	"screen_name": "bitcoin"
+    }
+  },
+  {
+    "id": "ethereum",
+    "name": "Ethereum",
+    "symbol": "ETH",
+    "twitter": {
+    	"screen_name": "ethereum"
+    }
+  },
+  {
+    "id": "ripple",
+    "name": "Ripple",
+    "symbol": "XRP",
+    "twitter": {
+    	"screen_name": "ripple"
+    }
+  },
+  {
+    "id": "bitcoin-cash",
+    "name": "Bitcoin Cash",
+    "symbol": "BCH",
+    "twitter": {
+    	"screen_name": "BITCOlNCASH"
+    }
+  },
+  {
+    "id": "litecoin",
+    "name": "Litecoin",
+    "symbol": "LTC",
+    "twitter": {
+    	"screen_name": "litecoin"
+    }
+  },
+  {
+    "id": "eos",
+    "name": "EOS",
+    "symbol": "EOS",
+    "twitter": {
+    	"screen_name": "EOS_io"
+    }
+  },
+  {
+    "id": "cardano",
+    "name": "Cardano",
+    "symbol": "ADA",
+    "twitter": {
+    	"screen_name": "cardanocom"
+    }
+  },
+  {
+    "id": "stellar",
+    "name": "Stellar",
+    "symbol": "XLM",
+    "twitter": {
+    	"screen_name": "StellarOrg"
+    }
+  },
+  {
+    "id": "neo",
+    "name": "NEO",
+    "symbol": "NEO",
+    "twitter": {
+    	"screen_name": "NEO_Blockchain"
+    }
+  },
+  {
+    "id": "iota",
+    "name": "IOTA",
+    "symbol": "MIOTA",
+    "twitter": {
+    	"screen_name": "IoTa2016"
+    }
+  },
+  {
+    "id": "dash",
+    "name": "Dash",
+    "symbol": "DASH",
+    "twitter": {
+    	"screen_name": "Dashpay"
+    }
+  },
+  {
+    "id": "monero",
+    "name": "Monero",
+    "symbol": "XMR",
+    "twitter": {
+    	"screen_name": "monerocurrency"
+    }
+  },
+  {
+    "id": "tron",
+    "name": "TRON",
+    "symbol": "TRX",
+    "twitter": {
+    	"screen_name": "tronfoundation"
+    }
+  },
+  {
+    "id": "nem",
+    "name": "NEM",
+    "symbol": "XEM",
+    "twitter": {
+    	"screen_name": "NEMofficial"
+    }
+  },
+  {
+    "id": "tether",
+    "name": "Tether",
+    "symbol": "USDT",
+    "twitter": {
+    	"screen_name": "Tether_to"
+    }
+  }
+]

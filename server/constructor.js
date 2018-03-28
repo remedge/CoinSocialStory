@@ -11,13 +11,12 @@ module.exports = {
 	};
 	this.social = {
 		twitter: {
-			
+			followersCount: 0,
+			statusesCount: 0
 		},
-		reddit: {
-			
-		}
+		reddit: "coming soon"
 	};
-	this.development = {};
-	this.network = {};
+	this.development = "coming soon";
+	this.network = "coming soon";
   }
 };

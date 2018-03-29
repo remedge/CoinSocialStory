@@ -10,13 +10,14 @@ block content
 				tr
 					th(scope='col') Name
 					th(scope='col') Market Cap
-					th(scope='col' colspan="2") Social Activity (Twitter)
+					th(scope='col' colspan="3") Social Activity
 					th(scope='col') Development Activity
 					th(scope='col') Network Activity
 				tr
 					th(scope='col' colspan="2") 
-					th(scope='col') Followers
+					th(scope='col') Followers Twitter
 					th(scope='col') Tweets and Replies
+					th(scope='col') Followers Reddit
 					th(scope='col' colspan="2") 
 			tbody
 				tr
@@ -24,5 +25,6 @@ block content
 					td #{market.coinMarketCap.marketVolumeUSD}
 					td #{social.twitter.followersCount}
 					td #{social.twitter.statusesCount}
+					td #{social.reddit.followersCount}
 					td #{development}
 					td #{network}

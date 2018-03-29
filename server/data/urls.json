@@ -1,3 +1,4 @@
 {
-	"coinMarketCap": "https://api.coinmarketcap.com/v1/ticker/"
+	"coinMarketCap": "https://api.coinmarketcap.com/v1/ticker/",
+	"reddit": "https://api.reddit.com/"
 }

@@ -5,15 +5,17 @@
     "symbol": "BTC",
     "market": {
       "coinMarketCap": {
-        "marketVolumeUSD": "136,761,180,794 $"
+        "marketVolumeUSD": "126,516,334,519 $"
       }
     },
     "social": {
       "twitter": {
-        "followersCount": "816,884",
-        "statusesCount": "19,731"
+        "followersCount": "817,712",
+        "statusesCount": "19,742"
       },
-      "reddit": "coming soon"
+      "reddit": {
+        "followersCount": "781,951"
+      }
     },
     "development": "coming soon",
     "network": "coming soon"
@@ -24,15 +26,17 @@
     "symbol": "ETH",
     "market": {
       "coinMarketCap": {
-        "marketVolumeUSD": "45,251,927,086 $"
+        "marketVolumeUSD": "40,030,370,550 $"
       }
     },
     "social": {
       "twitter": {
-        "followersCount": "380,819",
+        "followersCount": "381,304",
         "statusesCount": "1,897"
       },
-      "reddit": "coming soon"
+      "reddit": {
+        "followersCount": "347,175"
+      }
     },
     "development": "coming soon",
     "network": "coming soon"
@@ -43,15 +47,17 @@
     "symbol": "XRP",
     "market": {
       "coinMarketCap": {
-        "marketVolumeUSD": "22,852,491,473 $"
+        "marketVolumeUSD": "20,962,637,432 $"
       }
     },
     "social": {
       "twitter": {
-        "followersCount": "838,805",
-        "statusesCount": "5,939"
+        "followersCount": "840,620",
+        "statusesCount": "5,941"
       },
-      "reddit": "coming soon"
+      "reddit": {
+        "followersCount": "781,951"
+      }
     },
     "development": "coming soon",
     "network": "coming soon"
@@ -62,15 +68,17 @@
     "symbol": "BCH",
     "market": {
       "coinMarketCap": {
-        "marketVolumeUSD": "15,088,667,890 $"
+        "marketVolumeUSD": "12,846,264,243 $"
       }
     },
     "social": {
       "twitter": {
-        "followersCount": "98,039",
-        "statusesCount": "971"
+        "followersCount": "98,117",
+        "statusesCount": "972"
       },
-      "reddit": "coming soon"
+      "reddit": {
+        "followersCount": "781,952"
+      }
     },
     "development": "coming soon",
     "network": "coming soon"
@@ -81,15 +89,17 @@
     "symbol": "LTC",
     "market": {
       "coinMarketCap": {
-        "marketVolumeUSD": "7,693,642,153 $"
+        "marketVolumeUSD": "6,719,072,529 $"
       }
     },
     "social": {
       "twitter": {
-        "followersCount": "409,302",
+        "followersCount": "409,621",
         "statusesCount": "687"
       },
-      "reddit": "coming soon"
+      "reddit": {
+        "followersCount": "781,951"
+      }
     },
     "development": "coming soon",
     "network": "coming soon"
@@ -100,15 +110,17 @@
     "symbol": "EOS",
     "market": {
       "coinMarketCap": {
-        "marketVolumeUSD": "4,793,935,655 $"
+        "marketVolumeUSD": "4,784,401,654 $"
       }
     },
     "social": {
       "twitter": {
-        "followersCount": "127,435",
+        "followersCount": "127,872",
         "statusesCount": "809"
       },
-      "reddit": "coming soon"
+      "reddit": {
+        "followersCount": "781,951"
+      }
     },
     "development": "coming soon",
     "network": "coming soon"
@@ -119,15 +131,17 @@
     "symbol": "ADA",
     "market": {
       "coinMarketCap": {
-        "marketVolumeUSD": "4,199,433,542 $"
+        "marketVolumeUSD": "3,905,342,781 $"
       }
     },
     "social": {
       "twitter": {
-        "followersCount": "109,629",
-        "statusesCount": "916"
+        "followersCount": "109,790",
+        "statusesCount": "918"
       },
-      "reddit": "coming soon"
+      "reddit": {
+        "followersCount": "781,951"
+      }
     },
     "development": "coming soon",
     "network": "coming soon"
@@ -138,15 +152,17 @@
     "symbol": "XLM",
     "market": {
       "coinMarketCap": {
-        "marketVolumeUSD": "4,131,346,766 $"
+        "marketVolumeUSD": "3,670,160,589 $"
       }
     },
     "social": {
       "twitter": {
-        "followersCount": "222,992",
-        "statusesCount": "2,472"
+        "followersCount": "223,306",
+        "statusesCount": "2,473"
       },
-      "reddit": "coming soon"
+      "reddit": {
+        "followersCount": "781,951"
+      }
     },
     "development": "coming soon",
     "network": "coming soon"
@@ -157,15 +173,17 @@
     "symbol": "NEO",
     "market": {
       "coinMarketCap": {
-        "marketVolumeUSD": "3,799,009,500 $"
+        "marketVolumeUSD": "3,464,188,000 $"
       }
     },
     "social": {
       "twitter": {
-        "followersCount": "297,886",
-        "statusesCount": "551"
+        "followersCount": "298,346",
+        "statusesCount": "552"
       },
-      "reddit": "coming soon"
+      "reddit": {
+        "followersCount": "781,951"
+      }
     },
     "development": "coming soon",
     "network": "coming soon"
@@ -176,15 +194,17 @@
     "symbol": "MIOTA",
     "market": {
       "coinMarketCap": {
-        "marketVolumeUSD": "3,411,901,218 $"
+        "marketVolumeUSD": "3,084,555,936 $"
       }
     },
     "social": {
       "twitter": {
-        "followersCount": "54,224",
+        "followersCount": "54,235",
         "statusesCount": "779"
       },
-      "reddit": "coming soon"
+      "reddit": {
+        "followersCount": "781,951"
+      }
     },
     "development": "coming soon",
     "network": "coming soon"
@@ -195,15 +215,17 @@
     "symbol": "DASH",
     "market": {
       "coinMarketCap": {
-        "marketVolumeUSD": "2,901,043,134 $"
+        "marketVolumeUSD": "2,579,050,603 $"
       }
     },
     "social": {
       "twitter": {
-        "followersCount": "291,077",
-        "statusesCount": "2,569"
+        "followersCount": "291,322",
+        "statusesCount": "2,573"
       },
-      "reddit": "coming soon"
+      "reddit": {
+        "followersCount": "781,951"
+      }
     },
     "development": "coming soon",
     "network": "coming soon"
@@ -214,15 +236,17 @@
     "symbol": "XMR",
     "market": {
       "coinMarketCap": {
-        "marketVolumeUSD": "3,098,152,486 $"
+        "marketVolumeUSD": "2,935,921,049 $"
       }
     },
     "social": {
       "twitter": {
-        "followersCount": "282,596",
-        "statusesCount": "2,571"
+        "followersCount": "282,899",
+        "statusesCount": "2,574"
       },
-      "reddit": "coming soon"
+      "reddit": {
+        "followersCount": "781,952"
+      }
     },
     "development": "coming soon",
     "network": "coming soon"
@@ -233,15 +257,17 @@
     "symbol": "TRX",
     "market": {
       "coinMarketCap": {
-        "marketVolumeUSD": "2,958,839,607 $"
+        "marketVolumeUSD": "3,154,157,762 $"
       }
     },
     "social": {
       "twitter": {
-        "followersCount": "275,505",
-        "statusesCount": "368"
+        "followersCount": "276,351",
+        "statusesCount": "373"
       },
-      "reddit": "coming soon"
+      "reddit": {
+        "followersCount": "781,951"
+      }
     },
     "development": "coming soon",
     "network": "coming soon"
@@ -252,15 +278,17 @@
     "symbol": "XEM",
     "market": {
       "coinMarketCap": {
-        "marketVolumeUSD": "2,305,701,000 $"
+        "marketVolumeUSD": "2,073,114,000 $"
       }
     },
     "social": {
       "twitter": {
-        "followersCount": "195,366",
-        "statusesCount": "2,564"
+        "followersCount": "195,616",
+        "statusesCount": "2,578"
       },
-      "reddit": "coming soon"
+      "reddit": {
+        "followersCount": "781,952"
+      }
     },
     "development": "coming soon",
     "network": "coming soon"
@@ -271,15 +299,17 @@
     "symbol": "USDT",
     "market": {
       "coinMarketCap": {
-        "marketVolumeUSD": "2,286,857,208 $"
+        "marketVolumeUSD": "2,284,670,701 $"
       }
     },
     "social": {
       "twitter": {
-        "followersCount": "23,224",
+        "followersCount": "23,243",
         "statusesCount": "267"
       },
-      "reddit": "coming soon"
+      "reddit": {
+        "followersCount": "781,951"
+      }
     },
     "development": "coming soon",
     "network": "coming soon"

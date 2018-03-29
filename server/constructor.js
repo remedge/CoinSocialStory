@@ -14,7 +14,9 @@ module.exports = {
 			followersCount: 0,
 			statusesCount: 0
 		},
-		reddit: "coming soon"
+		reddit: {
+			followersCount: 0
+		}
 	};
 	this.development = "coming soon";
 	this.network = "coming soon";

@@ -5,6 +5,10 @@
     "symbol": "BTC",
     "twitter": {
     	"screen_name": "bitcoin"
+    },
+    "reddit": {
+    	"subreddit": "r/Bitcoin",
+    	"user": ""
     }
   },
   {
@@ -13,6 +17,10 @@
     "symbol": "ETH",
     "twitter": {
     	"screen_name": "ethereum"
+    },
+    "reddit": {
+    	"subreddit": "r/ethereum",
+    	"user": ""
     }
   },
   {
@@ -21,6 +29,10 @@
     "symbol": "XRP",
     "twitter": {
     	"screen_name": "ripple"
+    },
+    "reddit": {
+    	"subreddit": "r/Bitcoin",
+    	"user": ""
     }
   },
   {
@@ -29,6 +41,10 @@
     "symbol": "BCH",
     "twitter": {
     	"screen_name": "BITCOlNCASH"
+    },
+    "reddit": {
+    	"subreddit": "r/Bitcoin",
+    	"user": ""
     }
   },
   {
@@ -37,6 +53,10 @@
     "symbol": "LTC",
     "twitter": {
     	"screen_name": "litecoin"
+    },
+    "reddit": {
+    	"subreddit": "r/Bitcoin",
+    	"user": ""
     }
   },
   {
@@ -45,6 +65,10 @@
     "symbol": "EOS",
     "twitter": {
     	"screen_name": "EOS_io"
+    },
+    "reddit": {
+    	"subreddit": "r/Bitcoin",
+    	"user": ""
     }
   },
   {
@@ -53,6 +77,10 @@
     "symbol": "ADA",
     "twitter": {
     	"screen_name": "cardanocom"
+    },
+    "reddit": {
+    	"subreddit": "r/Bitcoin",
+    	"user": ""
     }
   },
   {
@@ -61,6 +89,10 @@
     "symbol": "XLM",
     "twitter": {
     	"screen_name": "StellarOrg"
+    },
+    "reddit": {
+    	"subreddit": "r/Bitcoin",
+    	"user": ""
     }
   },
   {
@@ -69,6 +101,10 @@
     "symbol": "NEO",
     "twitter": {
     	"screen_name": "NEO_Blockchain"
+    },
+    "reddit": {
+    	"subreddit": "r/Bitcoin",
+    	"user": ""
     }
   },
   {
@@ -77,6 +113,10 @@
     "symbol": "MIOTA",
     "twitter": {
     	"screen_name": "IoTa2016"
+    },
+    "reddit": {
+    	"subreddit": "r/Bitcoin",
+    	"user": ""
     }
   },
   {
@@ -85,6 +125,10 @@
     "symbol": "DASH",
     "twitter": {
     	"screen_name": "Dashpay"
+    },
+    "reddit": {
+    	"subreddit": "r/Bitcoin",
+    	"user": ""
     }
   },
   {
@@ -93,6 +137,10 @@
     "symbol": "XMR",
     "twitter": {
     	"screen_name": "monerocurrency"
+    },
+    "reddit": {
+    	"subreddit": "r/Bitcoin",
+    	"user": ""
     }
   },
   {
@@ -101,6 +149,10 @@
     "symbol": "TRX",
     "twitter": {
     	"screen_name": "tronfoundation"
+    },
+    "reddit": {
+    	"subreddit": "r/Bitcoin",
+    	"user": ""
     }
   },
   {
@@ -109,6 +161,10 @@
     "symbol": "XEM",
     "twitter": {
     	"screen_name": "NEMofficial"
+    },
+    "reddit": {
+    	"subreddit": "r/Bitcoin",
+    	"user": ""
     }
   },
   {
@@ -117,6 +173,10 @@
     "symbol": "USDT",
     "twitter": {
     	"screen_name": "Tether_to"
+    },
+    "reddit": {
+    	"subreddit": "r/Bitcoin",
+    	"user": ""
     }
   }
 ]

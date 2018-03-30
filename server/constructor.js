@@ -18,6 +18,7 @@ module.exports = {
 			followersCount: 0
 		}
 	};
+	this.links = coin.links;
 	this.development = "coming soon";
 	this.network = "coming soon";
   }

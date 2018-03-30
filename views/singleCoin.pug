@@ -2,8 +2,6 @@ extends layout.pug
 
 block content
 	.container
-		h1 Coin Social Story for #{name}
-		p Find another statistic about cryptocurrencies.
 		p Data updates every 10 minutes.
 		table.table.table-striped.table-hover
 			thead.thead-dark
@@ -28,3 +26,13 @@ block content
 					td #{social.reddit.followersCount}
 					td #{development}
 					td #{network}
+		if links
+			h6 Links for 
+				b #{name} 
+				| coin
+			ul.list-group
+				each link in links
+					li.list-group-item 
+						-var url = link.link
+						a(href="" + url) #{link.name}
+				

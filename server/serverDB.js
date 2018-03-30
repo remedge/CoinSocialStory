@@ -66,10 +66,9 @@ async function run() {
 				console.log('Reddit...');
 
 				let redditResponse = await request.get(urls.reddit + coins[index].reddit.subreddit + "/top.json?sort=top&t=day&limit=1");
-				// console.log(JSON.parse(JSON.stringify(redditResponse.body.data.children[0].data.subreddit_subscribers)));
-				// fs.writeFileSync('res.txt', redditResponse, 'utf8');
-				console.log(`Followers on Reddit for ${coin.id}: ${coin.social.reddit.followersCount}`)
 				coin.social.reddit.followersCount = numeral(redditResponse.body.data.children[0].data.subreddit_subscribers).format('0,0');
+				console.log(`Followers on Reddit for ${coin.id}: ${coin.social.reddit.followersCount}`);
+				
 			} catch (e) {
 				console.error(`Error while fetching info for ${coin.id} from Reddit:`, e, 'Skipped');
 			}

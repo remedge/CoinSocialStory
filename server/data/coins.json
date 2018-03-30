@@ -9,7 +9,14 @@
     "reddit": {
     	"subreddit": "r/Bitcoin",
     	"user": ""
-    }
+    },
+    "links": [{
+    	"name": "Twitter",
+    	"link": "https://twitter.com/bitcoin"
+    },{
+    	"name": "Reddit",
+    	"link": "https://reddit.com/r/Bitcoin"
+    }]
   },
   {
     "id": "ethereum",
@@ -21,7 +28,14 @@
     "reddit": {
     	"subreddit": "r/ethereum",
     	"user": ""
-    }
+    },
+    "links": [{
+    	"name": "Twitter",
+    	"link": "https://twitter.com/ethereum"
+    },{
+    	"name": "Reddit",
+    	"link": "https://reddit.com/r/ethereum"
+    }]
   },
   {
     "id": "ripple",
@@ -31,9 +45,16 @@
     	"screen_name": "ripple"
     },
     "reddit": {
-    	"subreddit": "r/Bitcoin",
+    	"subreddit": "r/Ripple",
     	"user": ""
-    }
+    },
+    "links": [{
+    	"name": "Twitter",
+    	"link": "https://twitter.com/ripple"
+    },{
+    	"name": "Reddit",
+    	"link": "https://reddit.com/r/Ripple"
+    }]
   },
   {
     "id": "bitcoin-cash",

@@ -1,6 +1,6 @@
 'use strict'
 
-const INTERVAL = 5000;
+const INTERVAL = 600000;
 
 const path = require('path');
 const fs = require('fs')
@@ -11,8 +11,6 @@ const creds = require('../creds');
 const numeral = require('numeral');
 
 const Twitter = require('twitter');
-// const snoowrap = require('snoowrap');
-
 
 const COINS_PATH = path.join(__dirname, 'data', 'coins.json');
 const LIST_PATH = path.join(__dirname, 'data', 'listOfCoins.json');
@@ -82,7 +80,7 @@ async function run() {
 	} catch (e) {
 		console.error(e);
 	}
-	// setTimeout(run, INTERVAL);
+	setTimeout(run, INTERVAL);
 }
 
 

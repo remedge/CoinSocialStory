@@ -64,9 +64,16 @@
     	"screen_name": "BITCOlNCASH"
     },
     "reddit": {
-    	"subreddit": "r/Bitcoin",
+    	"subreddit": "r/Bitcoincash",
     	"user": ""
-    }
+    },
+    "links": [{
+    	"name": "Twitter",
+    	"link": "https://twitter.com/BITCOlNCASH"
+    },{
+    	"name": "Reddit",
+    	"link": "https://reddit.com/r/Bitcoincash"
+    }]
   },
   {
     "id": "litecoin",
@@ -76,9 +83,16 @@
     	"screen_name": "litecoin"
     },
     "reddit": {
-    	"subreddit": "r/Bitcoin",
+    	"subreddit": "r/litecoin",
     	"user": ""
-    }
+    },
+    "links": [{
+    	"name": "Twitter",
+    	"link": "https://twitter.com/litecoin"
+    },{
+    	"name": "Reddit",
+    	"link": "https://reddit.com/r/litecoin"
+    }]
   },
   {
     "id": "eos",
@@ -88,9 +102,16 @@
     	"screen_name": "EOS_io"
     },
     "reddit": {
-    	"subreddit": "r/Bitcoin",
+    	"subreddit": "r/eos",
     	"user": ""
-    }
+    },
+    "links": [{
+    	"name": "Twitter",
+    	"link": "https://twitter.com/EOS_io"
+    },{
+    	"name": "Reddit",
+    	"link": "https://reddit.com/r/eos"
+    }]
   },
   {
     "id": "cardano",
@@ -100,9 +121,16 @@
     	"screen_name": "cardanocom"
     },
     "reddit": {
-    	"subreddit": "r/Bitcoin",
+    	"subreddit": "r/cardano",
     	"user": ""
-    }
+    },
+    "links": [{
+    	"name": "Twitter",
+    	"link": "https://twitter.com/cardanocom"
+    },{
+    	"name": "Reddit",
+    	"link": "https://reddit.com/r/cardano"
+    }]
   },
   {
     "id": "stellar",
@@ -112,9 +140,16 @@
     	"screen_name": "StellarOrg"
     },
     "reddit": {
-    	"subreddit": "r/Bitcoin",
+    	"subreddit": "r/Stellar",
     	"user": ""
-    }
+    },
+    "links": [{
+    	"name": "Twitter",
+    	"link": "https://twitter.com/StellarOrg"
+    },{
+    	"name": "Reddit",
+    	"link": "https://reddit.com/r/Stellar"
+    }]
   },
   {
     "id": "neo",
@@ -124,9 +159,16 @@
     	"screen_name": "NEO_Blockchain"
     },
     "reddit": {
-    	"subreddit": "r/Bitcoin",
+    	"subreddit": "r/NEO",
     	"user": ""
-    }
+    },
+    "links": [{
+    	"name": "Twitter",
+    	"link": "https://twitter.com/NEO_Blockchain"
+    },{
+    	"name": "Reddit",
+    	"link": "https://reddit.com/r/NEO"
+    }]
   },
   {
     "id": "iota",
@@ -136,9 +178,16 @@
     	"screen_name": "IoTa2016"
     },
     "reddit": {
-    	"subreddit": "r/Bitcoin",
+    	"subreddit": "r/Iota",
     	"user": ""
-    }
+    },
+    "links": [{
+    	"name": "Twitter",
+    	"link": "https://twitter.com/IoTa2016"
+    },{
+    	"name": "Reddit",
+    	"link": "https://reddit.com/r/Iota"
+    }]
   },
   {
     "id": "dash",
@@ -148,9 +197,16 @@
     	"screen_name": "Dashpay"
     },
     "reddit": {
-    	"subreddit": "r/Bitcoin",
+    	"subreddit": "r/dashpay",
     	"user": ""
-    }
+    },
+    "links": [{
+    	"name": "Twitter",
+    	"link": "https://twitter.com/Dashpay"
+    },{
+    	"name": "Reddit",
+    	"link": "https://reddit.com/r/dashpay"
+    }]
   },
   {
     "id": "monero",
@@ -160,9 +216,16 @@
     	"screen_name": "monerocurrency"
     },
     "reddit": {
-    	"subreddit": "r/Bitcoin",
+    	"subreddit": "r/Monero",
     	"user": ""
-    }
+    },
+    "links": [{
+    	"name": "Twitter",
+    	"link": "https://twitter.com/monerocurrency"
+    },{
+    	"name": "Reddit",
+    	"link": "https://reddit.com/r/Monero"
+    }]
   },
   {
     "id": "tron",
@@ -172,9 +235,16 @@
     	"screen_name": "tronfoundation"
     },
     "reddit": {
-    	"subreddit": "r/Bitcoin",
+    	"subreddit": "r/Tronix",
     	"user": ""
-    }
+    },
+    "links": [{
+    	"name": "Twitter",
+    	"link": "https://twitter.com/tronfoundation"
+    },{
+    	"name": "Reddit",
+    	"link": "https://reddit.com/r/Tronix"
+    }]
   },
   {
     "id": "nem",
@@ -184,9 +254,16 @@
     	"screen_name": "NEMofficial"
     },
     "reddit": {
-    	"subreddit": "r/Bitcoin",
+    	"subreddit": "r/nem",
     	"user": ""
-    }
+    },
+    "links": [{
+    	"name": "Twitter",
+    	"link": "https://twitter.com/NEMofficial"
+    },{
+    	"name": "Reddit",
+    	"link": "https://reddit.com/r/nem"
+    }]
   },
   {
     "id": "tether",
@@ -196,8 +273,15 @@
     	"screen_name": "Tether_to"
     },
     "reddit": {
-    	"subreddit": "r/Bitcoin",
+    	"subreddit": "r/Tether",
     	"user": ""
-    }
+    },
+    "links": [{
+    	"name": "Twitter",
+    	"link": "https://twitter.com/Tether_to"
+    },{
+    	"name": "Reddit",
+    	"link": "https://reddit.com/r/Tether"
+    }]
   }
 ]

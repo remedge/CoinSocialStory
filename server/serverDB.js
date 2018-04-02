@@ -5,7 +5,7 @@ const INTERVAL = 600000;
 const path = require('path');
 const fs = require('fs')
 const request = require("superagent");
-const constructor = require('./constructor');
+const tools = require('./tools');
 const urls = require('./data/urls');
 const creds = require('../creds');
 const numeral = require('numeral');
@@ -27,7 +27,7 @@ async function run() {
 		if (fs.existsSync(LIST_PATH)) {
 			list = JSON.parse(fs.readFileSync(LIST_PATH, 'utf8'));
 		} else {
-			list = coins.map(item => new constructor.coin(item));
+			list = coins.map(item => new tools.coin(item));
 		}
 
 		console.log(`Start fetching info for ${coins.length} coins...`);
@@ -82,6 +82,7 @@ async function run() {
 	}
 	setTimeout(run, INTERVAL);
 }
+
 
 
 

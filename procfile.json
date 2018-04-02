@@ -1,0 +1,27 @@
+{
+  "apps": [
+    {
+      "name": "site",
+      "script": "npm",
+      "args": "start",
+      "env": {
+        "NODE_ENV": "production",
+        "PORT": 8888
+      },
+      "merge_logs": true,
+      "error_file": "/var/log/CoinSocialStory.error.log",
+      "out_file": "/var/log/CoinSocialStory.out.log"
+    },
+    {
+      "name": "data",
+      "script": "./server/serverDB.js",
+      "args": "start",
+      "env": {
+        "NODE_ENV": "production"
+      },
+      "merge_logs": true,
+      "error_file": "/var/log/CoinSocialStoryDB.error.log",
+      "out_file": "/var/log/CoinSocialStoryDB.out.log"
+    }
+  ]
+}

@@ -1,22 +1,16 @@
 'use strict'
 
 const express = require('express')
-const app = express()
-const port = 3000
+const app = express();
+const port = process.env.PORT || 3000;
 const fs = require('fs')
-const constructor = require('./constructor');
 const path = require('path');
 
 const LIST_OF_COINS = path.join(__dirname, 'data', 'listOfCoins.json');
 const VIEWS_DIR = path.join(__dirname, '..', 'views');
 
-// const ngrok = require('ngrok');
-// const url = await ngrok.connect();
-
 
 console.log("yo!")
-
-console.log(typeof constructor.coin); // => 'function'
 
 let listOfCoins = JSON.parse(fs.readFileSync(LIST_OF_COINS, 'utf8'))
 console.log(listOfCoins[2].market.coinMarketCap)

@@ -1,34 +1,42 @@
 extends layout.pug
 
 block content
-  .container
-    p Data updates every 10 minutes.
-    table.table.table-striped.table-hover
-      thead.thead-dark
-        tr
-          th(scope='col') #
-          th(scope='col') Name
-          th(scope='col') Market Cap
-          th(scope='col' colspan="3") Social Activity
-          th(scope='col') Development Activity
-          th(scope='col') Network Activity
-        tr
-          th(scope='col' colspan="3") 
-          th(scope='col') Followers Twitter
-          th(scope='col') Tweets and Replies
-          th(scope='col') Subreddit followers
-          th(scope='col' colspan="2") 
-      tbody
-      each coin, index in coins
-        tr
-          th(scope='row')= index + 1
-          - var url = coin.id
-          td
-            a( href='/' + url )= coin.name 
-          td= coin.market.coinMarketCap.marketVolumeUSD
-          td= coin.social.twitter.followersCount
-          td= coin.social.twitter.statusesCount
-          td= coin.social.reddit.followersCount
-          td= coin.development
-          td= coin.network
-      
+	.container
+		p Data updates every 10 minutes.
+		table.table.table-striped.table-hover
+			thead.thead-dark
+				tr
+					th(scope='col') #
+					th(scope='col') 
+						a(href='/sortName/') Name
+					th(scope='col')
+						a(href = '/sortMarket/') Market Cap
+					th(scope='col' colspan="4") Social Activity
+					th(scope='col') Development Activity
+					th(scope='col') Network Activity
+				tr
+					th(scope='col' colspan="3") 
+					th(scope='col') 
+						a(href = '/sortSocialIndex/') Index
+					th(scope='col') 
+						a(href='/sortTwitterFollowers/') Followers Twitter
+					th(scope='col') 
+						a(href='/sortTweetsAndReplies/') Tweets and Replies
+					th(scope='col') 
+						a(href='/sortSubredditFollowers/') Subreddit followers
+					th(scope='col' colspan="2") 
+			tbody
+			each coin, index in coins
+				tr
+					th(scope='row')= index + 1
+					- var url = coin.id
+					td
+						a( href='/' + url )= coin.name 
+					td= coin.market.coinMarketCap.marketVolumeUSD
+					td= coin.social.index
+					td= coin.social.twitter.followersCount
+					td= coin.social.twitter.statusesCount
+					td= coin.social.reddit.followersCount
+					td= coin.development
+					td= coin.network
+			

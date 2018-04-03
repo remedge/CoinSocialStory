@@ -52,6 +52,9 @@ async function run() {
 				let twitterResponse = await clientTwitter.get('users/show', coins[index].twitter)
 				coin.social.twitter.followersCount = numeral(twitterResponse.followers_count).format('0,0');
 				coin.social.twitter.statusesCount = numeral(twitterResponse.statuses_count).format('0,0');
+				coin.social.twitter.creationDate = twitterResponse.created_at;
+
+				console.log(twitterResponse.created_at);
 
 	    		console.log(`Followers on twitter for ${coin.id}: ${twitterResponse.followers_count}`);
 	    		console.log(`Tweets & replies for ${coin.id}: ${twitterResponse.statuses_count}`);
@@ -65,13 +68,16 @@ async function run() {
 
 				let redditResponse = await request.get(urls.reddit + coins[index].reddit.subreddit + "/top.json?sort=top&t=day&limit=1");
 				coin.social.reddit.followersCount = numeral(redditResponse.body.data.children[0].data.subreddit_subscribers).format('0,0');
+				coin.social.reddit.creationDate = redditResponse.body.data.children[0].data.screated_utc;
 				console.log(`Followers on Reddit for ${coin.id}: ${coin.social.reddit.followersCount}`);
 				
 			} catch (e) {
 				console.error(`Error while fetching info for ${coin.id} from Reddit:`, e, 'Skipped');
 			}
+
 		}
 
+		tools.socialIndex(list);
 		console.log(`Saving data to ${LIST_PATH}...`);
 		fs.writeFileSync(LIST_PATH, JSON.stringify(list, null, 2));
 		console.log(`Data successfully fetched`);

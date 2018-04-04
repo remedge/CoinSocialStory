@@ -8,22 +8,22 @@ block content
 				tr
 					th(scope='col') #
 					th(scope='col') 
-						a(href='/sortName/') Name
+						a(href='?sortBy=name&order=' + (sortBy === 'name' ? order || 'asc' : 'asc') class='link' + (sortBy === 'name' ? '-active' : '-primary')) Name
 					th(scope='col')
-						a(href = '/sortMarket/') Market Cap
+						a(href='?sortBy=market_volume&order=' + (sortBy === 'market_volume' ? order || 'desc' : 'desc') class='link' + (sortBy === 'market_volume' ? '-active' : '-primary')) Market Cap
 					th(scope='col' colspan="4") Social Activity
 					th(scope='col') Development Activity
 					th(scope='col') Network Activity
 				tr
 					th(scope='col' colspan="3") 
 					th(scope='col') 
-						a(href = '/sortSocialIndex/') Index
+						a(href='?sortBy=social&order=' + (sortBy === 'social' ? order || 'desc' : 'desc') class='link' + (sortBy === 'social' ? '-active' : '-primary')) Index
 					th(scope='col') 
-						a(href='/sortTwitterFollowers/') Followers Twitter
+						a(href='?sortBy=twitter_followers&order=' + (sortBy === 'twitter_followers' ? order || 'desc' : 'desc') class='link' + (sortBy === 'twitter_followers' ? '-active' : '-primary')) Followers Twitter
 					th(scope='col') 
-						a(href='/sortTweetsAndReplies/') Tweets and Replies
+						a(href='?sortBy=twitter_statuses&order=' + (sortBy === 'twitter_statuses' ? order || 'desc' : 'desc') class='link' + (sortBy === 'twitter_statuses' ? '-active' : '-primary')) Tweets and Replies
 					th(scope='col') 
-						a(href='/sortSubredditFollowers/') Subreddit followers
+						a(href='?sortBy=reddit_followers&order=' + (sortBy === 'reddit_followers' ? order || 'desc' : 'desc') class='link' + (sortBy === 'reddit_followers' ? '-active' : '-primary')) Subreddit followers
 					th(scope='col' colspan="2") 
 			tbody
 			each coin, index in coins
@@ -32,11 +32,11 @@ block content
 					- var url = coin.id
 					td
 						a( href='/' + url )= coin.name 
-					td= coin.market.coinMarketCap.marketVolumeUSD
-					td= coin.social.index
-					td= coin.social.twitter.followersCount
-					td= coin.social.twitter.statusesCount
-					td= coin.social.reddit.followersCount
+					td= numeral(coin.market.coinMarketCap.marketVolumeUSD).format('0,0[.]00 $')
+					td= numeral(coin.social.index).format('0,0')
+					td= numeral(coin.social.twitter.followersCount).format('0,0')
+					td= numeral(coin.social.twitter.statusesCount).format('0,0')
+					td= numeral(coin.social.reddit.followersCount).format('0,0')
 					td= coin.development
 					td= coin.network
 			

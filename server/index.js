@@ -9,6 +9,7 @@ const tools = require('./tools');
 const numeral = require('numeral');
 const objectPath = require("object-path");
 const _ = require('lodash');
+const bodyParser = require('body-parser');
 
 const LIST_OF_COINS = path.join(__dirname, 'data', 'listOfCoins.json');
 const VIEWS_DIR = path.join(__dirname, '..', 'views');
@@ -19,37 +20,39 @@ console.log("yo!")
 let listOfCoins = JSON.parse(fs.readFileSync(LIST_OF_COINS, 'utf8'))
 
 
+app.use(bodyParser.json({extended: true}));
 app.use(express.static('build'));
 app.set('views', VIEWS_DIR)
 app.set('view engine', 'pug')
 
+app.use((req, res, next) => {
+	res.locals = res.locals || {};
+	res.locals.numeral = numeral;
+	return next();
+});
+
 app.get('/', (req, res) => {
-    res.render('index', {coins: listOfCoins});
-})
-app.get('/sortName/', (req, res) => {
-	const sortListOfCoins = tools.sortByParam( _.cloneDeep(listOfCoins), 'name', 'string');
-    res.render('index', {coins: sortListOfCoins});
-})
-app.get('/sortMarket/', (req, res) => {
-	const sortListOfCoins = tools.sortByParam( _.cloneDeep(listOfCoins), 'market.coinMarketCap.marketVolumeUSD', 'number');
-    res.render('index', {coins: sortListOfCoins});
-})
-app.get('/sortSocialIndex/', (req, res) => {
-	const sortListOfCoins = tools.sortByParam( _.cloneDeep(listOfCoins), 'social.index', 'number');
-    res.render('index', {coins: sortListOfCoins});
-})
-app.get('/sortTwitterFollowers/', (req, res) => {
-	const sortListOfCoins = tools.sortByParam( _.cloneDeep(listOfCoins), 'social.twitter.followersCount', 'number');
-    res.render('index', {coins: sortListOfCoins});
-})
-app.get('/sortTweetsAndReplies/', (req, res) => {
-	const sortListOfCoins = tools.sortByParam( _.cloneDeep(listOfCoins), 'social.twitter.statusesCount', 'number');
-    res.render('index', {coins: sortListOfCoins});
-})
-app.get('/sortSubredditFollowers/', (req, res) => {
-	const sortListOfCoins = tools.sortByParam( _.cloneDeep(listOfCoins), 'social.reddit.followersCount', 'number');
-    res.render('index', {coins: sortListOfCoins});
-})
+
+	const keys = {
+		'name': 'name',
+		'market_volume': 'market.coinMarketCap.marketVolumeUSD',
+		'social': 'social.index',
+		'twitter_followers': 'social.twitter.followersCount',
+		'twitter_statuses': 'social.twitter.statusesCount',
+		'reddit_followers': 'social.reddit.followersCount'
+	};
+
+	let {sortBy, order} = req.query;
+	let temp = _.sortBy(listOfCoins, keys[sortBy] || 'social.index');
+	order = order || 'desc';
+	if (order == 'desc') {
+		temp = temp.reverse();
+
+	}
+
+    res.render('index', {coins: temp, sortBy: sortBy, order: order === 'asc' ? 'desc' : 'asc'});
+});
+
 listOfCoins.forEach(function(coin, i) {
   app.get('/' + coin.id, (req, res) => {
   	res.render('singleCoin', coin)

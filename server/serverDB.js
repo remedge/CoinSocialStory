@@ -40,7 +40,7 @@ async function run() {
 				console.log(`CoinMarketCap...`);
 
 				let response = await request.get(urls.coinMarketCap + coin.id);
-				coin.market.coinMarketCap.marketVolumeUSD = numeral(response.body[0].market_cap_usd).format('0,0[.]00 $');
+				coin.market.coinMarketCap.marketVolumeUSD = +response.body[0].market_cap_usd;
 			} catch (e) {
 				console.error(`Error while fetching info for ${coin.id} from CoinMarketCap:`, e.response.error, 'Skipped');
 			}
@@ -50,8 +50,8 @@ async function run() {
 				console.log(`Twitter...`);
 
 				let twitterResponse = await clientTwitter.get('users/show', coins[index].twitter)
-				coin.social.twitter.followersCount = numeral(twitterResponse.followers_count).format('0,0');
-				coin.social.twitter.statusesCount = numeral(twitterResponse.statuses_count).format('0,0');
+				coin.social.twitter.followersCount = twitterResponse.followers_count;
+				coin.social.twitter.statusesCount = twitterResponse.statuses_count;
 				coin.social.twitter.creationDate = twitterResponse.created_at;
 
 				console.log(twitterResponse.created_at);
@@ -67,7 +67,7 @@ async function run() {
 				console.log('Reddit...');
 
 				let redditResponse = await request.get(urls.reddit + coins[index].reddit.subreddit + "/top.json?sort=top&t=day&limit=1");
-				coin.social.reddit.followersCount = numeral(redditResponse.body.data.children[0].data.subreddit_subscribers).format('0,0');
+				coin.social.reddit.followersCount = redditResponse.body.data.children[0].data.subreddit_subscribers;
 				coin.social.reddit.creationDate = redditResponse.body.data.children[0].data.screated_utc;
 				console.log(`Followers on Reddit for ${coin.id}: ${coin.social.reddit.followersCount}`);
 				

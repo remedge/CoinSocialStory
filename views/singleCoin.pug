@@ -2,30 +2,35 @@ extends layout.pug
 
 block content
 	.container
-		p Data updates every 10 minutes.
-		table.table.table-striped.table-hover
-			thead.thead-dark
-				tr
-					th(scope='col') Name
-					th(scope='col') Market Cap
-					th(scope='col' colspan="3") Social Activity
-					th(scope='col') Development Activity
-					th(scope='col') Network Activity
-				tr
-					th(scope='col' colspan="2") 
-					th(scope='col') Followers Twitter
-					th(scope='col') Tweets and Replies
-					th(scope='col') Followers Reddit
-					th(scope='col' colspan="2") 
-			tbody
-				tr
-					td #{name} 
-					td #{market.coinMarketCap.marketVolumeUSD}
-					td #{social.twitter.followersCount}
-					td #{social.twitter.statusesCount}
-					td #{social.reddit.followersCount}
-					td #{development}
-					td #{network}
+		h1 Coin Social Story for #{name}
+		p Here you can find statictics about #{name} community
+		.row
+			.col-4
+				.card.border-success.mb-3(style='max-width: 18rem;')
+					.card-header Social Index
+					.card-body.text-success
+						h5.card-title #{social.index}
+						p.card-text
+							| Social index indicates social activity of coin's community.
+			.col-8
+				table.table.table-striped.table-hover
+					thead.thead-dark
+						tr
+							th(scope='col') Name
+							th(scope='col') Market Cap
+							th(scope='col' colspan="3") Social Activity
+						tr
+							th(scope='col' colspan="2") 
+							th(scope='col') Followers Twitter
+							th(scope='col') Tweets and Replies
+							th(scope='col') Followers Reddit
+					tbody
+						tr
+							td #{name} 
+							td #{numeral(market.coinMarketCap.marketVolumeUSD).format('0,0[.]00 $')}
+							td #{numeral(social.twitter.followersCount).format('0,0')}
+							td #{numeral(social.twitter.statusesCount).format('0,0')}
+							td #{numeral(social.reddit.followersCount).format('0,0')}
 		if links
 			h6 Links for 
 				b #{name} 

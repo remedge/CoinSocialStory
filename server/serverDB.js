@@ -1,6 +1,7 @@
 'use strict'
 
-const INTERVAL = 600000;
+// const INTERVAL = 600000;
+const INTERVAL = 10000;
 
 const path = require('path');
 const fs = require('fs')
@@ -9,11 +10,14 @@ const tools = require('./tools');
 const urls = require('./data/urls');
 const creds = require('../creds');
 const numeral = require('numeral');
+const _ = require('lodash');
 
 const Twitter = require('twitter');
 
 const COINS_PATH = path.join(__dirname, 'data', 'coins.json');
 const LIST_PATH = path.join(__dirname, 'data', 'listOfCoins.json');
+const LIST_PREV_PATH = path.join(__dirname, 'data', 'listOfCoinsPrev.json');
+
 
 const clientTwitter = new Twitter(creds.twitter);
 
@@ -23,11 +27,15 @@ async function run() {
 	try {
 		let coins = JSON.parse(fs.readFileSync(COINS_PATH, 'utf8'));
 		let list;
+		let listPrev;
 
 		if (fs.existsSync(LIST_PATH)) {
 			list = JSON.parse(fs.readFileSync(LIST_PATH, 'utf8'));
+			listPrev = _.cloneDeep(list);
+			fs.writeFileSync(LIST_PREV_PATH, JSON.stringify(list, null, 2));
 		} else {
 			list = coins.map(item => new tools.coin(item));
+			listPrev = _.cloneDeep(list);
 		}
 
 		console.log(`Start fetching info for ${coins.length} coins...`);
@@ -77,7 +85,20 @@ async function run() {
 
 		}
 
+		const dateNow = Date.now();
+		const DATE_NOW_PATH = path.join(__dirname, 'data', 'history', dateNow + '.json');
+		fs.writeFileSync(DATE_NOW_PATH, JSON.stringify(list, null, 2));
+
 		tools.socialIndex(list);
+
+		for (let [index, coin] of list.entries()) {
+			list[index].social.indexDelta = tools.percentChange(list[index].social.index, listPrev[index].social.index);
+			list[index].social.twitter.followersCountDelta = tools.percentChange(list[index].social.twitter.followersCount, listPrev[index].social.twitter.followersCount);
+			list[index].social.twitter.statusesCountDelta = tools.percentChange(list[index].social.twitter.statusesCount, listPrev[index].social.twitter.statusesCount);
+			list[index].social.reddit.followersCountDelta = tools.percentChange(list[index].social.reddit.followersCount, listPrev[index].social.reddit.followersCount);
+		}
+
+
 		console.log(`Saving data to ${LIST_PATH}...`);
 		fs.writeFileSync(LIST_PATH, JSON.stringify(list, null, 2));
 		console.log(`Data successfully fetched`);
@@ -88,10 +109,3 @@ async function run() {
 	}
 	setTimeout(run, INTERVAL);
 }
-
-
-
-
-
-
-

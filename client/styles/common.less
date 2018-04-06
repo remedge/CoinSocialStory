@@ -11,5 +11,23 @@ body {
 		&:hover {
 			color: #d25d5d;
 		}
+		&.asc::after {
+			display: none;
+			font-family: "Font Awesome 5 Solid";
+			content: '\f107';
+		}
+		&.desc::after {
+			display: none;
+			font-family: "Font Awesome 5 Solid";
+			content: '\f106';
+		}
+	}
+}
+.param {
+	&-down {
+		color: red;
+	}
+	&-up {
+		color: green;
 	}
 }

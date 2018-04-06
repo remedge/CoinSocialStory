@@ -14,13 +14,17 @@ module.exports = {
 		};
 		this.social = {
 			index: 0,
+			indexDelta: 0,
 			twitter: {
 				followersCount: 0,
+				followersCountDelta: 0,
 				statusesCount: 0,
+				statusesCountDelta: 0,
 				creationDate: 0
 			},
 			reddit: {
 				followersCount: 0,
+				followersCountDelta: 0,
 				creationDate: 0
 			}
 		};
@@ -54,5 +58,8 @@ module.exports = {
   		for (let coin of listOfCoins) {
   			coin.social.index = (numeral(coin.social.twitter.followersCount).value() + numeral(coin.social.reddit.followersCount).value()) / 2;
   		}
-  	} 
+  	},
+  	percentChange: function (newValue, oldValue) {
+  		return _.round((newValue - oldValue) / newValue, 6);
+  	}
 };

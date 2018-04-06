@@ -5,21 +5,21 @@
     "symbol": "BTC",
     "market": {
       "coinMarketCap": {
-        "marketVolumeUSD": 111865592336
+        "marketVolumeUSD": 112223697985
       }
     },
     "social": {
-      "index": 806610.5,
-      "indexDelta": 0,
+      "index": 806729.5,
+      "indexDelta": 0.000001,
       "twitter": {
-        "followersCount": 822677,
-        "followersCountDelta": 0,
+        "followersCount": 822790,
+        "followersCountDelta": 0.000001,
         "statusesCount": 19769,
         "statusesCountDelta": 0,
         "creationDate": "Thu Aug 18 05:06:08 +0000 2011"
       },
       "reddit": {
-        "followersCount": 790544,
+        "followersCount": 790669,
         "followersCountDelta": 0
       }
     },
@@ -42,21 +42,21 @@
     "symbol": "ETH",
     "market": {
       "coinMarketCap": {
-        "marketVolumeUSD": 36297258627
+        "marketVolumeUSD": 36318685778
       }
     },
     "social": {
-      "index": 366530.5,
-      "indexDelta": 0.000001,
+      "index": 366564,
+      "indexDelta": 0,
       "twitter": {
-        "followersCount": 383602,
-        "followersCountDelta": 0.000003,
+        "followersCount": 383644,
+        "followersCountDelta": 0,
         "statusesCount": 1899,
         "statusesCountDelta": 0,
         "creationDate": "Sun Jan 26 19:15:24 +0000 2014"
       },
       "reddit": {
-        "followersCount": 349459,
+        "followersCount": 349484,
         "followersCountDelta": 0
       }
     },
@@ -79,21 +79,21 @@
     "symbol": "XRP",
     "market": {
       "coinMarketCap": {
-        "marketVolumeUSD": 18275671934
+        "marketVolumeUSD": 18322507169
       }
     },
     "social": {
-      "index": 515481.5,
+      "index": 515545,
       "indexDelta": 0,
       "twitter": {
-        "followersCount": 846646,
+        "followersCount": 846763,
         "followersCountDelta": 0,
         "statusesCount": 5950,
         "statusesCountDelta": 0,
         "creationDate": "Mon Dec 31 19:45:39 +0000 2012"
       },
       "reddit": {
-        "followersCount": 184317,
+        "followersCount": 184327,
         "followersCountDelta": 0
       }
     },
@@ -116,21 +116,21 @@
     "symbol": "BCH",
     "market": {
       "coinMarketCap": {
-        "marketVolumeUSD": 10399408588
+        "marketVolumeUSD": 10354265029
       }
     },
     "social": {
-      "index": 65485.5,
+      "index": 65493,
       "indexDelta": 0,
       "twitter": {
-        "followersCount": 98502,
+        "followersCount": 98515,
         "followersCountDelta": 0,
         "statusesCount": 972,
         "statusesCountDelta": 0,
         "creationDate": "Fri Jul 21 20:45:18 +0000 2017"
       },
       "reddit": {
-        "followersCount": 32469,
+        "followersCount": 32471,
         "followersCountDelta": 0
       }
     },
@@ -153,21 +153,21 @@
     "symbol": "LTC",
     "market": {
       "coinMarketCap": {
-        "marketVolumeUSD": 6326449709
+        "marketVolumeUSD": 6362435616
       }
     },
     "social": {
-      "index": 304090.5,
+      "index": 304111.5,
       "indexDelta": 0,
       "twitter": {
-        "followersCount": 410982,
+        "followersCount": 411028,
         "followersCountDelta": 0,
         "statusesCount": 689,
         "statusesCountDelta": 0,
         "creationDate": "Wed Oct 05 18:30:50 +0000 2011"
       },
       "reddit": {
-        "followersCount": 197199,
+        "followersCount": 197195,
         "followersCountDelta": 0
       }
     },
@@ -190,21 +190,21 @@
     "symbol": "EOS",
     "market": {
       "coinMarketCap": {
-        "marketVolumeUSD": 4587259051
+        "marketVolumeUSD": 4487705567
       }
     },
     "social": {
-      "index": 86796,
-      "indexDelta": 0,
+      "index": 86820.5,
+      "indexDelta": 0.000012,
       "twitter": {
-        "followersCount": 130353,
-        "followersCountDelta": 0,
-        "statusesCount": 816,
+        "followersCount": 130396,
+        "followersCountDelta": 0.000015,
+        "statusesCount": 821,
         "statusesCountDelta": 0,
         "creationDate": "Thu May 11 14:27:36 +0000 2017"
       },
       "reddit": {
-        "followersCount": 43239,
+        "followersCount": 43245,
         "followersCountDelta": 0
       }
     },
@@ -227,21 +227,21 @@
     "symbol": "ADA",
     "market": {
       "coinMarketCap": {
-        "marketVolumeUSD": 3688851742
+        "marketVolumeUSD": 3706508077
       }
     },
     "social": {
-      "index": 85883.5,
-      "indexDelta": 0.000006,
+      "index": 85897,
+      "indexDelta": 0.000012,
       "twitter": {
-        "followersCount": 110968,
-        "followersCountDelta": 0,
-        "statusesCount": 945,
+        "followersCount": 110991,
+        "followersCountDelta": 0.000009,
+        "statusesCount": 948,
         "statusesCountDelta": 0,
         "creationDate": "Mon Jan 30 04:16:01 +0000 2017"
       },
       "reddit": {
-        "followersCount": 60799,
+        "followersCount": 60803,
         "followersCountDelta": 0.000016
       }
     },
@@ -264,21 +264,21 @@
     "symbol": "XLM",
     "market": {
       "coinMarketCap": {
-        "marketVolumeUSD": 3540039468
+        "marketVolumeUSD": 3616784829
       }
     },
     "social": {
-      "index": 150937.5,
+      "index": 150959.5,
       "indexDelta": 0,
       "twitter": {
-        "followersCount": 225475,
+        "followersCount": 225511,
         "followersCountDelta": 0,
         "statusesCount": 2474,
         "statusesCountDelta": 0,
         "creationDate": "Thu Apr 24 00:11:10 +0000 2014"
       },
       "reddit": {
-        "followersCount": 76400,
+        "followersCount": 76408,
         "followersCountDelta": 0
       }
     },
@@ -301,22 +301,22 @@
     "symbol": "NEO",
     "market": {
       "coinMarketCap": {
-        "marketVolumeUSD": 2918987500
+        "marketVolumeUSD": 2913592500
       }
     },
     "social": {
-      "index": 195025.5,
+      "index": 195086,
       "indexDelta": 0.000003,
       "twitter": {
-        "followersCount": 301353,
-        "followersCountDelta": 0.000003,
+        "followersCount": 301413,
+        "followersCountDelta": 0,
         "statusesCount": 561,
         "statusesCountDelta": 0,
         "creationDate": "Sat Jun 28 02:51:36 +0000 2014"
       },
       "reddit": {
-        "followersCount": 88698,
-        "followersCountDelta": 0
+        "followersCount": 88759,
+        "followersCountDelta": 0.000011
       }
     },
     "links": [
@@ -338,21 +338,21 @@
     "symbol": "MIOTA",
     "market": {
       "coinMarketCap": {
-        "marketVolumeUSD": 2599288862
+        "marketVolumeUSD": 2596067387
       }
     },
     "social": {
       "index": 81532.5,
       "indexDelta": 0,
       "twitter": {
-        "followersCount": 54262,
+        "followersCount": 54263,
         "followersCountDelta": 0,
         "statusesCount": 788,
         "statusesCountDelta": 0,
         "creationDate": "Sat Sep 08 15:24:43 +0000 2012"
       },
       "reddit": {
-        "followersCount": 108803,
+        "followersCount": 108802,
         "followersCountDelta": 0
       }
     },
@@ -375,21 +375,21 @@
     "symbol": "DASH",
     "market": {
       "coinMarketCap": {
-        "marketVolumeUSD": 2295051201
+        "marketVolumeUSD": 2285151883
       }
     },
     "social": {
-      "index": 156836,
-      "indexDelta": -0.000003,
+      "index": 156853,
+      "indexDelta": 0,
       "twitter": {
-        "followersCount": 292952,
-        "followersCountDelta": -0.000003,
+        "followersCount": 292988,
+        "followersCountDelta": 0,
         "statusesCount": 2586,
         "statusesCountDelta": 0,
         "creationDate": "Tue Feb 11 14:55:27 +0000 2014"
       },
       "reddit": {
-        "followersCount": 20720,
+        "followersCount": 20718,
         "followersCountDelta": 0
       }
     },
@@ -412,21 +412,21 @@
     "symbol": "XMR",
     "market": {
       "coinMarketCap": {
-        "marketVolumeUSD": 2648112727
+        "marketVolumeUSD": 2630213313
       }
     },
     "social": {
-      "index": 204999.5,
+      "index": 205038,
       "indexDelta": 0,
       "twitter": {
-        "followersCount": 284679,
+        "followersCount": 284728,
         "followersCountDelta": 0,
-        "statusesCount": 2600,
+        "statusesCount": 2603,
         "statusesCountDelta": 0,
         "creationDate": "Mon May 05 14:22:44 +0000 2014"
       },
       "reddit": {
-        "followersCount": 125320,
+        "followersCount": 125348,
         "followersCountDelta": 0
       }
     },
@@ -449,21 +449,21 @@
     "symbol": "TRX",
     "market": {
       "coinMarketCap": {
-        "marketVolumeUSD": 2357174999
+        "marketVolumeUSD": 2449353852
       }
     },
     "social": {
-      "index": 171793,
+      "index": 171829.5,
       "indexDelta": 0,
       "twitter": {
-        "followersCount": 281034,
+        "followersCount": 281106,
         "followersCountDelta": 0,
         "statusesCount": 396,
         "statusesCountDelta": 0,
         "creationDate": "Sun Aug 06 16:20:28 +0000 2017"
       },
       "reddit": {
-        "followersCount": 62552,
+        "followersCount": 62553,
         "followersCountDelta": 0
       }
     },
@@ -486,21 +486,21 @@
     "symbol": "XEM",
     "market": {
       "coinMarketCap": {
-        "marketVolumeUSD": 1922625000
+        "marketVolumeUSD": 1925505000
       }
     },
     "social": {
-      "index": 106974,
+      "index": 106983,
       "indexDelta": 0,
       "twitter": {
-        "followersCount": 196976,
+        "followersCount": 196995,
         "followersCountDelta": 0,
-        "statusesCount": 2639,
+        "statusesCount": 2640,
         "statusesCountDelta": 0,
         "creationDate": "Mon Jan 27 13:40:09 +0000 2014"
       },
       "reddit": {
-        "followersCount": 16972,
+        "followersCount": 16971,
         "followersCountDelta": 0
       }
     },
@@ -523,14 +523,14 @@
     "symbol": "USDT",
     "market": {
       "coinMarketCap": {
-        "marketVolumeUSD": 2291600738
+        "marketVolumeUSD": 2287209428
       }
     },
     "social": {
-      "index": 13480,
+      "index": 13478.5,
       "indexDelta": 0,
       "twitter": {
-        "followersCount": 23350,
+        "followersCount": 23347,
         "followersCountDelta": 0,
         "statusesCount": 267,
         "statusesCountDelta": 0,

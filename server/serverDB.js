@@ -1,7 +1,7 @@
 'use strict'
 
-// const INTERVAL = 600000;
-const INTERVAL = 10000;
+const INTERVAL = 600000;
+// const INTERVAL = 10000;
 
 const path = require('path');
 const fs = require('fs')

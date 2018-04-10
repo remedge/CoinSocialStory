@@ -7,6 +7,7 @@ const path = require('path');
 const fs = require('fs')
 const request = require("superagent");
 const tools = require('./tools');
+const Coin = require('./Coin');
 const urls = require('./data/urls');
 const creds = require('../creds');
 const numeral = require('numeral');
@@ -21,6 +22,10 @@ const LIST_PREV_PATH = path.join(__dirname, 'data', 'listOfCoinsPrev.json');
 
 const clientTwitter = new Twitter(creds.twitter);
 
+if (!fs.existsSync(path.join(__dirname, 'data', 'history')) {
+	fs.mkdirSync(path.join(__dirname, 'data', 'history'));
+}
+
 run();
 
 async function run() {
@@ -34,7 +39,7 @@ async function run() {
 			listPrev = _.cloneDeep(list);
 			fs.writeFileSync(LIST_PREV_PATH, JSON.stringify(list, null, 2));
 		} else {
-			list = coins.map(item => new tools.coin(item));
+			list = coins.map(item => new Coin(item));
 			listPrev = _.cloneDeep(list);
 		}
 
@@ -60,7 +65,7 @@ async function run() {
 				let twitterResponse = await clientTwitter.get('users/show', coins[index].twitter)
 				coin.social.twitter.followersCount = twitterResponse.followers_count;
 				coin.social.twitter.statusesCount = twitterResponse.statuses_count;
-				coin.social.twitter.creationDate = twitterResponse.created_at;
+				coin.social.twitter.creationDate = new Date(twitterResponse.created_at).getTime();
 
 				console.log(twitterResponse.created_at);
 
@@ -76,8 +81,9 @@ async function run() {
 
 				let redditResponse = await request.get(urls.reddit + coins[index].reddit.subreddit + "/top.json?sort=top&t=day&limit=1");
 				coin.social.reddit.followersCount = redditResponse.body.data.children[0].data.subreddit_subscribers;
-				coin.social.reddit.creationDate = redditResponse.body.data.children[0].data.screated_utc;
+				coin.social.reddit.creationDate = redditResponse.body.data.children[0].data.created_utc;
 				console.log(`Followers on Reddit for ${coin.id}: ${coin.social.reddit.followersCount}`);
+				console.log(`Creation date for Reddit for ${coin.id}: ${coin.social.reddit.creationDate} ${redditResponse.body.data.children[0].data.created_utc}`);
 				
 			} catch (e) {
 				console.error(`Error while fetching info for ${coin.id} from Reddit:`, e, 'Skipped');

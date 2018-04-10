@@ -34,7 +34,7 @@ block content
 						td
 							a( href='/' + url )= coin.name 
 						td= numeral(coin.market.coinMarketCap.marketVolumeUSD).format('0,0[.]00 $')
-						td= numeral(coin.social.index).format('0,0')
+						td= numeral(coin.social.index).format('0,0.00000')
 							br
 							|(
 							span(class='' + (coin.social.indexDelta < 0 ? 'param-down' : 'param-up'))= numeral(coin.social.indexDelta).format('+0.00000 %')

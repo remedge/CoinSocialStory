@@ -23,8 +23,6 @@ console.log("yo!");
 let listOfCoins = JSON.parse(fs.readFileSync(LIST_OF_COINS, 'utf8'));
 
 
-
-
 app.use(bodyParser.json({extended: true}));
 app.use(express.static('build'));
 app.set('views', VIEWS_DIR);
@@ -57,14 +55,24 @@ app.get('/', (req, res) => {
     res.render('index', {coins: tempList, sortBy: sortBy, order: order === 'asc' ? 'desc' : 'asc'});
 });
 
-listOfCoins.forEach(function(coin, i) {
-  app.get('/' + coin.id, (req, res) => {
-  	res.render('singleCoin', coin)
-  });
-});
 app.get('/about', (req, res) => {
-	res.render('about')
+	res.render('about');
 });
+
+app.get('/:name', (req, res) => {
+	let coin = listOfCoins.find(item => item.id === req.params.name);
+	if (!coin) {
+		return res.status(404);
+	}
+	res.render('singleCoin', coin);
+});
+
+// listOfCoins.forEach(function(coin, i) {
+//   app.get('/' + coin.id, (req, res) => {
+//   	res.render('singleCoin', coin)
+//   });
+// });
+
 
 app.listen(port, (err) => {
     if (err) {

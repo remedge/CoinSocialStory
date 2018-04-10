@@ -22,7 +22,7 @@ const LIST_PREV_PATH = path.join(__dirname, 'data', 'listOfCoinsPrev.json');
 
 const clientTwitter = new Twitter(creds.twitter);
 
-if (!fs.existsSync(path.join(__dirname, 'data', 'history')) {
+if (!fs.existsSync(path.join(__dirname, 'data', 'history'))) {
 	fs.mkdirSync(path.join(__dirname, 'data', 'history'));
 }
 

@@ -41,6 +41,7 @@ async function run() {
 		} else {
 			list = coins.map(item => new Coin(item));
 			listPrev = _.cloneDeep(list);
+			fs.writeFileSync(LIST_PREV_PATH, JSON.stringify(list, null, 2));
 		}
 
 		console.log(`Start fetching info for ${coins.length} coins...`);

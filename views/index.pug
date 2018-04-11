@@ -3,6 +3,7 @@ extends layout.pug
 block content
 	.container
 		p Data updates every 10 minutes.
+		p Percent changes are indicated in the last 10 minutes.
 		.table-responsive
 			table.table.table-striped.table-hover
 				thead.thead-dark
@@ -56,4 +57,8 @@ block content
 							|)
 					//- td= coin.development
 					//- td= coin.network
-			
+		.donate
+			p Donate ETH: 0x8A224209BfA524BBCFfC697C92CBBcE0BC0930DD
+				br
+				| Donate BTC: 1PrLgy19yi8zPGJd5SY6q8Cv76paJ6xaQ1
+		

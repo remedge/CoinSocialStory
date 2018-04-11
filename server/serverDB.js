@@ -1,7 +1,7 @@
 'use strict'
 
-const INTERVAL = 600000;
-// const INTERVAL = 10000;
+// const INTERVAL = 600000;
+const INTERVAL = 10000;
 
 const path = require('path');
 const fs = require('fs')
@@ -22,6 +22,7 @@ const LIST_PREV_PATH = path.join(__dirname, 'data', 'listOfCoinsPrev.json');
 
 const clientTwitter = new Twitter(creds.twitter);
 
+
 if (!fs.existsSync(path.join(__dirname, 'data', 'history'))) {
 	fs.mkdirSync(path.join(__dirname, 'data', 'history'));
 }
@@ -36,6 +37,7 @@ async function run() {
 
 		if (fs.existsSync(LIST_PATH)) {
 			list = JSON.parse(fs.readFileSync(LIST_PATH, 'utf8'));
+			list.map(item => new Coin(item));
 			listPrev = _.cloneDeep(list);
 			fs.writeFileSync(LIST_PREV_PATH, JSON.stringify(list, null, 2));
 		} else {
@@ -55,6 +57,8 @@ async function run() {
 
 				let response = await request.get(urls.coinMarketCap + coin.id);
 				coin.market.coinMarketCap.marketVolumeUSD = +response.body[0].market_cap_usd;
+
+				console.log(`Market Cap for ${coin.id}: ${twitterResponse.created_at}`);
 			} catch (e) {
 				console.error(`Error while fetching info for ${coin.id} from CoinMarketCap:`, e.response.error, 'Skipped');
 			}
@@ -68,10 +72,9 @@ async function run() {
 				coin.social.twitter.statusesCount = twitterResponse.statuses_count;
 				coin.social.twitter.creationDate = new Date(twitterResponse.created_at).getTime();
 
-				console.log(twitterResponse.created_at);
-
 	    		console.log(`Followers on twitter for ${coin.id}: ${twitterResponse.followers_count}`);
 	    		console.log(`Tweets & replies for ${coin.id}: ${twitterResponse.statuses_count}`);
+	    		console.log(`Creation time of twitter for ${coin.id}: ${twitterResponse.created_at}`);
 			} catch (e) {
 				console.error(`Error while fetching info for ${coin.id} from Twitter:`, e.response.error, 'Skipped');
 			}
@@ -83,21 +86,26 @@ async function run() {
 				let redditResponse = await request.get(urls.reddit + coins[index].reddit.subreddit + "/top.json?sort=top&t=day&limit=1");
 				coin.social.reddit.followersCount = redditResponse.body.data.children[0].data.subreddit_subscribers;
 				coin.social.reddit.creationDate = redditResponse.body.data.children[0].data.created_utc;
+
 				console.log(`Followers on Reddit for ${coin.id}: ${coin.social.reddit.followersCount}`);
-				console.log(`Creation date for Reddit for ${coin.id}: ${coin.social.reddit.creationDate} ${redditResponse.body.data.children[0].data.created_utc}`);
-				
+				console.log(`Creation date for Reddit for ${coin.id}: ${coin.social.reddit.creationDate}`);	
 			} catch (e) {
 				console.error(`Error while fetching info for ${coin.id} from Reddit:`, e, 'Skipped');
 			}
-
 		}
 
+		// Calculate social index for coins
+		list.map(item => {
+			item = new Coin(item);
+			item.calcSocialIndex();
+		});
+		
+		// Save data to the history
 		const dateNow = Date.now();
 		const DATE_NOW_PATH = path.join(__dirname, 'data', 'history', dateNow + '.json');
 		fs.writeFileSync(DATE_NOW_PATH, JSON.stringify(list, null, 2));
 
-		tools.socialIndex(list);
-
+		// Calculate percent changes for all social parametrs
 		for (let [index, coin] of list.entries()) {
 			list[index].social.indexDelta = tools.percentChange(list[index].social.index, listPrev[index].social.index);
 			list[index].social.twitter.followersCountDelta = tools.percentChange(list[index].social.twitter.followersCount, listPrev[index].social.twitter.followersCount);
@@ -105,12 +113,12 @@ async function run() {
 			list[index].social.reddit.followersCountDelta = tools.percentChange(list[index].social.reddit.followersCount, listPrev[index].social.reddit.followersCount);
 		}
 
-
+		// Saving data
 		console.log(`Saving data to ${LIST_PATH}...`);
 		fs.writeFileSync(LIST_PATH, JSON.stringify(list, null, 2));
 		console.log(`Data successfully fetched`);
 		console.log(`Next fetching after ${INTERVAL / 1000} secs\n\n`);
-
+		
 	} catch (e) {
 		console.error(e);
 	}

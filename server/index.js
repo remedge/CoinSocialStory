@@ -6,6 +6,7 @@ const port = process.env.PORT || 3000;
 const fs = require('fs');
 const path = require('path');
 const tools = require('./tools');
+const converter = require('./converter');
 const numeral = require('numeral');
 const objectPath = require("object-path");
 const _ = require('lodash');
@@ -14,14 +15,14 @@ const bodyParser = require('body-parser');
 const LIST_OF_COINS = path.join(__dirname, 'data', 'listOfCoins.json');
 const VIEWS_DIR = path.join(__dirname, '..', 'views');
 
-const INTERVAL = 600000;
-// const INTERVAL = 10000;
+// const INTERVAL = 600000;
+const INTERVAL = 10000;
 
 
 console.log("yo!");
 
 let listOfCoins = JSON.parse(fs.readFileSync(LIST_OF_COINS, 'utf8'));
-
+// console.log(converter.dataForUI(listOfCoins));
 
 app.use(bodyParser.json({extended: true}));
 app.use(express.static('build'));
@@ -66,12 +67,6 @@ app.get('/:name', (req, res) => {
 	}
 	res.render('singleCoin', coin);
 });
-
-// listOfCoins.forEach(function(coin, i) {
-//   app.get('/' + coin.id, (req, res) => {
-//   	res.render('singleCoin', coin)
-//   });
-// });
 
 
 app.listen(port, (err) => {

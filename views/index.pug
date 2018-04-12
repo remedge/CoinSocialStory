@@ -1,28 +1,6 @@
 extends layout.pug
 
 block content
-	script
-		| function collapsePercent() {
-		| 	var a = document.getElementsByClassName('param-up');
-		| 	var b = document.getElementsByClassName('param-down');
-		|		Array.prototype.slice(a);
-		| 	Array.prototype.slice(b);
-		|
-		| 	for( var i = 0; i < a.length; i++ ) {
-		| 		if (a[i].getAttribute('style') == "display: none;"){
-		| 			a[i].setAttribute("style", "display: static;");
-		| 		} else {
-		| 			a[i].setAttribute("style", "display: none;");
-		| 		}
-		| 	}
-		| 	for( var i = 0; i < b.length; i++ ){
-		| 		if (b[i].getAttribute('style') == "display: none;"){
-		| 			b[i].setAttribute("style", "display: static;");
-		| 		} else {
-		| 			b[i].setAttribute("style", "display: none;");
-		| 		}
-		| 	}
-		| }
 	.container-fluid
 		button.btn.btn-primary(onclick='collapsePercent()', role='button') %
 		.table-responsive
@@ -40,33 +18,35 @@ block content
 					tr
 						th(scope='col' colspan="2")
 
-						th(scope='col') 
-							a(href='?sortBy=price_index&order=' + (sortBy === 'price_index' ? order || 'desc' : 'desc' ) class='link' + (sortBy === 'price_index' ? '-active' : '-primary') + ' ' + (sortBy === 'price_index' ? order || 'asc' : 'asc')) Index&nbsp;&nbsp;
-						th(scope='col') 
-							a(href='?sortBy=price&order=' + (sortBy === 'price' ? order || 'desc' : 'desc' ) class='link' + (sortBy === 'price' ? '-active' : '-primary') + ' ' + (sortBy === 'price' ? order || 'asc' : 'asc')) Price&nbsp;&nbsp;
-						th(scope='col')
-							a(href='?sortBy=market_volume&order=' + (sortBy === 'market_volume' ? order || 'desc' : 'desc' ) class='link' + (sortBy === 'market_volume' ? '-active' : '-primary') + ' ' + (sortBy === 'market_volume' ? order || 'asc' : 'asc')) Market Cap&nbsp;&nbsp; 
-						th(scope='col') 
-							a(href='?sortBy=volume&order=' + (sortBy === 'volume' ? order || 'desc' : 'desc' ) class='link' + (sortBy === 'volume' ? '-active' : '-primary') + ' ' + (sortBy === 'volume' ? order || 'asc' : 'asc')) 24h Volume&nbsp;&nbsp;
+						mixin thead(currentSortBy, name)
+							th(scope='col') 
+								- let href = '?sortBy=' + currentSortBy  + '&order=' + (sortBy === currentSortBy ? order || 'desc' : 'desc' );
+								- let classLink = 'link' + (sortBy === currentSortBy ? '-active' : '-primary') + ' ' + (sortBy === currentSortBy ? order || 'asc' : 'asc');
+									a(
+										href=href
+										class=classLink
+									)= name
+								
+						//- PRICE INDEX							
+						+thead('price_index', 'Index')
+						+thead('price', 'Price')
+						+thead('market_volume', 'Market Cap')
+						+thead('volume', '24h Volume')
 
+						//- SOCIAL INDEX
+						+thead('social', 'Index')
+						+thead('twitter_followers', 'Followers Twitter')
+						+thead('twitter_statuses', 'Tweets and Replies')
+						+thead('reddit_followers', 'Subreddit followers')
 
-
-						th(scope='col') 
-							a(href='?sortBy=social&order=' + (sortBy === 'social' ? order || 'desc' : 'desc') class='link' + (sortBy === 'social' ? '-active' : '-primary') + ' ' + (sortBy === 'social' ? order || 'asc' : 'asc')) Index&nbsp;&nbsp;
-						th(scope='col') 
-							a(href='?sortBy=twitter_followers&order=' + (sortBy === 'twitter_followers' ? order || 'desc' : 'desc') class='link' + (sortBy === 'twitter_followers' ? '-active' : '-primary') + ' ' + (sortBy === 'twitter_followers' ? order || 'asc' : 'asc')) Followers Twitter&nbsp;&nbsp;
-						th(scope='col') 
-							a(href='?sortBy=twitter_statuses&order=' + (sortBy === 'twitter_statuses' ? order || 'desc' : 'desc') class='link' + (sortBy === 'twitter_statuses' ? '-active' : '-primary') + ' ' + (sortBy === 'twitter_statuses' ? order || 'asc' : 'asc')) Tweets and Replies&nbsp;&nbsp;
-						th(scope='col') 
-							a(href='?sortBy=reddit_followers&order=' + (sortBy === 'reddit_followers' ? order || 'desc' : 'desc') class='link' + (sortBy === 'reddit_followers' ? '-active' : '-primary') + ' ' + (sortBy === 'reddit_followers' ? order || 'asc' : 'asc')) Subreddit followers&nbsp;&nbsp;
-
-
+						//- DEVELOPMANT INDEX
 						th(scope='col') Index
 						th(scope='col') Reps
 						th(scope='col') Commits
 						th(scope='col') Contributers
 						th(scope='col') Followers
 
+						//- NETWORK INDEX
 						th(scope='col') Index
 						th(scope='col') Transactions
 						th(scope='col') Nodes
@@ -82,42 +62,30 @@ block content
 						td
 							a( href='/' + url )= coin.name 
 
-						//- PRICE INDEX |||||
-							
-						td= numeral(coin.market.coinMarketCap.index).format('0,0[.]00')
-							//- br
-							div(class='' + (coin.market.coinMarketCap.indexDelta < 0 ? 'param-down' : 'param-up'))= numeral(coin.market.coinMarketCap.indexDelta).format('+0.00%')
-						td= numeral(coin.market.coinMarketCap.priceUSD).format('$0,0[.]00a')
-							//- br
-							div(class='' + (coin.market.coinMarketCap.priceUSDDelta < 0 ? 'param-down' : 'param-up'))= numeral(coin.market.coinMarketCap.priceUSDDelta).format('+0.00%')
-						td= numeral(coin.market.coinMarketCap.marketVolumeUSD).format('$0,0[.]00a')
-							//- br
-							div(class='' + (coin.market.coinMarketCap.marketVolumeUSDDelta < 0 ? 'param-down' : 'param-up'))= numeral(coin.market.coinMarketCap.marketVolumeUSDDelta).format('+0.00%')
-						td= numeral(coin.market.coinMarketCap.VolumeUSD).format('$0,0[.]00a')
-							//- br
-							div(class='' + (coin.market.coinMarketCap.VolumeUSDDelta < 0 ? 'param-down' : 'param-up'))= numeral(coin.market.coinMarketCap.VolumeUSDDelta).format('+0.00%')
+						mixin tcell(value, delta, format)
+							td= numeral(value).format(format)
+								div(class='' + (delta < 0 ? 'param-down' : 'param-up'))= numeral(delta).format('+0.00%')
 
+						//- PRICE INDEX 
+						+tcell(coin.market.coinMarketCap.index, coin.market.coinMarketCap.indexDelta, '0,0[.]00')
+						+tcell(coin.market.coinMarketCap.priceUSD, coin.market.coinMarketCap.priceUSDDelta, '$0,0[.]00a')
+						+tcell(coin.market.coinMarketCap.marketVolumeUSD, coin.market.coinMarketCap.marketVolumeUSDDelta, '$0,0[.]00a')
+						+tcell(coin.market.coinMarketCap.VolumeUSD, coin.market.coinMarketCap.VolumeUSDDelta, '$0,0[.]00a')
+						
+						//- SOCIAL INDEX
+						+tcell(coin.social.index, coin.social.indexDelta, '0,0.00')
+						+tcell(coin.social.twitter.followersCount, coin.social.twitter.followersCountDelta, '0,0')
+						+tcell(coin.social.twitter.statusesCount, coin.social.twitter.statusesCountDelta, '0,0')
+						+tcell(coin.social.reddit.followersCount, coin.social.reddit.followersCountDelta, '0,0')
 
-
-						td= numeral(coin.social.index).format('0,0.00')
-							//- br
-							div(class='' + (coin.social.indexDelta < 0 ? 'param-down' : 'param-up'))= numeral(coin.social.indexDelta).format('+0.00%')
-						td= numeral(coin.social.twitter.followersCount).format('0,0')
-							//- br
-							div(class='' + (coin.social.twitter.followersCountDelta < 0 ? 'param-down' : 'param-up'))= numeral(coin.social.twitter.followersCountDelta).format('+0,0.00%')
-						td= numeral(coin.social.twitter.statusesCount).format('0,0')
-							//- br
-							div(class='' + (coin.social.twitter.statusesCountDelta < 0 ? 'param-down' : 'param-up'))= numeral(coin.social.twitter.statusesCountDelta).format('+0,0.00%')
-						td= numeral(coin.social.reddit.followersCount).format('0,0')
-							//- br
-							div(class='' + (coin.social.reddit.followersCountDelta < 0 ? 'param-down' : 'param-up'))= numeral(coin.social.reddit.followersCountDelta).format('+0,0.00%')
-
+						//- DEVELOPMANT INDEX
 						td index
 						td Reps
 						td Commits
 						td Contributers
 						td Followers
 
+						//- NETWORK INDEX
 						td index
 						td transactions
 						td nodes

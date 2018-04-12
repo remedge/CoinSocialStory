@@ -39,10 +39,12 @@ app.get('/', (req, res) => {
 
 	const keys = {
 		'name': 'name',
+
 		'price_index': 'market.coinMarketCap.index',
 		'price': 'market.coinMarketCap.priceUSD',
 		'market_volume': 'market.coinMarketCap.marketVolumeUSD',
 		'volume': 'market.coinMarketCap.VolumeUSD',
+		
 		'social': 'social.index',
 		'twitter_followers': 'social.twitter.followersCount',
 		'twitter_statuses': 'social.twitter.statusesCount',

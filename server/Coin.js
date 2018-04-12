@@ -12,13 +12,33 @@ class Coin {
 		if (coin.market) {
 			this.market = {
 				coinMarketCap: {
-					marketVolumeUSD: coin.market.marketVolumeUSD || ''
+					index: coin.market.coinMarketCap.index || 0,
+					indexDelta: coin.market.coinMarketCap.indexDelta || 0,
+
+					marketVolumeUSD: coin.market.coinMarketCap.marketVolumeUSD || '',
+					marketVolumeUSDDelta: coin.market.coinMarketCap.marketVolumeUSDDelta || '',
+
+					priceUSD: coin.market.coinMarketCap.priceUSD || 0,
+					priceUSDDelta: coin.market.coinMarketCap.priceUSDDelta || 0,
+
+					VolumeUSD: coin.market.coinMarketCap.VolumeUSD || 0,
+					VolumeUSDDelta: coin.market.coinMarketCap.VolumeUSDDelta || 0
 				}
 			};
 		} else {
 			this.market = {
 				coinMarketCap: {
-					marketVolumeUSD: ''
+					index: 0,
+					indexDelta: 0,
+
+					marketVolumeUSD: '',
+					marketVolumeUSDDelta: '',
+
+					priceUSD: 0,
+					priceUSDDelta: 0,
+
+					VolumeUSD: 0,
+					VolumeUSDDelta: 0
 				}
 			};
 		}
@@ -72,6 +92,8 @@ class Coin {
 		let redditFollowers = numeral(this.social.reddit.followersCount).value();
 
 		this.social.index = ( (twitterStatuses + twitterFollowers) / twitterTime + redditFollowers / redditTime) * 1000 * 3600;
+
+		console.log(this.social.index);
   	}
 
 	percentChange() {}

@@ -39,7 +39,10 @@ app.get('/', (req, res) => {
 
 	const keys = {
 		'name': 'name',
+		'price_index': 'market.coinMarketCap.index',
+		'price': 'market.coinMarketCap.priceUSD',
 		'market_volume': 'market.coinMarketCap.marketVolumeUSD',
+		'volume': 'market.coinMarketCap.VolumeUSD',
 		'social': 'social.index',
 		'twitter_followers': 'social.twitter.followersCount',
 		'twitter_statuses': 'social.twitter.statusesCount',
@@ -47,7 +50,7 @@ app.get('/', (req, res) => {
 	};
 
 	let {sortBy, order} = req.query;
-	let tempList = _.sortBy(listOfCoins, keys[sortBy] || 'social.index');
+	let tempList = _.sortBy(listOfCoins, keys[sortBy] || 'market.coinMarketCap.marketVolumeUSD');
 	order = order || 'desc';
 	if (order == 'desc') {
 		tempList = tempList.reverse();

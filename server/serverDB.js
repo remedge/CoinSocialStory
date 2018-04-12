@@ -23,6 +23,7 @@ const LIST_PREV_PATH = path.join(__dirname, 'data', 'listOfCoinsPrev.json');
 const clientTwitter = new Twitter(creds.twitter);
 
 
+
 if (!fs.existsSync(path.join(__dirname, 'data', 'history'))) {
 	fs.mkdirSync(path.join(__dirname, 'data', 'history'));
 }
@@ -37,7 +38,7 @@ async function run() {
 
 		if (fs.existsSync(LIST_PATH)) {
 			list = JSON.parse(fs.readFileSync(LIST_PATH, 'utf8'));
-			list.map(item => new Coin(item));
+			// list.map(item => new Coin(item));
 			listPrev = _.cloneDeep(list);
 			fs.writeFileSync(LIST_PREV_PATH, JSON.stringify(list, null, 2));
 		} else {
@@ -57,9 +58,16 @@ async function run() {
 
 				let response = await request.get(urls.coinMarketCap + coin.id);
 				coin.market.coinMarketCap.marketVolumeUSD = +response.body[0].market_cap_usd;
+				coin.market.coinMarketCap.priceUSD = +response.body[0].price_usd;
+				
+				coin.market.coinMarketCap.VolumeUSD = +response.body[0]['24h_volume_usd'];
 
-				console.log(`Market Cap for ${coin.id}: ${twitterResponse.created_at}`);
+				// coin.market.coinMarketCap.index =  (coin.market.coinMarketCap.priceUSD + coin.market.coinMarketCap.marketVolumeUSD - coin.market.coinMarketCap.VolumeUSD * list[0].market.coinMarketCap.marketVolumeUSD / list[0].market.coinMarketCap.VolumeUSD) / 10000;
+				coin.market.coinMarketCap.index =  (coin.market.coinMarketCap.marketVolumeUSD - coin.market.coinMarketCap.VolumeUSD * (list[0].market.coinMarketCap.priceUSD - list[0].market.coinMarketCap.marketVolumeUSD )/ list[0].market.coinMarketCap.VolumeUSD) / 1000000000;
+
+
 			} catch (e) {
+				// console.error(`Error while fetching info for ${coin.id} from CoinMarketCap:`, e, 'Skipped');
 				console.error(`Error while fetching info for ${coin.id} from CoinMarketCap:`, e.response.error, 'Skipped');
 			}
 
@@ -77,6 +85,7 @@ async function run() {
 	    		console.log(`Creation time of twitter for ${coin.id}: ${twitterResponse.created_at}`);
 			} catch (e) {
 				console.error(`Error while fetching info for ${coin.id} from Twitter:`, e.response.error, 'Skipped');
+				// console.error(`Error while fetching info for ${coin.id} from Twitter:`, e, 'Skipped');
 			}
 
 			// Reddit Data
@@ -98,15 +107,30 @@ async function run() {
 		list.map(item => {
 			item = new Coin(item);
 			item.calcSocialIndex();
+			console.log(item.social);
 		});
-		
+
+		for (var i = 0; i < list.length; i++) {
+			list[i] = new Coin(list[i]);
+			list[i].calcSocialIndex();
+			console.log(list[i].social);
+		}
+		console.log("!!! AFTER CALCSOCIALINDEX !!!");
 		// Save data to the history
-		const dateNow = Date.now();
-		const DATE_NOW_PATH = path.join(__dirname, 'data', 'history', dateNow + '.json');
-		fs.writeFileSync(DATE_NOW_PATH, JSON.stringify(list, null, 2));
+		// const dateNow = Date.now();
+		// const DATE_NOW_PATH = path.join(__dirname, 'data', 'history', dateNow + '.json');
+		// fs.writeFileSync(DATE_NOW_PATH, JSON.stringify(list, null, 2));
 
 		// Calculate percent changes for all social parametrs
+		console.log(list[0].social.index);
 		for (let [index, coin] of list.entries()) {
+
+			list[index].market.coinMarketCap.indexDelta = tools.percentChange(list[index].market.coinMarketCap.index, listPrev[index].market.coinMarketCap.index);
+			list[index].market.coinMarketCap.marketVolumeUSDDelta = tools.percentChange(list[index].market.coinMarketCap.marketVolumeUSD, listPrev[index].market.coinMarketCap.marketVolumeUSD);
+			list[index].market.coinMarketCap.priceUSDDelta = tools.percentChange(list[index].market.coinMarketCap.priceUSD, listPrev[index].market.coinMarketCap.priceUSD);
+			list[index].market.coinMarketCap.VolumeUSDDelta = tools.percentChange(list[index].market.coinMarketCap.VolumeUSD, listPrev[index].market.coinMarketCap.VolumeUSD);
+
+
 			list[index].social.indexDelta = tools.percentChange(list[index].social.index, listPrev[index].social.index);
 			list[index].social.twitter.followersCountDelta = tools.percentChange(list[index].social.twitter.followersCount, listPrev[index].social.twitter.followersCount);
 			list[index].social.twitter.statusesCountDelta = tools.percentChange(list[index].social.twitter.statusesCount, listPrev[index].social.twitter.statusesCount);
@@ -118,7 +142,7 @@ async function run() {
 		fs.writeFileSync(LIST_PATH, JSON.stringify(list, null, 2));
 		console.log(`Data successfully fetched`);
 		console.log(`Next fetching after ${INTERVAL / 1000} secs\n\n`);
-		
+
 	} catch (e) {
 		console.error(e);
 	}

@@ -44,11 +44,13 @@ app.get('/', (req, res) => {
 		'price': 'market.coinMarketCap.priceUSD',
 		'market_volume': 'market.coinMarketCap.marketVolumeUSD',
 		'volume': 'market.coinMarketCap.VolumeUSD',
-		
+
 		'social': 'social.index',
 		'twitter_followers': 'social.twitter.followersCount',
 		'twitter_statuses': 'social.twitter.statusesCount',
-		'reddit_followers': 'social.reddit.followersCount'
+		'reddit_followers': 'social.reddit.followersCount',
+
+		'github_Repos': 'development.gitHub.reposCount'
 	};
 
 	let {sortBy, order} = req.query;

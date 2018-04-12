@@ -10,12 +10,18 @@
     	"subreddit": "r/Bitcoin",
     	"user": ""
     },
+    "gitHub": {
+        "user": "bitcoin"
+    },
     "links": [{
     	"name": "Twitter",
     	"link": "https://twitter.com/bitcoin"
-    },{
+    }, {
     	"name": "Reddit",
     	"link": "https://reddit.com/r/Bitcoin"
+    }, {
+        "name": "GitHub",
+        "link": "https://github.com/bitcoin"
     }]
   },
   {
@@ -35,6 +41,9 @@
     },{
     	"name": "Reddit",
     	"link": "https://reddit.com/r/ethereum"
+    }, {
+        "name": "GitHub",
+        "link": "https://github.com/ethereum"
     }]
   },
   {

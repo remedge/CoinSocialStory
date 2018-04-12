@@ -1,7 +1,7 @@
 'use strict'
 
-// const INTERVAL = 600000;
-const INTERVAL = 10000;
+const INTERVAL = 3600000;
+// const INTERVAL = 10000;
 
 const path = require('path');
 const fs = require('fs')
@@ -63,7 +63,7 @@ async function run() {
 				coin.market.coinMarketCap.VolumeUSD = +response.body[0]['24h_volume_usd'];
 
 				// coin.market.coinMarketCap.index =  (coin.market.coinMarketCap.priceUSD + coin.market.coinMarketCap.marketVolumeUSD - coin.market.coinMarketCap.VolumeUSD * list[0].market.coinMarketCap.marketVolumeUSD / list[0].market.coinMarketCap.VolumeUSD) / 10000;
-				coin.market.coinMarketCap.index =  (coin.market.coinMarketCap.marketVolumeUSD - coin.market.coinMarketCap.VolumeUSD * (list[0].market.coinMarketCap.priceUSD - list[0].market.coinMarketCap.marketVolumeUSD )/ list[0].market.coinMarketCap.VolumeUSD) / 1000000000;
+				coin.market.coinMarketCap.index = (coin.market.coinMarketCap.marketVolumeUSD - coin.market.coinMarketCap.VolumeUSD * (list[0].market.coinMarketCap.priceUSD - list[0].market.coinMarketCap.marketVolumeUSD )/ list[0].market.coinMarketCap.VolumeUSD) / 1000000000;
 
 
 			} catch (e) {
@@ -101,21 +101,48 @@ async function run() {
 			} catch (e) {
 				console.error(`Error while fetching info for ${coin.id} from Reddit:`, e, 'Skipped');
 			}
+
+			// GitHub Data
+			// console.log(coins[index]);
+			if (coins[index].gitHub) {
+				try {
+					console.log('GitHub...');
+
+					let githubResponse = await request.get(urls.gitHub + coins[index].gitHub.user + '/repos');
+
+					coin.development.gitHub.reposCount = githubResponse.body.length;
+					console.log(`GITHUB REPOS COUNT ${coin.development.gitHub.reposCount}`);
+					for (let item of githubResponse.body) {
+						try {
+							// console.log(item.contributors_url);
+							let contributors = await request.get(item.contributors_url);
+							console.log(contributors.body.length);
+							coin.development.gitHub.contributors += contributors.body.length;
+						} catch(e) {
+							// console.log(e);
+						}
+					};
+					console.log(`contributors ${coin.development.gitHub.contributors}`);
+
+
+				} catch (e) {
+					console.error(`Error while fetching info for ${coin.id} from GitHub:`, e, 'Skipped');
+				}
+			}
 		}
 
 		// Calculate social index for coins
-		list.map(item => {
-			item = new Coin(item);
-			item.calcSocialIndex();
-			console.log(item.social);
-		});
+		// list.map(item => {
+		// 	item = new Coin(item);
+		// 	item.calcSocialIndex();
+		// 	console.log(item.social);
+		// });
 
 		for (var i = 0; i < list.length; i++) {
 			list[i] = new Coin(list[i]);
 			list[i].calcSocialIndex();
-			console.log(list[i].social);
 		}
-		console.log("!!! AFTER CALCSOCIALINDEX !!!");
+		
 		// Save data to the history
 		// const dateNow = Date.now();
 		// const DATE_NOW_PATH = path.join(__dirname, 'data', 'history', dateNow + '.json');
@@ -125,16 +152,20 @@ async function run() {
 		console.log(list[0].social.index);
 		for (let [index, coin] of list.entries()) {
 
+			// PRICE INDEX
 			list[index].market.coinMarketCap.indexDelta = tools.percentChange(list[index].market.coinMarketCap.index, listPrev[index].market.coinMarketCap.index);
 			list[index].market.coinMarketCap.marketVolumeUSDDelta = tools.percentChange(list[index].market.coinMarketCap.marketVolumeUSD, listPrev[index].market.coinMarketCap.marketVolumeUSD);
 			list[index].market.coinMarketCap.priceUSDDelta = tools.percentChange(list[index].market.coinMarketCap.priceUSD, listPrev[index].market.coinMarketCap.priceUSD);
 			list[index].market.coinMarketCap.VolumeUSDDelta = tools.percentChange(list[index].market.coinMarketCap.VolumeUSD, listPrev[index].market.coinMarketCap.VolumeUSD);
 
-
+			// SOCIAL INDEX
 			list[index].social.indexDelta = tools.percentChange(list[index].social.index, listPrev[index].social.index);
 			list[index].social.twitter.followersCountDelta = tools.percentChange(list[index].social.twitter.followersCount, listPrev[index].social.twitter.followersCount);
 			list[index].social.twitter.statusesCountDelta = tools.percentChange(list[index].social.twitter.statusesCount, listPrev[index].social.twitter.statusesCount);
 			list[index].social.reddit.followersCountDelta = tools.percentChange(list[index].social.reddit.followersCount, listPrev[index].social.reddit.followersCount);
+
+			// DEVELOPMENT INDEX
+			list[index].development.gitHub.reposCountDelta = tools.percentChange(list[index].development.gitHub.reposCount, listPrev[index].development.gitHub.reposCount);
 		}
 
 		// Saving data

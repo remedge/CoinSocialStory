@@ -15,8 +15,8 @@ const bodyParser = require('body-parser');
 const LIST_OF_COINS = path.join(__dirname, 'data', 'listOfCoins.json');
 const VIEWS_DIR = path.join(__dirname, '..', 'views');
 
-// const INTERVAL = 600000;
-const INTERVAL = 10000;
+const INTERVAL = 3600000;
+// const INTERVAL = 10000;
 
 
 console.log("yo!");

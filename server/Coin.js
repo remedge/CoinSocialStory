@@ -80,7 +80,45 @@ class Coin {
 		}
 
 		this.links = coin.links;
-		this.development = "coming soon";
+		if (coin.development) {
+			this.development = {
+				gitHub: {
+					index: coin.development.gitHub.index || 0,
+					indexDelta: coin.development.gitHub.indexDelta || 0,
+
+					reposCount: coin.development.gitHub.reposCount || 0,
+					reposCountDelta: coin.development.gitHub.reposCountDelta || 0,
+
+					commits: coin.development.gitHub.commits || 0,
+					commitsDelta: coin.development.gitHub.commitsDelta || 0,
+
+					contributers: coin.development.gitHub.contributers || 0,
+					contributersDelta: coin.development.gitHub.contributersDelta || 0,
+
+					followers: coin.development.gitHub.followers || 0,
+					followersDelta: coin.development.gitHub.followersDelta || 0
+				}
+			};
+		} else {
+			this.development = {
+				gitHub: {
+					index: 0,
+					indexDelta: 0,
+
+					reposCount: 0,
+					reposCountDelta: 0,
+
+					commits: 0,
+					commitsDelta: 0,
+
+					contributers: 0,
+					contributersDelta: 0,
+
+					followers: 0,
+					followersDelta: 0
+				}
+			};
+		}
 		this.network = "coming soon";
 	}
 

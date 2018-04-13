@@ -32,38 +32,38 @@ function collapsePercent() {
  	}
 }
 
-function collapseNotIndex() {
- 	var a = document.getElementsByClassName('not-index');
- 	var heads = document.getElementsByClassName('collapsable');
- 	var colspan = ['4', '4', '5'];
-	Array.prototype.slice(a);
-	Array.prototype.slice(heads);
+// function collapseNotIndex() {
+//  	var a = document.getElementsByClassName('not-index');
+//  	var heads = document.getElementsByClassName('collapsable');
+//  	var colspan = ['4', '4', '5'];
+// 	Array.prototype.slice(a);
+// 	Array.prototype.slice(heads);
 
- 	for( var i = 0; i < a.length; i++ ) {
- 		if (a[i].getAttribute('style') == "display: none;"){
- 			a[i].setAttribute("style", "display: static;");
- 			localStorage.setItem('collapse', 'false');
- 		} else {
- 			a[i].setAttribute("style", "display: none;");
- 			localStorage.setItem('collapse', 'true');
- 		}
- 	}
-	if(localStorage.getItem('collapse') == 'true') {
-		for( var i = 0; i < heads.length; i++ ) {
- 			heads[i].setAttribute("colspan", '1');	
- 		}
-	} else {
-		for( var i = 0; i < heads.length; i++ ) {
- 			heads[i].setAttribute("colspan", colspan[i]);
- 		}
-	}
+//  	for( var i = 0; i < a.length; i++ ) {
+//  		if (a[i].getAttribute('style') == "display: none;"){
+//  			a[i].setAttribute("style", "display: static;");
+//  			localStorage.setItem('collapse', 'false');
+//  		} else {
+//  			a[i].setAttribute("style", "display: none;");
+//  			localStorage.setItem('collapse', 'true');
+//  		}
+//  	}
+// 	if(localStorage.getItem('collapse') == 'true') {
+// 		for( var i = 0; i < heads.length; i++ ) {
+//  			heads[i].setAttribute("colspan", '1');	
+//  		}
+// 	} else {
+// 		for( var i = 0; i < heads.length; i++ ) {
+//  			heads[i].setAttribute("colspan", colspan[i]);
+//  		}
+// 	}
 
-}
+// }
 
 
-if(localStorage.getItem('collapse') == 'true') {
-	document.addEventListener('DOMContentLoaded', function(){
-		collapseNotIndex();
-		document.getElementById('buttonCollapsePercent').setAttribute('disable', 'true');
-	});
-}
+// if(localStorage.getItem('collapse') == 'true') {
+// 	document.addEventListener('DOMContentLoaded', function(){
+// 		collapseNotIndex();
+// 		document.getElementById('buttonCollapsePercent').setAttribute('disable', 'true');
+// 	});
+// }

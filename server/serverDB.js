@@ -12,8 +12,11 @@ const urls = require('./data/urls');
 const creds = require('../creds');
 const numeral = require('numeral');
 const _ = require('lodash');
+const octokit = require('@octokit/rest')();
 
 const Twitter = require('twitter');
+// GITHUB
+octokit.authenticate(creds.github);
 
 const COINS_PATH = path.join(__dirname, 'data', 'coins.json');
 const LIST_PATH = path.join(__dirname, 'data', 'listOfCoins.json');
@@ -21,8 +24,6 @@ const LIST_PREV_PATH = path.join(__dirname, 'data', 'listOfCoinsPrev.json');
 
 
 const clientTwitter = new Twitter(creds.twitter);
-
-
 
 if (!fs.existsSync(path.join(__dirname, 'data', 'history'))) {
 	fs.mkdirSync(path.join(__dirname, 'data', 'history'));
@@ -59,11 +60,10 @@ async function run() {
 				let response = await request.get(urls.coinMarketCap + coin.id);
 				coin.market.coinMarketCap.marketVolumeUSD = +response.body[0].market_cap_usd;
 				coin.market.coinMarketCap.priceUSD = +response.body[0].price_usd;
-				
 				coin.market.coinMarketCap.VolumeUSD = +response.body[0]['24h_volume_usd'];
 
 				// coin.market.coinMarketCap.index =  (coin.market.coinMarketCap.priceUSD + coin.market.coinMarketCap.marketVolumeUSD - coin.market.coinMarketCap.VolumeUSD * list[0].market.coinMarketCap.marketVolumeUSD / list[0].market.coinMarketCap.VolumeUSD) / 10000;
-				coin.market.coinMarketCap.index = (coin.market.coinMarketCap.marketVolumeUSD - coin.market.coinMarketCap.VolumeUSD * (list[0].market.coinMarketCap.priceUSD - list[0].market.coinMarketCap.marketVolumeUSD )/ list[0].market.coinMarketCap.VolumeUSD) / 1000000000;
+				coin.market.coinMarketCap.index = (coin.market.coinMarketCap.marketVolumeUSD - coin.market.coinMarketCap.VolumeUSD * (list[0].market.coinMarketCap.priceUSD - list[0].market.coinMarketCap.marketVolumeUSD ) / list[0].market.coinMarketCap.VolumeUSD) / 1000000000;
 
 
 			} catch (e) {
@@ -108,36 +108,46 @@ async function run() {
 				try {
 					console.log('GitHub...');
 
-					let githubResponse = await request.get(urls.gitHub + coins[index].gitHub.user + '/repos');
+					let reposCount;
+					let watchersCount = 0;
+					let forksCount = 0;
+					let size = 0;
 
-					coin.development.gitHub.reposCount = githubResponse.body.length;
-					console.log(`GITHUB REPOS COUNT ${coin.development.gitHub.reposCount}`);
-					for (let item of githubResponse.body) {
-						try {
-							// console.log(item.contributors_url);
-							let contributors = await request.get(item.contributors_url);
-							console.log(contributors.body.length);
-							coin.development.gitHub.contributors += contributors.body.length;
-						} catch(e) {
-							// console.log(e);
-						}
-					};
-					console.log(`contributors ${coin.development.gitHub.contributors}`);
+					let repos = await fetchAll(octokit.repos.getForUser, {username: coins[index].gitHub.user});
 
+					reposCount = repos.length;
 
+					for (let repo of repos) {
+						watchersCount += repo.watchers_count;
+						forksCount += repo.forks_count;
+						size += repo.size;
+					}
+
+					coin.development.gitHub.reposCount = reposCount;
+					coin.development.gitHub.watchersCount = watchersCount;
+					coin.development.gitHub.forksCount = forksCount;
+					coin.development.gitHub.size = size;
+
+					coin.development.gitHub.index = watchersCount + 2 * forksCount - size * (list[0].development.gitHub.watchersCount - 2 * list[0].development.gitHub.forksCount) / list[0].development.gitHub.size;
+					coin.development.gitHub.index = coin.development.gitHub.index / 1000;
+
+					console.log(`Development index for ${coin.name}: ${coin.development.gitHub.index}`);
+					console.log(`Total repositories for ${coin.name}: ${coin.development.gitHub.reposCount}`);
+					console.log(`Total watchers for ${coin.name}: ${coin.development.gitHub.watchersCount}`);
+					console.log(`Total forks for ${coin.name}: ${coin.development.gitHub.forksCount}`);
+					console.log(`Total size for ${coin.name}: ${coin.development.gitHub.size}`);
+					
 				} catch (e) {
 					console.error(`Error while fetching info for ${coin.id} from GitHub:`, e, 'Skipped');
 				}
 			}
+
+			// TOTAL INDEX
+			coin.index = (coin.social.index + coin.market.coinMarketCap.index + coin.development.gitHub.index) / 3;
+			console.log(`Total index: ${coin.index}`);
 		}
 
 		// Calculate social index for coins
-		// list.map(item => {
-		// 	item = new Coin(item);
-		// 	item.calcSocialIndex();
-		// 	console.log(item.social);
-		// });
-
 		for (var i = 0; i < list.length; i++) {
 			list[i] = new Coin(list[i]);
 			list[i].calcSocialIndex();
@@ -148,7 +158,7 @@ async function run() {
 		// const DATE_NOW_PATH = path.join(__dirname, 'data', 'history', dateNow + '.json');
 		// fs.writeFileSync(DATE_NOW_PATH, JSON.stringify(list, null, 2));
 
-		// Calculate percent changes for all social parametrs
+		// Calculate percent changes for all parametrs
 		console.log(list[0].social.index);
 		for (let [index, coin] of list.entries()) {
 
@@ -165,7 +175,14 @@ async function run() {
 			list[index].social.reddit.followersCountDelta = tools.percentChange(list[index].social.reddit.followersCount, listPrev[index].social.reddit.followersCount);
 
 			// DEVELOPMENT INDEX
+			list[index].development.gitHub.indexDelta = tools.percentChange(list[index].development.gitHub.index, listPrev[index].development.gitHub.index);
 			list[index].development.gitHub.reposCountDelta = tools.percentChange(list[index].development.gitHub.reposCount, listPrev[index].development.gitHub.reposCount);
+			list[index].development.gitHub.watchersCountDelta = tools.percentChange(list[index].development.gitHub.watchersCount, listPrev[index].development.gitHub.watchersCount);
+			list[index].development.gitHub.forksCountDelta = tools.percentChange(list[index].development.gitHub.forksCount, listPrev[index].development.gitHub.forksCount);
+			list[index].development.gitHub.sizeDelta = tools.percentChange(list[index].development.gitHub.size, listPrev[index].development.gitHub.size);
+
+			// TOTAL INDEX
+			list[index].indexDelta = tools.percentChange(list[index].index, listPrev[index].index);
 		}
 
 		// Saving data
@@ -178,4 +195,16 @@ async function run() {
 		console.error(e);
 	}
 	setTimeout(run, INTERVAL);
+}
+
+
+async function fetchAll(method, params) {
+	params.per_page = 100;
+	let response = await method(params);
+	let {data} = response;
+	while (octokit.hasNextPage(response)) {
+		response = await octokit.getNextPage(response)
+		data = data.concat(response.data)
+	}
+	return data
 }

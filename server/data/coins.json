@@ -35,6 +35,9 @@
     	"subreddit": "r/ethereum",
     	"user": ""
     },
+    "gitHub": {
+        "user": "ethereum"
+    },
     "links": [{
     	"name": "Twitter",
     	"link": "https://twitter.com/ethereum"
@@ -56,6 +59,9 @@
     "reddit": {
     	"subreddit": "r/Ripple",
     	"user": ""
+    }, 
+    "gitHub": {
+        "user": "ripple"
     },
     "links": [{
     	"name": "Twitter",

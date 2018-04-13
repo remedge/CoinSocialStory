@@ -50,7 +50,13 @@ app.get('/', (req, res) => {
 		'twitter_statuses': 'social.twitter.statusesCount',
 		'reddit_followers': 'social.reddit.followersCount',
 
-		'github_Repos': 'development.gitHub.reposCount'
+		'github_index': 'development.gitHub.index',
+		'github_repos': 'development.gitHub.reposCount',
+		'github_watchers': 'development.gitHub.watchersCount',
+		'github_forks': 'development.gitHub.forksCount',
+		'github_size': 'development.gitHub.size',
+
+		'total_index': 'index'
 	};
 
 	let {sortBy, order} = req.query;

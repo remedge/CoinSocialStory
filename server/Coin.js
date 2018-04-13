@@ -8,6 +8,8 @@ class Coin {
 		this.id = coin.id;
 		this.name = coin.name;
 		this.symbol = coin.symbol;
+		this.index = coin.index || 0;
+		this.indexDelta = coin.indexDelta || 0;
 
 		if (coin.market) {
 			this.market = {
@@ -15,8 +17,8 @@ class Coin {
 					index: coin.market.coinMarketCap.index || 0,
 					indexDelta: coin.market.coinMarketCap.indexDelta || 0,
 
-					marketVolumeUSD: coin.market.coinMarketCap.marketVolumeUSD || '',
-					marketVolumeUSDDelta: coin.market.coinMarketCap.marketVolumeUSDDelta || '',
+					marketVolumeUSD: coin.market.coinMarketCap.marketVolumeUSD || 0,
+					marketVolumeUSDDelta: coin.market.coinMarketCap.marketVolumeUSDDelta || 0,
 
 					priceUSD: coin.market.coinMarketCap.priceUSD || 0,
 					priceUSDDelta: coin.market.coinMarketCap.priceUSDDelta || 0,
@@ -31,8 +33,8 @@ class Coin {
 					index: 0,
 					indexDelta: 0,
 
-					marketVolumeUSD: '',
-					marketVolumeUSDDelta: '',
+					marketVolumeUSD: 0,
+					marketVolumeUSDDelta: 0,
 
 					priceUSD: 0,
 					priceUSDDelta: 0,
@@ -89,14 +91,14 @@ class Coin {
 					reposCount: coin.development.gitHub.reposCount || 0,
 					reposCountDelta: coin.development.gitHub.reposCountDelta || 0,
 
-					commits: coin.development.gitHub.commits || 0,
-					commitsDelta: coin.development.gitHub.commitsDelta || 0,
+					watchersCount: coin.development.gitHub.watchersCount || 0,
+					watchersCountDelta: coin.development.gitHub.watchersCountDelta || 0,
 
-					contributers: coin.development.gitHub.contributers || 0,
-					contributersDelta: coin.development.gitHub.contributersDelta || 0,
+					forksCount: coin.development.gitHub.forksCount || 0,
+					forksCountDelta: coin.development.gitHub.forksCountDelta || 0,
 
-					followers: coin.development.gitHub.followers || 0,
-					followersDelta: coin.development.gitHub.followersDelta || 0
+					size: coin.development.gitHub.size || 0,
+					sizeDelta: coin.development.gitHub.sizeDelta || 0
 				}
 			};
 		} else {
@@ -108,14 +110,14 @@ class Coin {
 					reposCount: 0,
 					reposCountDelta: 0,
 
-					commits: 0,
-					commitsDelta: 0,
+					watchersCount: 0,
+					watchersCountDelta: 0,
 
-					contributers: 0,
-					contributersDelta: 0,
+					forksCount: 0,
+					forksCountDelta: 0,
 
-					followers: 0,
-					followersDelta: 0
+					size: 0,
+					sizeDelta: 0
 				}
 			};
 		}

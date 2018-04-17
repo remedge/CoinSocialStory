@@ -3,7 +3,7 @@ extends layout.pug
 block content
 	.container-fluid
 		button.btn.btn-primary(id='buttonCollapsePercent' onclick='collapsePercent()', role='button') %
-		//- button.btn.btn-primary(onclick='collapseNotIndex()', role='button') index
+		button.btn.btn-primary(onclick='collapseNotIndex()', role='button') index
 		.table-responsive
 			table.table.table-hover
 				thead.thead-light
@@ -15,7 +15,7 @@ block content
 						
 						th(scope='col' colspan='4' class='collapsable') Social
 						th(scope='col' colspan='5' class='collapsable') Development 
-						th(scope='col' colspan='3') Network 
+						th(scope='col' colspan='3' class='collapsable') Network 
 						th(scope='col') Total
 					tr
 						th(scope='col' colspan="2")
@@ -52,12 +52,12 @@ block content
 						+thead('github_size', 'Size', 'not-index')
 
 						//- NETWORK INDEX
-						th(scope='col') Index
-						th(scope='col') Transactions
-						th(scope='col') Nodes
+						th(scope='col' class='index') Index
+						th(scope='col' class='not-index') Transactions
+						th(scope='col' class='not-index') Nodes
 
 						//- TOTAL INDEX
-						+thead('total_index', 'Index', 'Index')
+						+thead('total_index', 'Index', 'index')
 
 
 				tbody
@@ -79,13 +79,13 @@ block content
 						+tcell('not-index', 	coin.market.coinMarketCap.VolumeUSD, 				coin.market.coinMarketCap.VolumeUSDDelta, 			'$0,0[.]00a')
 						
 						//- SOCIAL INDEX
-						+tcell('index',				coin.social.index, 										coin.social.indexDelta, 									'0,0.00')
+						+tcell('index',			coin.social.index, 										coin.social.indexDelta, 									'0,0.00')
 						+tcell('not-index',	coin.social.twitter.followersCount, 	coin.social.twitter.followersCountDelta, 	'0,0')
 						+tcell('not-index',	coin.social.twitter.statusesCount, 		coin.social.twitter.statusesCountDelta, 	'0,0')
 						+tcell('not-index',	coin.social.reddit.followersCount, 		coin.social.reddit.followersCountDelta, 	'0,0')
 
 						//- DEVELOPMANT INDEX
-						+tcell('index', 			coin.development.gitHub.index, 					coin.development.gitHub.indexDelta, 				'0,0')
+						+tcell('index', 		coin.development.gitHub.index, 					coin.development.gitHub.indexDelta, 				'0,0')
 						+tcell('not-index',	coin.development.gitHub.reposCount, 		coin.development.gitHub.reposCountDelta, 		'0,0')
 						+tcell('not-index',	coin.development.gitHub.watchersCount, 	coin.development.gitHub.watchersCountDelta, '0,0')
 						+tcell('not-index',	coin.development.gitHub.forksCount, 		coin.development.gitHub.forksCountDelta, 		'0,0')
@@ -93,9 +93,9 @@ block content
 
 
 						//- NETWORK INDEX
-						td index
-						td transactions
-						td nodes
+						td(class='index') index
+						td(class='not-index') transactions
+						td(class='not-index') nodes
 
 						//- TOTAL INDEX
 						+tcell('index', coin.index, coin.indexDelta, '0,0')

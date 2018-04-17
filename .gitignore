@@ -7,3 +7,5 @@ creds.json
 data/history
 data/listOfCoins.json 
 data/listOfCoinsPrev.json
+server/data/listOfCoinsPrev.json
+server/data/listOfCoins.json

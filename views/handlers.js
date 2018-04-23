@@ -1,45 +1,46 @@
-
-
 function collapsePercent() {
 
- 	var a = document.getElementsByClassName('param-up');
- 	var b = document.getElementsByClassName('param-down');
+ 	var percentUp = document.getElementsByClassName('param-up');
+ 	var percentDown = document.getElementsByClassName('param-down');
 
-	var aTD = document.getElementsByClassName('td-param-up');
- 	var bTD = document.getElementsByClassName('td-param-down');
+	var upTD = document.getElementsByClassName('td-param-up');
+ 	var downTD = document.getElementsByClassName('td-param-down');
 
-	Array.prototype.slice(a);
- 	Array.prototype.slice(b);
- 	Array.prototype.slice(aTD);
- 	Array.prototype.slice(bTD);
+	Array.prototype.slice(percentUp);
+ 	Array.prototype.slice(percentDown);
+ 	Array.prototype.slice(upTD);
+ 	Array.prototype.slice(downTD);
 
- 	for( var i = 0; i < a.length; i++ ) {
- 		if (a[i].getAttribute('style') == "display: none;"){
- 			a[i].setAttribute("style", "display: static;");
- 			aTD[i].setAttribute("style", "color: black;");
+ 	for( var i = 0; i < percentUp.length; i++ ) {
+ 		if  (percentUp[i].style.display === 'none') {
+ 			percentUp[i].style.display = '';
+ 			upTD[i].style.color = 'black';
  		} else {
- 			a[i].setAttribute("style", "display: none;");
- 			aTD[i].setAttribute("style", "color: green;");
+ 			percentUp[i].style.display = 'none';
+ 			upTD[i].style.color = 'green';
  		}
  	}
- 	for( var i = 0; i < b.length; i++ ){
- 		if (b[i].getAttribute('style') == "display: none;"){
- 			b[i].setAttribute("style", "display: static;");
- 			bTD[i].setAttribute("style", "color: black;");
+
+ 	for( var i = 0; i < percentDown.length; i++ ){
+
+ 		if (percentDown[i].style.display === 'none') {
+ 			percentDown[i].style = '';
+ 			downTD[i].style.color = 'black'; 
  		} else {
- 			b[i].setAttribute("style", "display: none;");
- 			bTD[i].setAttribute("style", "color: red;");
+ 			percentDown[i].style.display = 'none';
+ 			downTD[i].style.color = 'red';
  		}
  	}
+
  	if(localStorage.getItem('collapse') == 'true') {
- 		var c = document.getElementsByClassName('not-index');
+ 		var  notIndex = document.getElementsByClassName('not-index');
 	 	var heads = document.getElementsByClassName('collapsable');
 	 	var colspan = ['4', '4', '5', '3'];
-		Array.prototype.slice(c);
+		Array.prototype.slice(notIndex);
 		Array.prototype.slice(heads);
 
-	 	for( var i = 0; i < c.length; i++ ) {
- 			c[i].setAttribute("style", "display: none;");
+	 	for( var i = 0; i < notIndex.length; i++ ) {
+	 		notIndex[i].style.display = 'none';
 	 	}
 
 		for( var i = 0; i < heads.length; i++ ) {
@@ -50,18 +51,19 @@ function collapsePercent() {
 }
 
 function collapseNotIndex() {
- 	var a = document.getElementsByClassName('not-index');
+ 	var notIndex = document.getElementsByClassName('not-index');
  	var heads = document.getElementsByClassName('collapsable');
  	var colspan = ['4', '4', '5', '3'];
-	Array.prototype.slice(a);
+	Array.prototype.slice(notIndex);
 	Array.prototype.slice(heads);
 
- 	for( var i = 0; i < a.length; i++ ) {
- 		if (a[i].getAttribute('style') == "display: none;"){
- 			a[i].setAttribute("style", "display: static;");
+ 	for( var i = 0; i < notIndex.length; i++ ) {
+
+ 		if (notIndex[i].style.display === 'none') {
+ 			notIndex[i].style.display = '';
  			localStorage.setItem('collapse', 'false');
  		} else {
- 			a[i].setAttribute("style", "display: none;");
+ 			notIndex[i].style.display = 'none';
  			localStorage.setItem('collapse', 'true');
  		}
  	}
@@ -74,7 +76,6 @@ function collapseNotIndex() {
  			heads[i].setAttribute("colspan", colspan[i]);
  		}
 	}
-
 }
 
 

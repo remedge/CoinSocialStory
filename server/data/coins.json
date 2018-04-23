@@ -4,21 +4,21 @@
     "name": "Bitcoin",
     "symbol": "BTC",
     "twitter": {
-    	"screen_name": "bitcoin"
+        "screen_name": "bitcoin"
     },
     "reddit": {
-    	"subreddit": "r/Bitcoin",
-    	"user": ""
+        "subreddit": "r/Bitcoin",
+        "user": ""
     },
     "gitHub": {
         "user": "bitcoin"
     },
     "links": [{
-    	"name": "Twitter",
-    	"link": "https://twitter.com/bitcoin"
+        "name": "Twitter",
+        "link": "https://twitter.com/bitcoin"
     }, {
-    	"name": "Reddit",
-    	"link": "https://reddit.com/r/Bitcoin"
+        "name": "Reddit",
+        "link": "https://reddit.com/r/Bitcoin"
     }, {
         "name": "GitHub",
         "link": "https://github.com/bitcoin"
@@ -29,21 +29,21 @@
     "name": "Ethereum",
     "symbol": "ETH",
     "twitter": {
-    	"screen_name": "ethereum"
+        "screen_name": "ethereum"
     },
     "reddit": {
-    	"subreddit": "r/ethereum",
-    	"user": ""
+        "subreddit": "r/ethereum",
+        "user": ""
     },
     "gitHub": {
         "user": "ethereum"
     },
     "links": [{
-    	"name": "Twitter",
-    	"link": "https://twitter.com/ethereum"
+        "name": "Twitter",
+        "link": "https://twitter.com/ethereum"
     },{
-    	"name": "Reddit",
-    	"link": "https://reddit.com/r/ethereum"
+        "name": "Reddit",
+        "link": "https://reddit.com/r/ethereum"
     }, {
         "name": "GitHub",
         "link": "https://github.com/ethereum"
@@ -54,21 +54,24 @@
     "name": "Ripple",
     "symbol": "XRP",
     "twitter": {
-    	"screen_name": "ripple"
+        "screen_name": "ripple"
     },
     "reddit": {
-    	"subreddit": "r/Ripple",
-    	"user": ""
-    }, 
+        "subreddit": "r/Ripple",
+        "user": ""
+    },
     "gitHub": {
         "user": "ripple"
     },
     "links": [{
-    	"name": "Twitter",
-    	"link": "https://twitter.com/ripple"
+        "name": "Twitter",
+        "link": "https://twitter.com/ripple"
     },{
-    	"name": "Reddit",
-    	"link": "https://reddit.com/r/Ripple"
+        "name": "Reddit",
+        "link": "https://reddit.com/r/Ripple"
+    },{
+        "name": "GitHub",
+        "link": "https://github.com/ripple"
     }]
   },
   {
@@ -76,18 +79,18 @@
     "name": "Bitcoin Cash",
     "symbol": "BCH",
     "twitter": {
-    	"screen_name": "BITCOlNCASH"
+        "screen_name": "BITCOlNCASH"
     },
     "reddit": {
-    	"subreddit": "r/Bitcoincash",
-    	"user": ""
+        "subreddit": "r/Bitcoincash",
+        "user": ""
     },
     "links": [{
-    	"name": "Twitter",
-    	"link": "https://twitter.com/BITCOlNCASH"
+        "name": "Twitter",
+        "link": "https://twitter.com/BITCOlNCASH"
     },{
-    	"name": "Reddit",
-    	"link": "https://reddit.com/r/Bitcoincash"
+        "name": "Reddit",
+        "link": "https://reddit.com/r/Bitcoincash"
     }]
   },
   {
@@ -95,18 +98,18 @@
     "name": "Litecoin",
     "symbol": "LTC",
     "twitter": {
-    	"screen_name": "litecoin"
+        "screen_name": "litecoin"
     },
     "reddit": {
-    	"subreddit": "r/litecoin",
-    	"user": ""
+        "subreddit": "r/litecoin",
+        "user": ""
     },
     "links": [{
-    	"name": "Twitter",
-    	"link": "https://twitter.com/litecoin"
+        "name": "Twitter",
+        "link": "https://twitter.com/litecoin"
     },{
-    	"name": "Reddit",
-    	"link": "https://reddit.com/r/litecoin"
+        "name": "Reddit",
+        "link": "https://reddit.com/r/litecoin"
     }]
   },
   {
@@ -114,18 +117,18 @@
     "name": "EOS",
     "symbol": "EOS",
     "twitter": {
-    	"screen_name": "EOS_io"
+        "screen_name": "EOS_io"
     },
     "reddit": {
-    	"subreddit": "r/eos",
-    	"user": ""
+        "subreddit": "r/eos",
+        "user": ""
     },
     "links": [{
-    	"name": "Twitter",
-    	"link": "https://twitter.com/EOS_io"
+        "name": "Twitter",
+        "link": "https://twitter.com/EOS_io"
     },{
-    	"name": "Reddit",
-    	"link": "https://reddit.com/r/eos"
+        "name": "Reddit",
+        "link": "https://reddit.com/r/eos"
     }]
   },
   {
@@ -133,18 +136,18 @@
     "name": "Cardano",
     "symbol": "ADA",
     "twitter": {
-    	"screen_name": "cardanocom"
+        "screen_name": "cardanocom"
     },
     "reddit": {
-    	"subreddit": "r/cardano",
-    	"user": ""
+        "subreddit": "r/cardano",
+        "user": ""
     },
     "links": [{
-    	"name": "Twitter",
-    	"link": "https://twitter.com/cardanocom"
+        "name": "Twitter",
+        "link": "https://twitter.com/cardanocom"
     },{
-    	"name": "Reddit",
-    	"link": "https://reddit.com/r/cardano"
+        "name": "Reddit",
+        "link": "https://reddit.com/r/cardano"
     }]
   },
   {
@@ -152,18 +155,18 @@
     "name": "Stellar",
     "symbol": "XLM",
     "twitter": {
-    	"screen_name": "StellarOrg"
+        "screen_name": "StellarOrg"
     },
     "reddit": {
-    	"subreddit": "r/Stellar",
-    	"user": ""
+        "subreddit": "r/Stellar",
+        "user": ""
     },
     "links": [{
-    	"name": "Twitter",
-    	"link": "https://twitter.com/StellarOrg"
+        "name": "Twitter",
+        "link": "https://twitter.com/StellarOrg"
     },{
-    	"name": "Reddit",
-    	"link": "https://reddit.com/r/Stellar"
+        "name": "Reddit",
+        "link": "https://reddit.com/r/Stellar"
     }]
   },
   {
@@ -171,18 +174,18 @@
     "name": "NEO",
     "symbol": "NEO",
     "twitter": {
-    	"screen_name": "NEO_Blockchain"
+        "screen_name": "NEO_Blockchain"
     },
     "reddit": {
-    	"subreddit": "r/NEO",
-    	"user": ""
+        "subreddit": "r/NEO",
+        "user": ""
     },
     "links": [{
-    	"name": "Twitter",
-    	"link": "https://twitter.com/NEO_Blockchain"
+        "name": "Twitter",
+        "link": "https://twitter.com/NEO_Blockchain"
     },{
-    	"name": "Reddit",
-    	"link": "https://reddit.com/r/NEO"
+        "name": "Reddit",
+        "link": "https://reddit.com/r/NEO"
     }]
   },
   {
@@ -190,18 +193,18 @@
     "name": "IOTA",
     "symbol": "MIOTA",
     "twitter": {
-    	"screen_name": "IoTa2016"
+        "screen_name": "IoTa2016"
     },
     "reddit": {
-    	"subreddit": "r/Iota",
-    	"user": ""
+        "subreddit": "r/Iota",
+        "user": ""
     },
     "links": [{
-    	"name": "Twitter",
-    	"link": "https://twitter.com/IoTa2016"
+        "name": "Twitter",
+        "link": "https://twitter.com/IoTa2016"
     },{
-    	"name": "Reddit",
-    	"link": "https://reddit.com/r/Iota"
+        "name": "Reddit",
+        "link": "https://reddit.com/r/Iota"
     }]
   },
   {
@@ -209,18 +212,18 @@
     "name": "Dash",
     "symbol": "DASH",
     "twitter": {
-    	"screen_name": "Dashpay"
+        "screen_name": "Dashpay"
     },
     "reddit": {
-    	"subreddit": "r/dashpay",
-    	"user": ""
+        "subreddit": "r/dashpay",
+        "user": ""
     },
     "links": [{
-    	"name": "Twitter",
-    	"link": "https://twitter.com/Dashpay"
+        "name": "Twitter",
+        "link": "https://twitter.com/Dashpay"
     },{
-    	"name": "Reddit",
-    	"link": "https://reddit.com/r/dashpay"
+        "name": "Reddit",
+        "link": "https://reddit.com/r/dashpay"
     }]
   },
   {
@@ -228,18 +231,18 @@
     "name": "Monero",
     "symbol": "XMR",
     "twitter": {
-    	"screen_name": "monerocurrency"
+        "screen_name": "monerocurrency"
     },
     "reddit": {
-    	"subreddit": "r/Monero",
-    	"user": ""
+        "subreddit": "r/Monero",
+        "user": ""
     },
     "links": [{
-    	"name": "Twitter",
-    	"link": "https://twitter.com/monerocurrency"
+        "name": "Twitter",
+        "link": "https://twitter.com/monerocurrency"
     },{
-    	"name": "Reddit",
-    	"link": "https://reddit.com/r/Monero"
+        "name": "Reddit",
+        "link": "https://reddit.com/r/Monero"
     }]
   },
   {
@@ -247,18 +250,18 @@
     "name": "TRON",
     "symbol": "TRX",
     "twitter": {
-    	"screen_name": "tronfoundation"
+        "screen_name": "tronfoundation"
     },
     "reddit": {
-    	"subreddit": "r/Tronix",
-    	"user": ""
+        "subreddit": "r/Tronix",
+        "user": ""
     },
     "links": [{
-    	"name": "Twitter",
-    	"link": "https://twitter.com/tronfoundation"
+        "name": "Twitter",
+        "link": "https://twitter.com/tronfoundation"
     },{
-    	"name": "Reddit",
-    	"link": "https://reddit.com/r/Tronix"
+        "name": "Reddit",
+        "link": "https://reddit.com/r/Tronix"
     }]
   },
   {
@@ -266,18 +269,18 @@
     "name": "NEM",
     "symbol": "XEM",
     "twitter": {
-    	"screen_name": "NEMofficial"
+        "screen_name": "NEMofficial"
     },
     "reddit": {
-    	"subreddit": "r/nem",
-    	"user": ""
+        "subreddit": "r/nem",
+        "user": ""
     },
     "links": [{
-    	"name": "Twitter",
-    	"link": "https://twitter.com/NEMofficial"
+        "name": "Twitter",
+        "link": "https://twitter.com/NEMofficial"
     },{
-    	"name": "Reddit",
-    	"link": "https://reddit.com/r/nem"
+        "name": "Reddit",
+        "link": "https://reddit.com/r/nem"
     }]
   },
   {
@@ -285,18 +288,759 @@
     "name": "Tether",
     "symbol": "USDT",
     "twitter": {
-    	"screen_name": "Tether_to"
+        "screen_name": "Tether_to"
     },
     "reddit": {
-    	"subreddit": "r/Tether",
-    	"user": ""
+        "subreddit": "r/Tether",
+        "user": ""
     },
     "links": [{
-    	"name": "Twitter",
-    	"link": "https://twitter.com/Tether_to"
+        "name": "Twitter",
+        "link": "https://twitter.com/Tether_to"
     },{
-    	"name": "Reddit",
-    	"link": "https://reddit.com/r/Tether"
+        "name": "Reddit",
+        "link": "https://reddit.com/r/Tether"
+    }]
+  },
+  {
+    "id": "vechain",
+    "name": "VeChain",
+    "symbol": "VEN",
+    "twitter": {
+        "screen_name": "vechainofficial"
+    },
+    "reddit": {
+        "subreddit": "r/VeChain",
+        "user": ""
+    },
+    "links": [{
+        "name": "Twitter",
+        "link": "https://twitter.com/vechainofficial"
+    },{
+        "name": "Reddit",
+        "link": "https://reddit.com/r/VeChain"
+    }]
+  },
+  {
+    "id": "ethereum-classic",
+    "name": "Ethereum Classic",
+    "symbol": "ETC",
+    "twitter": {
+        "screen_name": "eth_classic"
+    },
+    "reddit": {
+        "subreddit": "r/EthereumClassic",
+        "user": ""
+    },
+    "links": [{
+        "name": "Twitter",
+        "link": "https://twitter.com/eth_classic"
+    },{
+        "name": "Reddit",
+        "link": "https://reddit.com/r/EthereumClassic"
+    }]
+  },
+  {
+    "id": "omisego",
+    "name": "OmiseGO",
+    "symbol": "OMG",
+    "twitter": {
+        "screen_name": "omise_go"
+    },
+    "reddit": {
+        "subreddit": "r/omise_go",
+        "user": ""
+    },
+    "links": [{
+        "name": "Twitter",
+        "link": "https://twitter.com/omise_go"
+    },{
+        "name": "Reddit",
+        "link": "https://reddit.com/r/omise_go"
+    }]
+  },
+  {
+    "id": "qtum",
+    "name": "Qtum",
+    "symbol": "QTUM",
+    "twitter": {
+        "screen_name": "QtumOfficial"
+    },
+    "reddit": {
+        "subreddit": "r/Qtum",
+        "user": ""
+    },
+    "links": [{
+        "name": "Twitter",
+        "link": "https://twitter.com/QtumOfficial"
+    },{
+        "name": "Reddit",
+        "link": "https://reddit.com/r/Qtum"
+    }]
+  },
+  {
+    "id": "verge",
+    "name": "Verge",
+    "symbol": "XVG",
+    "twitter": {
+        "screen_name": "vergecurrency"
+    },
+    "reddit": {
+        "subreddit": "r/vergecurrency",
+        "user": ""
+    },
+    "links": [{
+        "name": "Twitter",
+        "link": "https://twitter.com/vergecurrency"
+    },{
+        "name": "Reddit",
+        "link": "https://reddit.com/r/vergecurrency"
+    }]
+  },
+  {
+    "id": "binance-coin",
+    "name": "Binance Coin",
+    "symbol": "BNB",
+    "twitter": {
+        "screen_name": "binance"
+    },
+    "reddit": {
+        "subreddit": "r/BinanceExchange",
+        "user": ""
+    },
+    "links": [{
+        "name": "Twitter",
+        "link": "https://twitter.com/binance"
+    },{
+        "name": "Reddit",
+        "link": "https://reddit.com/r/BinanceExchange"
+    }]
+  },
+  {
+    "id": "lisk",
+    "name": "Lisk",
+    "symbol": "LSK",
+    "twitter": {
+        "screen_name": "LiskHQ"
+    },
+    "reddit": {
+        "subreddit": "r/Lisk",
+        "user": ""
+    },
+    "links": [{
+        "name": "Twitter",
+        "link": "https://twitter.com/LiskHQ"
+    },{
+        "name": "Reddit",
+        "link": "https://reddit.com/r/Lisk"
+    }]
+  },
+  {
+    "id": "icon",
+    "name": "ICON",
+    "symbol": "ICX",
+    "twitter": {
+        "screen_name": "helloiconworld"
+    },
+    "reddit": {
+        "subreddit": "r/helloicon",
+        "user": ""
+    },
+    "links": [{
+        "name": "Twitter",
+        "link": "https://twitter.com/helloiconworld"
+    },{
+        "name": "Reddit",
+        "link": "https://reddit.com/r/helloicon"
+    }]
+  },
+  {
+    "id": "ontology",
+    "name": "Ontology",
+    "symbol": "ONT",
+    "twitter": {
+        "screen_name": "OntologyNetwork"
+    },
+    "reddit": {
+        "subreddit": "r/OntologyNetwork",
+        "user": ""
+    },
+    "links": [{
+        "name": "Twitter",
+        "link": "https://twitter.com/OntologyNetwork"
+    },{
+        "name": "Reddit",
+        "link": "https://reddit.com/r/OntologyNetwork"
+    }]
+  },
+  {
+    "id": "bitcoin-gold",
+    "name": "Bitcoin Gold",
+    "symbol": "BTG",
+    "twitter": {
+        "screen_name": "bitcoingold"
+    },
+    "reddit": {
+        "subreddit": "r/BitcoinGoldHQ",
+        "user": ""
+    },
+    "links": [{
+        "name": "Twitter",
+        "link": "https://twitter.com/bitcoingold"
+    },{
+        "name": "Reddit",
+        "link": "https://reddit.com/r/BitcoinGoldHQ"
+    }]
+  },
+  {
+    "id": "bytom",
+    "name": "Bytom",
+    "symbol": "BTM",
+    "twitter": {
+        "screen_name": "Bytom_Official"
+    },
+    "reddit": {
+        "subreddit": "r/BytomBlockchain",
+        "user": ""
+    },
+    "links": [{
+        "name": "Twitter",
+        "link": "https://twitter.com/Bytom_Official"
+    },{
+        "name": "Reddit",
+        "link": "https://reddit.com/r/BytomBlockchain"
+    }]
+  },
+  {
+    "id": "populous",
+    "name": "Populous",
+    "symbol": "PPT",
+    "twitter": {
+        "screen_name": "BitPopulous"
+    },
+    "reddit": {
+        "subreddit": "r/populous_platform",
+        "user": ""
+    },
+    "links": [{
+        "name": "Twitter",
+        "link": "https://twitter.com/BitPopulous"
+    },{
+        "name": "Reddit",
+        "link": "https://reddit.com/r/populous_platform"
+    }]
+  },
+  {
+    "id": "zcash",
+    "name": "ZCash",
+    "symbol": "ZEC",
+    "twitter": {
+        "screen_name": "zcashco"
+    },
+    "reddit": {
+        "subreddit": "r/zec",
+        "user": ""
+    },
+    "links": [{
+        "name": "Twitter",
+        "link": "https://twitter.com/zcashco"
+    },{
+        "name": "Reddit",
+        "link": "https://reddit.com/r/zec"
+    }]
+  },
+  {
+    "id": "nano",
+    "name": "Nano",
+    "symbol": "NANO",
+    "twitter": {
+        "screen_name": "nanocurrency"
+    },
+    "reddit": {
+        "subreddit": "r/nanocurrency",
+        "user": ""
+    },
+    "links": [{
+        "name": "Twitter",
+        "link": "https://twitter.com/nanocurrency"
+    },{
+        "name": "Reddit",
+        "link": "https://reddit.com/r/nanocurrency"
+    }]
+  },
+  {
+    "id": "bytecoin-bcn",
+    "name": "Bytecoin",
+    "symbol": "BCN",
+    "twitter": {
+        "screen_name": "Bytecoin_BCN"
+    },
+    "reddit": {
+        "subreddit": "r/BytecoinBCN",
+        "user": ""
+    },
+    "links": [{
+        "name": "Twitter",
+        "link": "https://twitter.com/Bytecoin_BCN"
+    },{
+        "name": "Reddit",
+        "link": "https://reddit.com/r/BytecoinBCN"
+    }]
+  },
+  {
+    "id": "steem",
+    "name": "Steem",
+    "symbol": "STEEM",
+    "twitter": {
+        "screen_name": "steemit"
+    },
+    "reddit": {
+        "subreddit": "r/steemit",
+        "user": ""
+    },
+    "links": [{
+        "name": "Twitter",
+        "link": "https://twitter.com/steemit"
+    },{
+        "name": "Reddit",
+        "link": "https://reddit.com/r/steemit"
+    }]
+  },
+  {
+    "id": "siacoin",
+    "name": "Siacoin",
+    "symbol": "SC",
+    "twitter": {
+        "screen_name": "SiaTechHQ"
+    },
+    "reddit": {
+        "subreddit": "r/siacoin",
+        "user": ""
+    },
+    "links": [{
+        "name": "Twitter",
+        "link": "https://twitter.com/SiaTechHQ"
+    },{
+        "name": "Reddit",
+        "link": "https://reddit.com/r/siacoin"
+    }]
+  },
+  {
+    "id": "wanchain",
+    "name": "Wanchain",
+    "symbol": "WAN",
+    "twitter": {
+        "screen_name": "wanchain_org"
+    },
+    "reddit": {
+        "subreddit": "r/wanchain",
+        "user": ""
+    },
+    "links": [{
+        "name": "Twitter",
+        "link": "https://twitter.com/wanchain_org"
+    },{
+        "name": "Reddit",
+        "link": "https://reddit.com/r/wanchain"
+    }]
+  },
+  {
+    "id": "bitshares",
+    "name": "BitShares",
+    "symbol": "BTS",
+    "twitter": {
+        "screen_name": "bitshares"
+    },
+    "reddit": {
+        "subreddit": "r/BitShares",
+        "user": ""
+    },
+    "links": [{
+        "name": "Twitter",
+        "link": "https://twitter.com/bitshares"
+    },{
+        "name": "Reddit",
+        "link": "https://reddit.com/r/BitShares"
+    }]
+  },
+  {
+    "id": "dogecoin",
+    "name": "Dogecoin",
+    "symbol": "DOGE",
+    "twitter": {
+        "screen_name": "dogecoin"
+    },
+    "reddit": {
+        "subreddit": "r/dogecoin",
+        "user": ""
+    },
+    "links": [{
+        "name": "Twitter",
+        "link": "https://twitter.com/dogecoin"
+    },{
+        "name": "Reddit",
+        "link": "https://reddit.com/r/dogecoin"
+    }]
+  },
+  {
+    "id": "bitcoin-private",
+    "name": "Bitcoin Private",
+    "symbol": "BTCP",
+    "twitter": {
+        "screen_name": "bitcoinprivate"
+    },
+    "reddit": {
+        "subreddit": "r/bitcoinprivate",
+        "user": ""
+    },
+    "links": [{
+        "name": "Twitter",
+        "link": "https://twitter.com/bitcoinprivate"
+    },{
+        "name": "Reddit",
+        "link": "https://reddit.com/r/bitcoinprivate"
+    }]
+  },
+  {
+    "id": "stratis",
+    "name": "Stratis",
+    "symbol": "STRAT",
+    "twitter": {
+        "screen_name": "stratisplatform"
+    },
+    "reddit": {
+        "subreddit": "r/stratisplatform",
+        "user": ""
+    },
+    "links": [{
+        "name": "Twitter",
+        "link": "https://twitter.com/stratisplatform"
+    },{
+        "name": "Reddit",
+        "link": "https://reddit.com/r/stratisplatform"
+    }]
+  },
+  {
+    "id": "digixdao",
+    "name": "DigixDAO",
+    "symbol": "DGD",
+    "twitter": {
+        "screen_name": "DigixGlobal"
+    },
+    "reddit": {
+        "subreddit": "r/digix",
+        "user": ""
+    },
+    "links": [{
+        "name": "Twitter",
+        "link": "https://twitter.com/DigixGlobal"
+    },{
+        "name": "Reddit",
+        "link": "https://reddit.com/r/digix"
+    }]
+  },
+  {
+    "id": "waves",
+    "name": "Waves",
+    "symbol": "WAVES",
+    "twitter": {
+        "screen_name": "wavesplatform"
+    },
+    "reddit": {
+        "subreddit": "r/wavesplatform",
+        "user": ""
+    },
+    "links": [{
+        "name": "Twitter",
+        "link": "https://twitter.com/wavesplatform"
+    },{
+        "name": "Reddit",
+        "link": "https://reddit.com/r/wavesplatform"
+    }]
+  },
+  {
+    "id": "zilliqa",
+    "name": "Zilliqa",
+    "symbol": "ZIL",
+    "twitter": {
+        "screen_name": "zilliqa"
+    },
+    "reddit": {
+        "subreddit": "r/zilliqa",
+        "user": ""
+    },
+    "links": [{
+        "name": "Twitter",
+        "link": "https://twitter.com/zilliqa"
+    },{
+        "name": "Reddit",
+        "link": "https://reddit.com/r/zilliqa"
+    }]
+  },
+  {
+    "id": "maker",
+    "name": "Maker",
+    "symbol": "MKR",
+    "twitter": {
+        "screen_name": "MakerDAO"
+    },
+    "reddit": {
+        "subreddit": "r/MakerDAO",
+        "user": ""
+    },
+    "links": [{
+        "name": "Twitter",
+        "link": "https://twitter.com/MakerDAO"
+    },{
+        "name": "Reddit",
+        "link": "https://reddit.com/r/MakerDAO"
+    }]
+  },
+  {
+    "id": "bitcoin-diamond",
+    "name": "Bitcoin Diamond",
+    "symbol": "BCD",
+    "twitter": {
+        "screen_name": "BitcoinDiamond_"
+    },
+    "reddit": {
+        "subreddit": "r/BitcoinDiamond",
+        "user": ""
+    },
+    "links": [{
+        "name": "Twitter",
+        "link": "https://twitter.com/BitcoinDiamond_"
+    },{
+        "name": "Reddit",
+        "link": "https://reddit.com/"
+    }]
+  },
+  {
+    "id": "decred",
+    "name": "Decred",
+    "symbol": "DCR",
+    "twitter": {
+        "screen_name": "decredproject"
+    },
+    "reddit": {
+        "subreddit": "r/decred",
+        "user": ""
+    },
+    "links": [{
+        "name": "Twitter",
+        "link": "https://twitter.com/decredproject"
+    },{
+        "name": "Reddit",
+        "link": "https://reddit.com/r/decred"
+    }]
+  },
+  {
+    "id": "status",
+    "name": "Status",
+    "symbol": "SNT",
+    "twitter": {
+        "screen_name": "ethstatus"
+    },
+    "reddit": {
+        "subreddit": "r/statusim",
+        "user": ""
+    },
+    "links": [{
+        "name": "Twitter",
+        "link": "https://twitter.com/ethstatus"
+    },{
+        "name": "Reddit",
+        "link": "https://reddit.com/r/statusim"
+    }]
+  },
+  {
+    "id": "aeternity",
+    "name": "Aeternity",
+    "symbol": "AE",
+    "twitter": {
+        "screen_name": "aeternity"
+    },
+    "reddit": {
+        "subreddit": "r/Aeternity",
+        "user": ""
+    },
+    "links": [{
+        "name": "Twitter",
+        "link": "https://twitter.com/aeternity"
+    },{
+        "name": "Reddit",
+        "link": "https://reddit.com/r/Aeternity"
+    }]
+  },
+  {
+    "id": "0x",
+    "name": "0x",
+    "symbol": "ZRX",
+    "twitter": {
+        "screen_name": "0xProject"
+    },
+    "reddit": {
+        "subreddit": "r/0xProject",
+        "user": ""
+    },
+    "links": [{
+        "name": "Twitter",
+        "link": "https://twitter.com/0xProject"
+    },{
+        "name": "Reddit",
+        "link": "https://reddit.com/r/0xProject"
+    }]
+  },
+  {
+    "id": "rchain",
+    "name": "RChain",
+    "symbol": "RHOC",
+    "twitter": {
+        "screen_name": "rchain_coop"
+    },
+    "reddit": {
+        "subreddit": "r/RChain",
+        "user": ""
+    },
+    "links": [{
+        "name": "Twitter",
+        "link": "https://twitter.com/rchain_coop"
+    },{
+        "name": "Reddit",
+        "link": "https://reddit.com/r/RChain"
+    }]
+  },
+  {
+    "id": "aion",
+    "name": "Aion",
+    "symbol": "AION",
+    "twitter": {
+        "screen_name": "Aion_Network"
+    },
+    "reddit": {
+        "subreddit": "r/AionNetwork",
+        "user": ""
+    },
+    "links": [{
+        "name": "Twitter",
+        "link": "https://twitter.com/Aion_Network"
+    },{
+        "name": "Reddit",
+        "link": "https://reddit.com/r/AionNetwork"
+    }]
+  },
+  {
+    "id": "loopring",
+    "name": "Loopring",
+    "symbol": "LRC",
+    "twitter": {
+        "screen_name": "loopringorg"
+    },
+    "reddit": {
+        "subreddit": "r/loopringorg",
+        "user": ""
+    },
+    "links": [{
+        "name": "Twitter",
+        "link": "https://twitter.com/loopringorg"
+    },{
+        "name": "Reddit",
+        "link": "https://reddit.com/r/loopringorg"
+    }]
+  },
+  {
+    "id": "komodo",
+    "name": "Komodo",
+    "symbol": "KMD",
+    "twitter": {
+        "screen_name": "KomodoPlatform"
+    },
+    "reddit": {
+        "subreddit": "r/KomodoPlatform",
+        "user": ""
+    },
+    "links": [{
+        "name": "Twitter",
+        "link": "https://twitter.com/KomodoPlatform"
+    },{
+        "name": "Reddit",
+        "link": "https://reddit.com/r/KomodoPlatform"
+    }]
+  },
+  {
+    "id": "golem-network-tokens",
+    "name": "Golem",
+    "symbol": "GNT",
+    "twitter": {
+        "screen_name": "golemproject"
+    },
+    "reddit": {
+        "subreddit": "r/GolemProject",
+        "user": ""
+    },
+    "links": [{
+        "name": "Twitter",
+        "link": "https://twitter.com/golemproject"
+    },{
+        "name": "Reddit",
+        "link": "https://reddit.com/r/GolemProject"
+    }]
+  },
+  {
+    "id": "ardor",
+    "name": "Ardor",
+    "symbol": "ARDR",
+    "twitter": {
+        "screen_name": "ArdorPlatform"
+    },
+    "reddit": {
+        "subreddit": "r/Ardor",
+        "user": ""
+    },
+    "links": [{
+        "name": "Twitter",
+        "link": "https://twitter.com/ArdorPlatform"
+    },{
+        "name": "Reddit",
+        "link": "https://reddit.com/r/Ardor"
+    }]
+  },
+  {
+    "id": "augur",
+    "name": "Augur",
+    "symbol": "REP",
+    "twitter": {
+        "screen_name": "AugurProject"
+    },
+    "reddit": {
+        "subreddit": "r/Augur",
+        "user": ""
+    },
+    "links": [{
+        "name": "Twitter",
+        "link": "https://twitter.com/AugurProject"
+    },{
+        "name": "Reddit",
+        "link": "https://reddit.com/r/Augur"
+    }]
+  },
+  {
+    "id": "digibyte",
+    "name": "DigiByte",
+    "symbol": "DGB",
+    "twitter": {
+        "screen_name": "DigiByteCoin"
+    },
+    "reddit": {
+        "subreddit": "r/Digibyte",
+        "user": ""
+    },
+    "links": [{
+        "name": "Twitter",
+        "link": "https://twitter.com/DigiByteCoin"
+    },{
+        "name": "Reddit",
+        "link": "https://reddit.com/r/Digibyte"
     }]
   }
 ]

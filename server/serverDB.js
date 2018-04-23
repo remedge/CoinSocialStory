@@ -6,6 +6,7 @@ const INTERVAL = 3600000;
 const path = require('path');
 const fs = require('fs')
 const request = require("superagent");
+const storage = require('./storage');
 const tools = require('./tools');
 const Coin = require('./Coin');
 const urls = require('./data/urls');
@@ -15,38 +16,23 @@ const _ = require('lodash');
 const octokit = require('@octokit/rest')();
 
 const Twitter = require('twitter');
+
 // GITHUB
 octokit.authenticate(creds.github);
 
 const COINS_PATH = path.join(__dirname, 'data', 'coins.json');
-const LIST_PATH = path.join(__dirname, 'data', 'listOfCoins.json');
-const LIST_PREV_PATH = path.join(__dirname, 'data', 'listOfCoinsPrev.json');
-
 
 const clientTwitter = new Twitter(creds.twitter);
-
-if (!fs.existsSync(path.join(__dirname, 'data', 'history'))) {
-	fs.mkdirSync(path.join(__dirname, 'data', 'history'));
-}
 
 run();
 
 async function run() {
 	try {
 		let coins = JSON.parse(fs.readFileSync(COINS_PATH, 'utf8'));
-		let list;
-		let listPrev;
+		let list = storage.loadData().list;
+		let listPrev = storage.loadData().listPrev;
 
-		if (fs.existsSync(LIST_PATH)) {
-			list = JSON.parse(fs.readFileSync(LIST_PATH, 'utf8'));
-			// list.map(item => new Coin(item));
-			listPrev = _.cloneDeep(list);
-			fs.writeFileSync(LIST_PREV_PATH, JSON.stringify(list, null, 2));
-		} else {
-			list = coins.map(item => new Coin(item));
-			listPrev = _.cloneDeep(list);
-			fs.writeFileSync(LIST_PREV_PATH, JSON.stringify(list, null, 2));
-		}
+		const dateNow = Date.now();
 
 		console.log(`Start fetching info for ${coins.length} coins...`);
 
@@ -62,12 +48,10 @@ async function run() {
 				coin.market.coinMarketCap.priceUSD = +response.body[0].price_usd;
 				coin.market.coinMarketCap.VolumeUSD = +response.body[0]['24h_volume_usd'];
 
-				// coin.market.coinMarketCap.index =  (coin.market.coinMarketCap.priceUSD + coin.market.coinMarketCap.marketVolumeUSD - coin.market.coinMarketCap.VolumeUSD * list[0].market.coinMarketCap.marketVolumeUSD / list[0].market.coinMarketCap.VolumeUSD) / 10000;
 				coin.market.coinMarketCap.index = (coin.market.coinMarketCap.marketVolumeUSD - coin.market.coinMarketCap.VolumeUSD * (list[0].market.coinMarketCap.priceUSD - list[0].market.coinMarketCap.marketVolumeUSD ) / list[0].market.coinMarketCap.VolumeUSD) / 1000000000;
 
 
 			} catch (e) {
-				// console.error(`Error while fetching info for ${coin.id} from CoinMarketCap:`, e, 'Skipped');
 				console.error(`Error while fetching info for ${coin.id} from CoinMarketCap:`, e.response.error, 'Skipped');
 			}
 
@@ -85,14 +69,13 @@ async function run() {
 	    		console.log(`Creation time of twitter for ${coin.id}: ${twitterResponse.created_at}`);
 			} catch (e) {
 				console.error(`Error while fetching info for ${coin.id} from Twitter:`, e.response.error, 'Skipped');
-				// console.error(`Error while fetching info for ${coin.id} from Twitter:`, e, 'Skipped');
 			}
 
 			// Reddit Data
 			try {
 				console.log('Reddit...');
 
-				let redditResponse = await request.get(urls.reddit + coins[index].reddit.subreddit + "/top.json?sort=top&t=day&limit=1");
+				let redditResponse = await request.get(urls.reddit + coins[index].reddit.subreddit);
 				coin.social.reddit.followersCount = redditResponse.body.data.children[0].data.subreddit_subscribers;
 				coin.social.reddit.creationDate = redditResponse.body.data.children[0].data.created_utc;
 
@@ -103,7 +86,6 @@ async function run() {
 			}
 
 			// GitHub Data
-			// console.log(coins[index]);
 			if (coins[index].gitHub) {
 				try {
 					console.log('GitHub...');
@@ -144,7 +126,7 @@ async function run() {
 
 			// TOTAL INDEX
 			coin.index = (coin.social.index + coin.market.coinMarketCap.index + coin.development.gitHub.index) / 3;
-			console.log(`Total index: ${coin.index}`);
+			console.log(`Total index for ${coin.name}: ${coin.index}`);
 		}
 
 		// Calculate social index for coins
@@ -152,14 +134,8 @@ async function run() {
 			list[i] = new Coin(list[i]);
 			list[i].calcSocialIndex();
 		}
-		
-		// Save data to the history
-		// const dateNow = Date.now();
-		// const DATE_NOW_PATH = path.join(__dirname, 'data', 'history', dateNow + '.json');
-		// fs.writeFileSync(DATE_NOW_PATH, JSON.stringify(list, null, 2));
 
 		// Calculate percent changes for all parametrs
-		console.log(list[0].social.index);
 		for (let [index, coin] of list.entries()) {
 
 			// PRICE INDEX
@@ -186,8 +162,8 @@ async function run() {
 		}
 
 		// Saving data
-		console.log(`Saving data to ${LIST_PATH}...`);
-		fs.writeFileSync(LIST_PATH, JSON.stringify(list, null, 2));
+		console.log(`Saving data...`);
+		storage.saveData(list, dateNow);
 		console.log(`Data successfully fetched`);
 		console.log(`Next fetching after ${INTERVAL / 1000} secs\n\n`);
 

@@ -160,12 +160,18 @@
         "subreddit": "r/cardano",
         "user": ""
     },
+    "gitHub": {
+        "user": "input-output-hk"
+    },
     "links": [{
         "name": "Twitter",
         "link": "https://twitter.com/cardanocom"
-    },{
+    }, {
         "name": "Reddit",
         "link": "https://reddit.com/r/cardano"
+    }, {
+        "name": "GitHub",
+        "link": "https://github.com/input-output-hk"
     }]
   },
   {
@@ -179,12 +185,18 @@
         "subreddit": "r/Stellar",
         "user": ""
     },
+    "gitHub": {
+        "user": "stellar"
+    },
     "links": [{
         "name": "Twitter",
         "link": "https://twitter.com/StellarOrg"
-    },{
+    }, {
         "name": "Reddit",
         "link": "https://reddit.com/r/Stellar"
+    }, {
+        "name": "GitHub",
+        "link": "https://github.com/stellar"
     }]
   },
   {
@@ -198,12 +210,18 @@
         "subreddit": "r/NEO",
         "user": ""
     },
+    "gitHub": {
+        "user": "neo-project"
+    },
     "links": [{
         "name": "Twitter",
         "link": "https://twitter.com/NEO_Blockchain"
-    },{
+    }, {
         "name": "Reddit",
         "link": "https://reddit.com/r/NEO"
+    }, {
+        "name": "GitHub",
+        "link": "https://github.com/neo-project"
     }]
   },
   {
@@ -217,12 +235,18 @@
         "subreddit": "r/Iota",
         "user": ""
     },
+    "gitHub": {
+        "user": "iotaledger"
+    },
     "links": [{
         "name": "Twitter",
         "link": "https://twitter.com/IoTa2016"
-    },{
+    }, {
         "name": "Reddit",
         "link": "https://reddit.com/r/Iota"
+    }, {
+        "name": "GitHub",
+        "link": "https://github.com/iotaledger"
     }]
   },
   {
@@ -236,12 +260,18 @@
         "subreddit": "r/dashpay",
         "user": ""
     },
+    "gitHub": {
+        "user": "dashpay"
+    },
     "links": [{
         "name": "Twitter",
         "link": "https://twitter.com/Dashpay"
     },{
         "name": "Reddit",
         "link": "https://reddit.com/r/dashpay"
+    }, {
+        "name": "GitHub",
+        "link": "https://github.com/dashpay"
     }]
   },
   {
@@ -274,12 +304,18 @@
         "subreddit": "r/Tronix",
         "user": ""
     },
+    "gitHub": {
+        "user": "tronprotocol"
+    },
     "links": [{
         "name": "Twitter",
         "link": "https://twitter.com/tronfoundation"
-    },{
+    }, {
         "name": "Reddit",
         "link": "https://reddit.com/r/Tronix"
+    }, {
+        "name": "GitHub",
+        "link": "https://github.com/tronprotocol"
     }]
   },
   {
@@ -293,12 +329,18 @@
         "subreddit": "r/nem",
         "user": ""
     },
+    "gitHub": {
+        "user": "NemProject"
+    },
     "links": [{
         "name": "Twitter",
         "link": "https://twitter.com/NEMofficial"
-    },{
+    }, {
         "name": "Reddit",
         "link": "https://reddit.com/r/nem"
+    }, {
+        "name": "GitHub",
+        "link": "https://github.com/NemProject"
     }]
   },
   {
@@ -331,12 +373,18 @@
         "subreddit": "r/VeChain",
         "user": ""
     },
+    "gitHub": {
+        "user": "vechain"
+    },
     "links": [{
         "name": "Twitter",
         "link": "https://twitter.com/vechainofficial"
     },{
         "name": "Reddit",
         "link": "https://reddit.com/r/VeChain"
+    }, {
+        "name": "GitHub",
+        "link": "https://github.com/vechain"
     }]
   },
   {

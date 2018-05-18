@@ -84,6 +84,9 @@
     "reddit": {
         "subreddit": "r/Bitcoincash",
         "user": ""
+    }, 
+    "gitHub": {
+        "user": "bitcoin-abc"
     },
     "links": [{
         "name": "Twitter",
@@ -91,6 +94,9 @@
     },{
         "name": "Reddit",
         "link": "https://reddit.com/r/Bitcoincash"
+    },{
+        "name": "GitHub",
+        "link": "https://github.com/bitcoin-abc"
     }]
   },
   {
@@ -104,12 +110,18 @@
         "subreddit": "r/litecoin",
         "user": ""
     },
+    "gitHub": {
+        "user": "litecoin-project"
+    },
     "links": [{
         "name": "Twitter",
         "link": "https://twitter.com/litecoin"
     },{
         "name": "Reddit",
         "link": "https://reddit.com/r/litecoin"
+    }, {
+        "name": "GitHub",
+        "link": "https://github.com/litecoin-project"
     }]
   },
   {
@@ -123,12 +135,18 @@
         "subreddit": "r/eos",
         "user": ""
     },
+    "gitHub": {
+        "user": "eosio"
+    },
     "links": [{
         "name": "Twitter",
         "link": "https://twitter.com/EOS_io"
-    },{
+    }, {
         "name": "Reddit",
         "link": "https://reddit.com/r/eos"
+    }, {
+        "name": "GitHub",
+        "link": "https://github.com/eosio"
     }]
   },
   {

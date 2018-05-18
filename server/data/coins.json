@@ -398,12 +398,18 @@
         "subreddit": "r/EthereumClassic",
         "user": ""
     },
+    "gitHub": {
+        "user": "ethereumproject"
+    },
     "links": [{
         "name": "Twitter",
         "link": "https://twitter.com/eth_classic"
-    },{
+    }, {
         "name": "Reddit",
         "link": "https://reddit.com/r/EthereumClassic"
+    }, {
+        "name": "GitHub",
+        "link": "https://github.com/ethereumproject"
     }]
   },
   {
@@ -417,12 +423,18 @@
         "subreddit": "r/omise_go",
         "user": ""
     },
+    "gitHub": {
+        "user": "omisego"
+    },
     "links": [{
         "name": "Twitter",
         "link": "https://twitter.com/omise_go"
     },{
         "name": "Reddit",
         "link": "https://reddit.com/r/omise_go"
+    }, {
+        "name": "GitHub",
+        "link": "https://github.com/omisego"
     }]
   },
   {
@@ -436,12 +448,18 @@
         "subreddit": "r/Qtum",
         "user": ""
     },
+    "gitHub": {
+        "user": "qtumproject"
+    },
     "links": [{
         "name": "Twitter",
         "link": "https://twitter.com/QtumOfficial"
     },{
         "name": "Reddit",
         "link": "https://reddit.com/r/Qtum"
+    }, {
+        "name": "GitHub",
+        "link": "https://github.com/qtumproject"
     }]
   },
   {
@@ -455,12 +473,18 @@
         "subreddit": "r/vergecurrency",
         "user": ""
     },
+    "gitHub": {
+        "user": "vergecurrency"
+    },
     "links": [{
         "name": "Twitter",
         "link": "https://twitter.com/vergecurrency"
     },{
         "name": "Reddit",
         "link": "https://reddit.com/r/vergecurrency"
+    }, {
+        "name": "GitHub",
+        "link": "https://github.com/vergecurrency"
     }]
   },
   {
@@ -474,12 +498,18 @@
         "subreddit": "r/BinanceExchange",
         "user": ""
     },
+    "gitHub": {
+        "user": "binance-exchange"
+    },
     "links": [{
         "name": "Twitter",
         "link": "https://twitter.com/binance"
     },{
         "name": "Reddit",
         "link": "https://reddit.com/r/BinanceExchange"
+    }, {
+        "name": "GitHub",
+        "link": "https://github.com/binance-exchange"
     }]
   },
   {
@@ -493,12 +523,18 @@
         "subreddit": "r/Lisk",
         "user": ""
     },
+    "gitHub": {
+        "user": "LiskHQ"
+    },
     "links": [{
         "name": "Twitter",
         "link": "https://twitter.com/LiskHQ"
     },{
         "name": "Reddit",
         "link": "https://reddit.com/r/Lisk"
+    }, {
+        "name": "GitHub",
+        "link": "https://github.com/LiskHQ"
     }]
   },
   {
@@ -512,12 +548,18 @@
         "subreddit": "r/helloicon",
         "user": ""
     },
+    "gitHub": {
+        "user": "icon-foundation"
+    },
     "links": [{
         "name": "Twitter",
         "link": "https://twitter.com/helloiconworld"
     },{
         "name": "Reddit",
         "link": "https://reddit.com/r/helloicon"
+    }, {
+        "name": "GitHub",
+        "link": "https://github.com/icon-foundation"
     }]
   },
   {
@@ -531,12 +573,18 @@
         "subreddit": "r/OntologyNetwork",
         "user": ""
     },
+    "gitHub": {
+        "user": "ontio"
+    },
     "links": [{
         "name": "Twitter",
         "link": "https://twitter.com/OntologyNetwork"
     },{
         "name": "Reddit",
         "link": "https://reddit.com/r/OntologyNetwork"
+    }, {
+        "name": "GitHub",
+        "link": "https://github.com/ontio"
     }]
   },
   {
@@ -550,12 +598,18 @@
         "subreddit": "r/BitcoinGoldHQ",
         "user": ""
     },
+    "gitHub": {
+        "user": "BTCGPU"
+    },
     "links": [{
         "name": "Twitter",
         "link": "https://twitter.com/bitcoingold"
     },{
         "name": "Reddit",
         "link": "https://reddit.com/r/BitcoinGoldHQ"
+    }, {
+        "name": "GitHub",
+        "link": "https://github.com/BTCGPU"
     }]
   },
   {
@@ -569,12 +623,18 @@
         "subreddit": "r/BytomBlockchain",
         "user": ""
     },
+    "gitHub": {
+        "user": "Bytom"
+    },
     "links": [{
         "name": "Twitter",
         "link": "https://twitter.com/Bytom_Official"
     },{
         "name": "Reddit",
         "link": "https://reddit.com/r/BytomBlockchain"
+    }, {
+        "name": "GitHub",
+        "link": "https://github.com/Bytom"
     }]
   },
   {
@@ -588,12 +648,18 @@
         "subreddit": "r/populous_platform",
         "user": ""
     },
+    "gitHub": {
+        "user": "bitpopulous"
+    },
     "links": [{
         "name": "Twitter",
         "link": "https://twitter.com/BitPopulous"
     },{
         "name": "Reddit",
         "link": "https://reddit.com/r/populous_platform"
+    }, {
+        "name": "GitHub",
+        "link": "https://github.com/bitpopulous"
     }]
   },
   {
@@ -607,12 +673,18 @@
         "subreddit": "r/zec",
         "user": ""
     },
+    "gitHub": {
+        "user": "zcash"
+    },
     "links": [{
         "name": "Twitter",
         "link": "https://twitter.com/zcashco"
     },{
         "name": "Reddit",
         "link": "https://reddit.com/r/zec"
+    }, {
+        "name": "GitHub",
+        "link": "https://github.com/zcash"
     }]
   },
   {
@@ -626,12 +698,18 @@
         "subreddit": "r/nanocurrency",
         "user": ""
     },
+    "gitHub": {
+        "user": "nanocurrency"
+    },
     "links": [{
         "name": "Twitter",
         "link": "https://twitter.com/nanocurrency"
     },{
         "name": "Reddit",
         "link": "https://reddit.com/r/nanocurrency"
+    }, {
+        "name": "GitHub",
+        "link": "https://github.com/nanocurrency"
     }]
   },
   {
@@ -664,12 +742,18 @@
         "subreddit": "r/steemit",
         "user": ""
     },
+    "gitHub": {
+        "user": "steemit"
+    },
     "links": [{
         "name": "Twitter",
         "link": "https://twitter.com/steemit"
     },{
         "name": "Reddit",
         "link": "https://reddit.com/r/steemit"
+    }, {
+        "name": "GitHub",
+        "link": "https://github.com/steemit"
     }]
   },
   {
@@ -683,12 +767,18 @@
         "subreddit": "r/siacoin",
         "user": ""
     },
+    "gitHub": {
+        "user": "nebulouslabs"
+    },
     "links": [{
         "name": "Twitter",
         "link": "https://twitter.com/SiaTechHQ"
     },{
         "name": "Reddit",
         "link": "https://reddit.com/r/siacoin"
+    }, {
+        "name": "GitHub",
+        "link": "https://github.com/nebulouslabs"
     }]
   },
   {
@@ -702,12 +792,18 @@
         "subreddit": "r/wanchain",
         "user": ""
     },
+    "gitHub": {
+        "user": "wanchain"
+    },
     "links": [{
         "name": "Twitter",
         "link": "https://twitter.com/wanchain_org"
     },{
         "name": "Reddit",
         "link": "https://reddit.com/r/wanchain"
+    }, {
+        "name": "GitHub",
+        "link": "https://github.com/wanchain"
     }]
   },
   {
@@ -721,12 +817,18 @@
         "subreddit": "r/BitShares",
         "user": ""
     },
+    "gitHub": {
+        "user": "bitshares"
+    },
     "links": [{
         "name": "Twitter",
         "link": "https://twitter.com/bitshares"
     },{
         "name": "Reddit",
         "link": "https://reddit.com/r/BitShares"
+    }, {
+        "name": "GitHub",
+        "link": "https://github.com/bitshares"
     }]
   },
   {
@@ -740,12 +842,18 @@
         "subreddit": "r/dogecoin",
         "user": ""
     },
+    "gitHub": {
+        "user": "dogecoin"
+    },
     "links": [{
         "name": "Twitter",
         "link": "https://twitter.com/dogecoin"
     },{
         "name": "Reddit",
         "link": "https://reddit.com/r/dogecoin"
+    }, {
+        "name": "GitHub",
+        "link": "https://github.com/dogecoin"
     }]
   },
   {
@@ -759,12 +867,18 @@
         "subreddit": "r/bitcoinprivate",
         "user": ""
     },
+    "gitHub": {
+        "user": "BTCPrivate"
+    },
     "links": [{
         "name": "Twitter",
         "link": "https://twitter.com/bitcoinprivate"
     },{
         "name": "Reddit",
         "link": "https://reddit.com/r/bitcoinprivate"
+    }, {
+        "name": "GitHub",
+        "link": "https://github.com/BTCPrivate"
     }]
   },
   {
@@ -778,12 +892,18 @@
         "subreddit": "r/stratisplatform",
         "user": ""
     },
+    "gitHub": {
+        "user": "stratisproject"
+    },
     "links": [{
         "name": "Twitter",
         "link": "https://twitter.com/stratisplatform"
     },{
         "name": "Reddit",
         "link": "https://reddit.com/r/stratisplatform"
+    }, {
+        "name": "GitHub",
+        "link": "https://github.com/stratisproject"
     }]
   },
   {
@@ -797,12 +917,18 @@
         "subreddit": "r/digix",
         "user": ""
     },
+    "gitHub": {
+        "user": "DigixGlobal"
+    },
     "links": [{
         "name": "Twitter",
         "link": "https://twitter.com/DigixGlobal"
     },{
         "name": "Reddit",
         "link": "https://reddit.com/r/digix"
+    }, {
+        "name": "GitHub",
+        "link": "https://github.com/DigixGlobal"
     }]
   },
   {
@@ -816,12 +942,18 @@
         "subreddit": "r/wavesplatform",
         "user": ""
     },
+    "gitHub": {
+        "user": "wavesplatform"
+    },
     "links": [{
         "name": "Twitter",
         "link": "https://twitter.com/wavesplatform"
     },{
         "name": "Reddit",
         "link": "https://reddit.com/r/wavesplatform"
+    }, {
+        "name": "GitHub",
+        "link": "https://github.com/wavesplatform"
     }]
   },
   {
@@ -835,12 +967,18 @@
         "subreddit": "r/zilliqa",
         "user": ""
     },
+    "gitHub": {
+        "user": "Zilliqa"
+    },
     "links": [{
         "name": "Twitter",
         "link": "https://twitter.com/zilliqa"
     },{
         "name": "Reddit",
         "link": "https://reddit.com/r/zilliqa"
+    }, {
+        "name": "GitHub",
+        "link": "https://github.com/Zilliqa"
     }]
   },
   {
@@ -854,12 +992,18 @@
         "subreddit": "r/MakerDAO",
         "user": ""
     },
+    "gitHub": {
+        "user": "makerdao"
+    },
     "links": [{
         "name": "Twitter",
         "link": "https://twitter.com/MakerDAO"
     },{
         "name": "Reddit",
         "link": "https://reddit.com/r/MakerDAO"
+    }, {
+        "name": "GitHub",
+        "link": "https://github.com/makerdao"
     }]
   },
   {
@@ -892,12 +1036,18 @@
         "subreddit": "r/decred",
         "user": ""
     },
+    "gitHub": {
+        "user": "decred"
+    },
     "links": [{
         "name": "Twitter",
         "link": "https://twitter.com/decredproject"
     },{
         "name": "Reddit",
         "link": "https://reddit.com/r/decred"
+    }, {
+        "name": "GitHub",
+        "link": "https://github.com/decred"
     }]
   },
   {
@@ -911,12 +1061,18 @@
         "subreddit": "r/statusim",
         "user": ""
     },
+    "gitHub": {
+        "user": "status-im"
+    },
     "links": [{
         "name": "Twitter",
         "link": "https://twitter.com/ethstatus"
     },{
         "name": "Reddit",
         "link": "https://reddit.com/r/statusim"
+    }, {
+        "name": "GitHub",
+        "link": "https://github.com/status-im"
     }]
   },
   {
@@ -930,12 +1086,18 @@
         "subreddit": "r/Aeternity",
         "user": ""
     },
+    "gitHub": {
+        "user": "aeternity"
+    },
     "links": [{
         "name": "Twitter",
         "link": "https://twitter.com/aeternity"
     },{
         "name": "Reddit",
         "link": "https://reddit.com/r/Aeternity"
+    }, {
+        "name": "GitHub",
+        "link": "https://github.com/aeternity"
     }]
   },
   {
@@ -949,12 +1111,18 @@
         "subreddit": "r/0xProject",
         "user": ""
     },
+    "gitHub": {
+        "user": "0xProject"
+    },
     "links": [{
         "name": "Twitter",
         "link": "https://twitter.com/0xProject"
     },{
         "name": "Reddit",
         "link": "https://reddit.com/r/0xProject"
+    }, {
+        "name": "GitHub",
+        "link": "https://github.com/0xProject"
     }]
   },
   {
@@ -968,12 +1136,18 @@
         "subreddit": "r/RChain",
         "user": ""
     },
+    "gitHub": {
+        "user": "rchain"
+    },
     "links": [{
         "name": "Twitter",
         "link": "https://twitter.com/rchain_coop"
     },{
         "name": "Reddit",
         "link": "https://reddit.com/r/RChain"
+    }, {
+        "name": "GitHub",
+        "link": "https://github.com/rchain"
     }]
   },
   {
@@ -987,12 +1161,18 @@
         "subreddit": "r/AionNetwork",
         "user": ""
     },
+    "gitHub": {
+        "user": "aionnetwork"
+    },
     "links": [{
         "name": "Twitter",
         "link": "https://twitter.com/Aion_Network"
     },{
         "name": "Reddit",
         "link": "https://reddit.com/r/AionNetwork"
+    }, {
+        "name": "GitHub",
+        "link": "https://github.com/aionnetwork"
     }]
   },
   {
@@ -1006,12 +1186,18 @@
         "subreddit": "r/loopringorg",
         "user": ""
     },
+    "gitHub": {
+        "user": "loopring"
+    },
     "links": [{
         "name": "Twitter",
         "link": "https://twitter.com/loopringorg"
     },{
         "name": "Reddit",
         "link": "https://reddit.com/r/loopringorg"
+    }, {
+        "name": "GitHub",
+        "link": "https://github.com/loopring"
     }]
   },
   {
@@ -1025,12 +1211,18 @@
         "subreddit": "r/KomodoPlatform",
         "user": ""
     },
+    "gitHub": {
+        "user": "KomodoPlatform"
+    },
     "links": [{
         "name": "Twitter",
         "link": "https://twitter.com/KomodoPlatform"
     },{
         "name": "Reddit",
         "link": "https://reddit.com/r/KomodoPlatform"
+    }, {
+        "name": "GitHub",
+        "link": "https://github.com/KomodoPlatform"
     }]
   },
   {
@@ -1044,12 +1236,18 @@
         "subreddit": "r/GolemProject",
         "user": ""
     },
+    "gitHub": {
+        "user": "golemfactory"
+    },
     "links": [{
         "name": "Twitter",
         "link": "https://twitter.com/golemproject"
     },{
         "name": "Reddit",
         "link": "https://reddit.com/r/GolemProject"
+    }, {
+        "name": "GitHub",
+        "link": "https://github.com/golemfactory"
     }]
   },
   {
@@ -1069,6 +1267,9 @@
     },{
         "name": "Reddit",
         "link": "https://reddit.com/r/Ardor"
+    }, {
+        "name": "BitBucket",
+        "link": "https://bitbucket.org/Jelurida/ardor/downloads/"
     }]
   },
   {
@@ -1082,12 +1283,18 @@
         "subreddit": "r/Augur",
         "user": ""
     },
+    "gitHub": {
+        "user": "AugurProject"
+    },
     "links": [{
         "name": "Twitter",
         "link": "https://twitter.com/AugurProject"
     },{
         "name": "Reddit",
         "link": "https://reddit.com/r/Augur"
+    }, {
+        "name": "GitHub",
+        "link": "https://github.com/AugurProject"
     }]
   },
   {

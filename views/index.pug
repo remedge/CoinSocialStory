@@ -73,23 +73,23 @@ block content
 								div(class='' + (delta < 0 ? 'param-down' : 'param-up'))= numeral(delta).format('+0.00%')
 
 						//- PRICE INDEX 
-						+tcell('index', 			coin.market.coinMarketCap.index, 						coin.market.coinMarketCap.indexDelta, 					'0,0[.]00')
-						+tcell('not-index', 	coin.market.coinMarketCap.priceUSD, 				coin.market.coinMarketCap.priceUSDDelta, 				'$0,0[.]00a')
-						+tcell('not-index', 	coin.market.coinMarketCap.marketVolumeUSD, 	coin.market.coinMarketCap.marketVolumeUSDDelta, '$0,0[.]00a')
-						+tcell('not-index', 	coin.market.coinMarketCap.VolumeUSD, 				coin.market.coinMarketCap.VolumeUSDDelta, 			'$0,0[.]00a')
+						+tcell('index', coin.market.coinMarketCap.index, coin.market.coinMarketCap.indexDelta, '0,0[.]00')
+						+tcell('not-index', coin.market.coinMarketCap.priceUSD, coin.market.coinMarketCap.priceUSDDelta, '$0,0[.]00a')
+						+tcell('not-index', coin.market.coinMarketCap.marketVolumeUSD, coin.market.coinMarketCap.marketVolumeUSDDelta, '$0,0[.]00a')
+						+tcell('not-index', coin.market.coinMarketCap.VolumeUSD, coin.market.coinMarketCap.VolumeUSDDelta, '$0,0[.]00a')
 						
 						//- SOCIAL INDEX
-						+tcell('index',			coin.social.index, 										coin.social.indexDelta, 									'0,0.00')
-						+tcell('not-index',	coin.social.twitter.followersCount, 	coin.social.twitter.followersCountDelta, 	'0,0')
-						+tcell('not-index',	coin.social.twitter.statusesCount, 		coin.social.twitter.statusesCountDelta, 	'0,0')
-						+tcell('not-index',	coin.social.reddit.followersCount, 		coin.social.reddit.followersCountDelta, 	'0,0')
+						+tcell('index',	coin.social.index, coin.social.indexDelta, '0,0.00')
+						+tcell('not-index',	coin.social.twitter.followersCount, coin.social.twitter.followersCountDelta, '0,0')
+						+tcell('not-index',	coin.social.twitter.statusesCount, coin.social.twitter.statusesCountDelta, '0,0')
+						+tcell('not-index',	coin.social.reddit.followersCount, coin.social.reddit.followersCountDelta, '0,0')
 
 						//- DEVELOPMANT INDEX
-						+tcell('index', 		coin.development.gitHub.index, 					coin.development.gitHub.indexDelta, 				'0,0')
-						+tcell('not-index',	coin.development.gitHub.reposCount, 		coin.development.gitHub.reposCountDelta, 		'0,0')
-						+tcell('not-index',	coin.development.gitHub.watchersCount, 	coin.development.gitHub.watchersCountDelta, '0,0')
-						+tcell('not-index',	coin.development.gitHub.forksCount, 		coin.development.gitHub.forksCountDelta, 		'0,0')
-						+tcell('not-index',	coin.development.gitHub.size, 					coin.development.gitHub.sizeDelta, 					'0b')
+						+tcell('index', coin.development.gitHub.index, coin.development.gitHub.indexDelta, '0,0')
+						+tcell('not-index',	coin.development.gitHub.reposCount, coin.development.gitHub.reposCountDelta, '0,0')
+						+tcell('not-index',	coin.development.gitHub.watchersCount, coin.development.gitHub.watchersCountDelta, '0,0')
+						+tcell('not-index',	coin.development.gitHub.forksCount, coin.development.gitHub.forksCountDelta, '0,0')
+						+tcell('not-index',	coin.development.gitHub.size, coin.development.gitHub.sizeDelta, '0b')
 
 
 						//- NETWORK INDEX

@@ -266,12 +266,15 @@
     "links": [{
         "name": "Twitter",
         "link": "https://twitter.com/Dashpay"
-    },{
+    }, {
         "name": "Reddit",
         "link": "https://reddit.com/r/dashpay"
     }, {
-        "name": "GitHub",
+        "name": "GitHub Dashpay",
         "link": "https://github.com/dashpay"
+    }, {
+        "name": "GitHub Dashevo",
+        "link": "https://github.com/dashevo"
     }]
   },
   {

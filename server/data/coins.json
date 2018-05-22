@@ -288,12 +288,18 @@
         "subreddit": "r/Monero",
         "user": ""
     },
+    "gitHub": {
+        "user": "monero-project"
+    },
     "links": [{
         "name": "Twitter",
         "link": "https://twitter.com/monerocurrency"
-    },{
+    }, {
         "name": "Reddit",
         "link": "https://reddit.com/r/Monero"
+    }, {
+        "name": "GitHub",
+        "link": "https://github.com/monero-project"
     }]
   },
   {
@@ -726,12 +732,18 @@
         "subreddit": "r/BytecoinBCN",
         "user": ""
     },
+    "gitHub": {
+        "user": "bcndev"
+    },
     "links": [{
         "name": "Twitter",
         "link": "https://twitter.com/Bytecoin_BCN"
     },{
         "name": "Reddit",
         "link": "https://reddit.com/r/BytecoinBCN"
+    }, {
+        "name": "GitHub",
+        "link": "https://github.com/bcndev"
     }]
   },
   {

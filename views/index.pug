@@ -15,7 +15,7 @@ block content
 						
 						th(scope='col' colspan='4' class='collapsable') Social
 						th(scope='col' colspan='5' class='collapsable') Development 
-						th(scope='col' colspan='3' class='collapsable') Network 
+						th(scope='col' colspan='4' class='collapsable') Network 
 						th(scope='col') Total
 					tr
 						th(scope='col' colspan="2")
@@ -44,7 +44,7 @@ block content
 						+thead('twitter_statuses', 'Tweets and Replies', 'not-index')
 						+thead('reddit_followers', 'Subreddit followers', 'not-index')
 
-						//- DEVELOPMANT Index
+						//- DEVELOPMENT Index
 						+thead('github_index', 'Index', 'index')
 						+thead('github_repos', 'Repos', 'not-index')
 						+thead('github_watchers', 'Watchers', 'not-index')
@@ -55,6 +55,7 @@ block content
 						th(scope='col' class='index') Index
 						th(scope='col' class='not-index') Transactions
 						th(scope='col' class='not-index') Nodes
+						th(scope='col' class='not-index') Size
 
 						//- TOTAL INDEX
 						+thead('total_index', 'Index', 'index')
@@ -93,9 +94,10 @@ block content
 
 
 						//- NETWORK INDEX
-						td(class='index') index
-						td(class='not-index') transactions
-						td(class='not-index') nodes
+						td(class='index') TBD
+						td(class='not-index') TBD
+						td(class='not-index') TBD
+						td(class='not-index') TBD
 
 						//- TOTAL INDEX
 						+tcell('index', coin.index, coin.indexDelta, '0,0')

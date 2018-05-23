@@ -9,7 +9,7 @@ block content
 				.card.border-primary.mb-3(style='max-width: 18rem;')
 					.card-header Price Index
 					.card-body.text-primary
-						h5.card-title #{market.coinMarketCap.index}
+						h5.card-title= numeral(market.coinMarketCap.index).format('0,0[.]00')
 								br
 								span(class='' + (market.coinMarketCap.indexDelta < 0 ? 'param-down' : 'param-up'))= numeral(market.coinMarketCap.indexDelta).format('+0,0.00 %')
 						p.card-text
@@ -40,7 +40,7 @@ block content
 				.card.border-primary.mb-3(style='max-width: 18rem;')
 					.card-header Social Index
 					.card-body.text-primary
-						h5.card-title #{social.index}
+						h5.card-title= numeral(social.index).format('0,0[.]00')
 								br
 								span(class='' + (social.indexDelta < 0 ? 'param-down' : 'param-up'))= numeral(social.indexDelta).format('+0,0.00 %')
 						p.card-text
@@ -70,7 +70,7 @@ block content
 				.card.border-primary.mb-3(style='max-width: 18rem;')
 					.card-header Development Index
 					.card-body.text-primary
-						h5.card-title #{development.gitHub.index}
+						h5.card-title= numeral(development.gitHub.index).format('0,0[.]00')
 								br
 								span(class='' + (development.gitHub.indexDelta < 0 ? 'param-down' : 'param-up'))= numeral(development.gitHub.indexDelta).format('+0,0.00 %')
 						p.card-text

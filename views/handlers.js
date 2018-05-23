@@ -53,7 +53,7 @@ function collapsePercent() {
 function collapseNotIndex() {
  	var notIndex = document.getElementsByClassName('not-index');
  	var heads = document.getElementsByClassName('collapsable');
- 	var colspan = ['4', '4', '5', '3'];
+ 	var colspan = ['4', '4', '5', '4'];
 	Array.prototype.slice(notIndex);
 	Array.prototype.slice(heads);
 

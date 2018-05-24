@@ -11,11 +11,11 @@ block content
 						th(scope='col') #
 						th(scope='col') 
 							a(href='?sortBy=name&order=' + (sortBy === 'name' ? order || 'asc' : 'asc') class='link' + (sortBy === 'name' ? '-active' : '-primary') + ' ' + (sortBy === 'name' ? order || 'asc' : 'asc')) Name&nbsp;&nbsp;
-						th(scope='col' colspan='4' class='collapsable') Price 
+						th(scope='col' colspan='4' class='collapsable border-left border-right') Price 
 						
-						th(scope='col' colspan='4' class='collapsable') Social
-						th(scope='col' colspan='5' class='collapsable') Development 
-						th(scope='col' colspan='4' class='collapsable') Network 
+						th(scope='col' colspan='4' class='collapsable border-left border-right') Social
+						th(scope='col' colspan='5' class='collapsable border-left border-right') Development 
+						th(scope='col' colspan='4' class='collapsable border-left border-right') Network 
 						th(scope='col') Total
 					tr
 						th(scope='col' colspan="2")
@@ -33,32 +33,32 @@ block content
 									)= name
 								
 						//- PRICE INDEX							
-						+thead('price_index', 'Index', 'index')
+						+thead('price_index', 'Index', 'index border-left')
 						+thead('price', 'Price', 'not-index')
 						+thead('market_volume', 'Market Cap', 'not-index')
-						+thead('volume', '24h Volume', 'not-index')
+						+thead('volume', '24h Volume', 'not-index border-right')
 
 						//- SOCIAL INDEX
-						+thead('social', 'Index', 'index')
+						+thead('social', 'Index', 'index border-left')
 						+thead('twitter_followers', 'Followers Twitter', 'not-index')
 						+thead('twitter_statuses', 'Tweets and Replies', 'not-index')
-						+thead('reddit_followers', 'Subreddit followers', 'not-index')
+						+thead('reddit_followers', 'Subreddit followers', 'not-index border-right')
 
 						//- DEVELOPMENT Index
-						+thead('github_index', 'Index', 'index')
+						+thead('github_index', 'Index', 'index border-left')
 						+thead('github_repos', 'Repos', 'not-index')
 						+thead('github_watchers', 'Watchers', 'not-index')
 						+thead('github_forks', 'Forks', 'not-index')
-						+thead('github_size', 'Size', 'not-index')
+						+thead('github_size', 'Size', 'not-index border-right')
 
 						//- NETWORK INDEX
-						th(scope='col' class='index') Index
+						th(scope='col' class='index border-left') Index
 						th(scope='col' class='not-index') Transactions
 						th(scope='col' class='not-index') Nodes
-						th(scope='col' class='not-index') Size
+						th(scope='col' class='not-index border-right') Size
 
 						//- TOTAL INDEX
-						+thead('total_index', 'Index', 'index')
+						+thead('total_index', 'Index', 'index border-left')
 
 
 				tbody
@@ -74,33 +74,33 @@ block content
 								div(class='' + (delta < 0 ? 'param-down' : 'param-up'))= numeral(delta).format('+0.00%')
 
 						//- PRICE INDEX 
-						+tcell('index', coin.market.coinMarketCap.index, coin.market.coinMarketCap.indexDelta, '0,0[.]00')
+						+tcell('index border-left', coin.market.coinMarketCap.index, coin.market.coinMarketCap.indexDelta, '0,0[.]00')
 						+tcell('not-index', coin.market.coinMarketCap.priceUSD, coin.market.coinMarketCap.priceUSDDelta, '$0,0[.]00a')
 						+tcell('not-index', coin.market.coinMarketCap.marketVolumeUSD, coin.market.coinMarketCap.marketVolumeUSDDelta, '$0,0[.]00a')
-						+tcell('not-index', coin.market.coinMarketCap.VolumeUSD, coin.market.coinMarketCap.VolumeUSDDelta, '$0,0[.]00a')
+						+tcell('not-index border-right', coin.market.coinMarketCap.VolumeUSD, coin.market.coinMarketCap.VolumeUSDDelta, '$0,0[.]00a')
 						
 						//- SOCIAL INDEX
-						+tcell('index',	coin.social.index, coin.social.indexDelta, '0,0.00')
+						+tcell('index border-left',	coin.social.index, coin.social.indexDelta, '0,0.00')
 						+tcell('not-index',	coin.social.twitter.followersCount, coin.social.twitter.followersCountDelta, '0,0')
 						+tcell('not-index',	coin.social.twitter.statusesCount, coin.social.twitter.statusesCountDelta, '0,0')
-						+tcell('not-index',	coin.social.reddit.followersCount, coin.social.reddit.followersCountDelta, '0,0')
+						+tcell('not-index border-right',	coin.social.reddit.followersCount, coin.social.reddit.followersCountDelta, '0,0')
 
 						//- DEVELOPMANT INDEX
-						+tcell('index', coin.development.gitHub.index, coin.development.gitHub.indexDelta, '0,0')
+						+tcell('index border-left', coin.development.gitHub.index, coin.development.gitHub.indexDelta, '0,0')
 						+tcell('not-index',	coin.development.gitHub.reposCount, coin.development.gitHub.reposCountDelta, '0,0')
 						+tcell('not-index',	coin.development.gitHub.watchersCount, coin.development.gitHub.watchersCountDelta, '0,0')
 						+tcell('not-index',	coin.development.gitHub.forksCount, coin.development.gitHub.forksCountDelta, '0,0')
-						+tcell('not-index',	coin.development.gitHub.size, coin.development.gitHub.sizeDelta, '0b')
+						+tcell('not-index border-right',	coin.development.gitHub.size, coin.development.gitHub.sizeDelta, '0b')
 
 
 						//- NETWORK INDEX
-						td(class='index') TBD
+						td(class='index border-left') TBD
 						td(class='not-index') TBD
 						td(class='not-index') TBD
-						td(class='not-index') TBD
+						td(class='not-index border-right') TBD
 
 						//- TOTAL INDEX
-						+tcell('index', coin.index, coin.indexDelta, '0,0')
+						+tcell('index border-left', coin.index, coin.indexDelta, '0,0')
 
 
 

@@ -2,16 +2,16 @@ extends layout.pug
 
 block content
 	.container
-		h1 Coin Social Story for #{name}
-		p Here you can find statictics about #{name} community
+		h1 Coin Social Story for #{title}
+		p Here you can find statictics about #{title} community
 		.row
 			.col-4
 				.card.border-primary.mb-3(style='max-width: 18rem;')
 					.card-header Price Index
 					.card-body.text-primary
-						h5.card-title= numeral(market.coinMarketCap.index).format('0,0[.]00')
+						h5.card-title= numeral(currentStatistic.priceIndex).format('0,0[.]00')
 								br
-								span(class='' + (market.coinMarketCap.indexDelta < 0 ? 'param-down' : 'param-up'))= numeral(market.coinMarketCap.indexDelta).format('+0,0.00 %')
+								span(class='' + (currentStatistic.priceIndexDelta < 0 ? 'param-down' : 'param-up'))= numeral(currentStatistic.priceIndexDelta).format('+0,0.00 %')
 						p.card-text
 							| Price index indicates market activity of coin.
 			.col-8
@@ -25,24 +25,24 @@ block content
 							th(scope='col') 24h Volume
 					tbody
 						tr  
-							td #{numeral(market.coinMarketCap.priceUSD).format('$0,0[.]00a')}
+							td #{numeral(currentStatistic.priceUSD).format('$0,0[.]00a')}
 								br
-								span(class='' + (market.coinMarketCap.priceUSDDelta < 0 ? 'param-down' : 'param-up'))= numeral(market.coinMarketCap.priceUSDDelta).format('+0,0.00 %')
-							td #{numeral(market.coinMarketCap.marketVolumeUSD).format('$0,0[.]00a')}
+								span(class='' + (currentStatistic.priceUSDDelta < 0 ? 'param-down' : 'param-up'))= numeral(currentStatistic.priceUSDDelta).format('+0,0.00 %')
+							td #{numeral(currentStatistic.marketCapUSD).format('$0,0[.]00a')}
 								br
-								span(class='' + (market.coinMarketCap.marketVolumeUSDDelta < 0 ? 'param-down' : 'param-up'))= numeral(market.coinMarketCap.marketVolumeUSDDelta).format('+0,0.00 %')
-							td #{numeral(market.coinMarketCap.VolumeUSD).format('$0,0[.]00a')}
+								span(class='' + (currentStatistic.marketCapUSDDelta < 0 ? 'param-down' : 'param-up'))= numeral(currentStatistic.marketCapUSDDelta).format('+0,0.00 %')
+							td #{numeral(currentStatistic.volume24hUSD).format('$0,0[.]00a')}
 								br
-								span(class='' + (market.coinMarketCap.VolumeUSDDelta < 0 ? 'param-down' : 'param-up'))= numeral(market.coinMarketCap.VolumeUSDDelta).format('+0,0.00 %')
+								span(class='' + (currentStatistic.volume24hUSDDelta < 0 ? 'param-down' : 'param-up'))= numeral(currentStatistic.volume24hUSDDelta).format('+0,0.00 %')
 
 		.row
 			.col-4
 				.card.border-primary.mb-3(style='max-width: 18rem;')
 					.card-header Social Index
 					.card-body.text-primary
-						h5.card-title= numeral(social.index).format('0,0[.]00')
+						h5.card-title= numeral(currentStatistic.socialIndex).format('0,0[.]00')
 								br
-								span(class='' + (social.indexDelta < 0 ? 'param-down' : 'param-up'))= numeral(social.indexDelta).format('+0,0.00 %')
+								span(class='' + (currentStatistic.socialIndexDelta < 0 ? 'param-down' : 'param-up'))= numeral(currentStatistic.socialIndexDelta).format('+0,0.00 %')
 						p.card-text
 							| Social index indicates social activity of coin's community.
 			.col-8
@@ -56,23 +56,23 @@ block content
 							th(scope='col') Followers Reddit
 					tbody
 						tr  
-							td #{numeral(social.twitter.followersCount).format('0,0')}
+							td #{numeral(currentStatistic.twitterFollowers).format('0,0')}
 								br
-								span(class='' + (social.twitter.followersCountDelta < 0 ? 'param-down' : 'param-up'))= numeral(social.twitter.followersCountDelta).format('+0,0.00 %')
-							td #{numeral(social.twitter.statusesCount).format('0,0')}
+								span(class='' + (currentStatistic.twitterFollowersDelta < 0 ? 'param-down' : 'param-up'))= numeral(currentStatistic.twitterFollowersDelta).format('+0,0.00 %')
+							td #{numeral(currentStatistic.tweetsNReplies).format('0,0')}
 								br
-								span(class='' + (social.twitter.statusesCountDelta < 0 ? 'param-down' : 'param-up'))= numeral(social.twitter.statusesCountDelta).format('+0,0.00 %')
-							td #{numeral(social.reddit.followersCount).format('0,0')}
+								span(class='' + (currentStatistic.tweetsNRepliesDelta < 0 ? 'param-down' : 'param-up'))= numeral(currentStatistic.tweetsNRepliesDelta).format('+0,0.00 %')
+							td #{numeral(currentStatistic.redditFollowers).format('0,0')}
 								br
-								span(class='' + (social.reddit.followersCountDelta < 0 ? 'param-down' : 'param-up'))= numeral(social.reddit.followersCountDelta).format('+0,0.00 %')
+								span(class='' + (currentStatistic.redditFollowersDelta < 0 ? 'param-down' : 'param-up'))= numeral(currentStatistic.redditFollowersDelta).format('+0,0.00 %')
 		.row
 			.col-4
 				.card.border-primary.mb-3(style='max-width: 18rem;')
 					.card-header Development Index
 					.card-body.text-primary
-						h5.card-title= numeral(development.gitHub.index).format('0,0[.]00')
+						h5.card-title= numeral(currentStatistic.developmentIndex).format('0,0[.]00')
 								br
-								span(class='' + (development.gitHub.indexDelta < 0 ? 'param-down' : 'param-up'))= numeral(development.gitHub.indexDelta).format('+0,0.00 %')
+								span(class='' + (currentStatistic.developmentIndexDelta < 0 ? 'param-down' : 'param-up'))= numeral(currentStatistic.developmentIndexDelta).format('+0,0.00 %')
 						p.card-text
 							| Development index indicates development activity of coin's community.
 			.col-8
@@ -87,18 +87,18 @@ block content
 							th(scope='col') Size
 					tbody
 						tr  
-							td #{numeral(development.gitHub.reposCount).format('0,0')}
+							td #{numeral(currentStatistic.githubRepositoriesCount).format('0,0')}
 								br
-								span(class='' + (development.gitHub.reposCountDelta < 0 ? 'param-down' : 'param-up'))= numeral(development.gitHub.reposCountDelta).format('+0,0.00 %')
-							td #{numeral(development.gitHub.watchersCount).format('0,0')}
+								span(class='' + (currentStatistic.githubRepositoriesCountDelta < 0 ? 'param-down' : 'param-up'))= numeral(currentStatistic.githubRepositoriesCountDelta).format('+0,0.00 %')
+							td #{numeral(currentStatistic.githubRepositoriesWatchers).format('0,0')}
 								br
-								span(class='' + (development.gitHub.watchersCountDelta < 0 ? 'param-down' : 'param-up'))= numeral(development.gitHub.watchersCountDelta).format('+0,0.00 %')
-							td #{numeral(development.gitHub.forksCount).format('0,0')}
+								span(class='' + (currentStatistic.githubRepositoriesWatchersDelta < 0 ? 'param-down' : 'param-up'))= numeral(currentStatistic.githubRepositoriesWatchersDelta).format('+0,0.00 %')
+							td #{numeral(currentStatistic.githubForks).format('0,0')}
 								br
-								span(class='' + (development.gitHub.forksCountDelta < 0 ? 'param-down' : 'param-up'))= numeral(development.gitHub.forksCountDelta).format('+0,0.00 %')
-							td #{numeral(development.gitHub.size).format('0,0')}
+								span(class='' + (currentStatistic.githubForksDelta < 0 ? 'param-down' : 'param-up'))= numeral(currentStatistic.githubForksDelta).format('+0,0.00 %')
+							td #{numeral(currentStatistic.githubRepositoriesSize).format('0,0')}
 								br
-								span(class='' + (development.gitHub.sizeDelta < 0 ? 'param-down' : 'param-up'))= numeral(development.gitHub.sizeDelta).format('+0,0.00 %')
+								span(class='' + (currentStatistic.githubRepositoriesSizeDelta < 0 ? 'param-down' : 'param-up'))= numeral(currentStatistic.githubRepositoriesSizeDelta).format('+0,0.00 %')
 		.row
 			.col-4
 				.card.border-primary.mb-3(style='max-width: 18rem;')
@@ -116,16 +116,16 @@ block content
 							h5.mb-0
 								button.btn.btn-link(data-toggle='collapse', data-target='#collapseHistory', aria-expanded='true', aria-controls='collapseHistory')
 									| History of the 
-									b #{name}
+									b #{title}
 						#collapseHistory.collapse.show(aria-labelledby='headingHistory', data-parent='#accordion')
 							.card-body
-								| Text about #{name} not ready yet. You can help us with it: drop an email to 
+								| Text about #{title} not ready yet. You can help us with it: drop an email to
 								a(href="mailto:coinsocialstory@gmail.com") coinsocialstory@gmail.com
 								|  ✨
 		br
 		if links
 			h6 Links for 
-				b #{name} 
+				b #{title}
 				| coin
 			ul.list-group
 				each link in links

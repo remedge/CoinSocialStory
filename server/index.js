@@ -36,13 +36,10 @@ app.get('/', (req, res) => {
     if (undefined === order) {
         order = [];
     }
-
-    for (let key in order) {
-        sortBy = key;
-    }
+    sortBy = Object.keys(order).pop();
 
     axios.get(API_COINS_LIST_URL, {params: query})
-        .then(function(response) {
+        .then(response => {
         	res.render('index', {coins: response.data, order: order, sortBy: sortBy});
         });
 });
@@ -53,7 +50,7 @@ app.get('/about', (req, res) => {
 
 app.get('/coin/:slug', (req, res) => {
     axios.get(API_COIN_URL+req.params.slug)
-	.then(function(response) {
+	.then(response => {
         res.render('singleCoin', response.data);
 	});
 });
@@ -64,5 +61,5 @@ app.listen(port, (err) => {
         console.log('Something bad happened' + err);
         return next(err)
     }
-    console.log('Server is listening on ' + port)
+    console.log('Server is listening on ' + port);
 });

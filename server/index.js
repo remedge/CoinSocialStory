@@ -13,6 +13,7 @@ const VIEWS_DIR = path.join(__dirname, '..', 'views');
 
 const API_COINS_LIST_URL = 'http://127.0.0.1:8000/api/coins';
 const API_COIN_URL = 'http://127.0.0.1:8000/api/coins/';
+const API_STATISTIC_URL = 'http://127.0.0.1:8000/api/coin_statistics?coin.slug=';
 
 console.log("yo!");
 
@@ -49,10 +50,36 @@ app.get('/about', (req, res) => {
 });
 
 app.get('/coin/:slug', (req, res) => {
-    axios.get(API_COIN_URL+req.params.slug)
-	.then(response => {
-        res.render('singleCoin', response.data);
-	});
+    let promises = [];
+
+    let coin = {};
+    let priceData = [];
+    let socialData = [];
+    let developmentData = [];
+
+    promises.push(axios.get(API_COIN_URL+req.params.slug));
+    promises.push(axios.get(API_STATISTIC_URL+req.params.slug));
+
+    axios.all(promises)
+        .then(axios.spread(function (coinResponse, statisticResponse) {
+            coin = coinResponse.data;
+            statisticResponse.data.forEach(function(statistic) {
+                priceData.push({
+                    t: statistic.timestamp,
+                    y: statistic.priceIndex
+                });
+                socialData.push({
+                    t: statistic.timestamp,
+                    y: statistic.socialIndex
+                });
+                developmentData.push({
+                    t: statistic.timestamp,
+                    y: statistic.developmentIndex
+                });
+            });
+
+            res.render('singleCoin', {coin: coin, priceData: priceData, socialData: socialData, developmentData: developmentData});
+        }));
 });
 
 

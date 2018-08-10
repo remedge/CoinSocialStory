@@ -64,37 +64,62 @@ block content
 						tr
 							th(scope='row')= index + 1
 							- var url = coin.slug
-							td
-								a( href='/coin/' + url )= coin.title
+							td(class="text-nowrap")
+								a(href='/coin/' + url)= coin.title
 
 							mixin tcell(tdClass, value, delta, format)
 								td(class=tdClass + ' ' + (delta < 0 ? 'td-param-down' : 'td-param-up'))= numeral(value).format(format)
 									div(class='' + (delta < 0 ? 'param-down' : 'param-up'))= numeral(delta).format('+0.00%')
 
-							//- PRICE INDEX 
-							+tcell('index border-left', coin.currentStatistic.priceIndex, coin.currentStatistic.priceIndexDelta, '0,0[.]00')
-							+tcell('not-index', coin.currentStatistic.priceUSD, coin.currentStatistic.priceUSDDelta, '$0,0[.]00a')
-							+tcell('not-index', coin.currentStatistic.marketCapUSD, coin.currentStatistic.marketCapUSDDelta, '$0,0[.]00a')
-							+tcell('not-index', coin.currentStatistic.volume24hUSD, coin.currentStatistic.volume24hUSDDelta, '$0,0[.]00a')
-							
-							//- SOCIAL INDEX
-							+tcell('index border-left',	coin.currentStatistic.socialIndex, coin.currentStatistic.socialIndexDelta, '0,0.00')
-							+tcell('not-index',	coin.currentStatistic.twitterFollowers, coin.currentStatistic.twitterFollowersDelta, '0,0')
-							+tcell('not-index',	coin.currentStatistic.tweetsNReplies, coin.currentStatistic.tweetsNRepliesDelta, '0,0')
-							+tcell('not-index border-right', coin.currentStatistic.redditFollowers, coin.currentStatistic.redditFollowersDelta, '0,0')
+							if coin.currentStatistic
+								//- PRICE INDEX
+								+tcell('index border-left', coin.currentStatistic.priceIndex, coin.currentStatistic.priceIndexDelta, '0,0[.]00')
+								+tcell('not-index', coin.currentStatistic.priceUSD, coin.currentStatistic.priceUSDDelta, '$0,0[.]00a')
+								+tcell('not-index', coin.currentStatistic.marketCapUSD, coin.currentStatistic.marketCapUSDDelta, '$0,0[.]00a')
+								+tcell('not-index', coin.currentStatistic.volume24hUSD, coin.currentStatistic.volume24hUSDDelta, '$0,0[.]00a')
 
-							//- DEVELOPMENT INDEX
-							+tcell('index border-left', coin.currentStatistic.developmentIndex, coin.currentStatistic.developmentIndexDelta, '0,0')
-							+tcell('not-index',	coin.currentStatistic.githubRepositoriesCount, coin.currentStatistic.githubRepositoriesCountDelta, '0,0')
-							+tcell('not-index',	coin.currentStatistic.githubRepositoriesWatchers, coin.currentStatistic.githubRepositoriesWatchersDelta, '0,0')
-							+tcell('not-index',	coin.currentStatistic.githubForks, coin.currentStatistic.githubForksDelta, '0,0')
-							+tcell('not-index border-right', coin.currentStatistic.githubRepositoriesSize, coin.currentStatistic.githubRepositoriesSizeDelta, '0b')
+								//- SOCIAL INDEX
+								+tcell('index border-left',	coin.currentStatistic.socialIndex, coin.currentStatistic.socialIndexDelta, '0,0.00')
+								+tcell('not-index',	coin.currentStatistic.twitterFollowers, coin.currentStatistic.twitterFollowersDelta, '0,0')
+								+tcell('not-index',	coin.currentStatistic.tweetsNReplies, coin.currentStatistic.tweetsNRepliesDelta, '0,0')
+								+tcell('not-index border-right', coin.currentStatistic.redditFollowers, coin.currentStatistic.redditFollowersDelta, '0,0')
 
-							//- NETWORK INDEX
-							td(class='index border-left') TBD
-							td(class='not-index') TBD
-							td(class='not-index') TBD
-							td(class='not-index border-right') TBD
+								//- DEVELOPMENT INDEX
+								+tcell('index border-left', coin.currentStatistic.developmentIndex, coin.currentStatistic.developmentIndexDelta, '0,0')
+								+tcell('not-index',	coin.currentStatistic.githubRepositoriesCount, coin.currentStatistic.githubRepositoriesCountDelta, '0,0')
+								+tcell('not-index',	coin.currentStatistic.githubRepositoriesWatchers, coin.currentStatistic.githubRepositoriesWatchersDelta, '0,0')
+								+tcell('not-index',	coin.currentStatistic.githubForks, coin.currentStatistic.githubForksDelta, '0,0')
+								+tcell('not-index border-right', coin.currentStatistic.githubRepositoriesSize, coin.currentStatistic.githubRepositoriesSizeDelta, '0b')
 
-							//- TOTAL INDEX
-							+tcell('index border-left', coin.currentStatistic.totalIndex, coin.currentStatistic.totalIndexDelta, '0,0')
+								//- NETWORK INDEX
+								td(class='index border-left') TBD
+								td(class='not-index') TBD
+								td(class='not-index') TBD
+								td(class='not-index border-right') TBD
+
+								//- TOTAL INDEX
+								+tcell('index border-left', coin.currentStatistic.totalIndex, coin.currentStatistic.totalIndexDelta, '0,0')
+							else
+								td="-"
+								td="-"
+								td="-"
+								td="-"
+
+								td="-"
+								td="-"
+								td="-"
+								td="-"
+
+								td="-"
+								td="-"
+								td="-"
+								td="-"
+								td="-"
+
+								td="-"
+								td="-"
+								td="-"
+								td="-"
+
+								td="-"
+							endif

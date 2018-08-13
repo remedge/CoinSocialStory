@@ -134,13 +134,13 @@ block content
                             th(scope='col') 24h Volume
                     tbody
                         tr
-                            td #{numeral(coin.currentStatistic.priceUSD).format('$0,0[.]00a')}
+                            td #{numeral(coin.currentStatistic.priceUSD).format('$0,0')}
                                 br
                                 span(class='' + (coin.currentStatistic.priceUSDDelta < 0 ? 'param-down' : 'param-up'))= numeral(coin.currentStatistic.priceUSDDelta).format('+0,0.00 %')
-                            td #{numeral(coin.currentStatistic.marketCapUSD).format('$0,0[.]00a')}
+                            td #{numeral(coin.currentStatistic.marketCapUSD).format('$0,0')}
                                 br
                                 span(class='' + (coin.currentStatistic.marketCapUSDDelta < 0 ? 'param-down' : 'param-up'))= numeral(coin.currentStatistic.marketCapUSDDelta).format('+0,0.00 %')
-                            td #{numeral(coin.currentStatistic.volume24hUSD).format('$0,0[.]00a')}
+                            td #{numeral(coin.currentStatistic.volume24hUSD).format('$0,0')}
                                 br
                                 span(class='' + (coin.currentStatistic.volume24hUSDDelta < 0 ? 'param-down' : 'param-up'))= numeral(coin.currentStatistic.volume24hUSDDelta).format('+0,0.00 %')
 

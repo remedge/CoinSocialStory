@@ -11,11 +11,11 @@ block content
 						th(scope='col') #
 						th(scope='col')
 							a(href='?order[title]=' + (order['title'] === 'desc' ? 'asc' : 'desc') class='link' + ((order['title'] === 'desc' || (order['title'] === 'asc')) ? '-active' : '-primary') + ' ' + (order['title'] === 'desc' ? 'asc' : 'desc')) Name&nbsp;&nbsp;
-						th(scope='col' colspan='4' class='collapsable border-left border-right') Price 
-						
+						th(scope='col' colspan='4' class='collapsable border-left border-right') Price
+
 						th(scope='col' colspan='4' class='collapsable border-left border-right') Social
-						th(scope='col' colspan='5' class='collapsable border-left border-right') Development 
-						th(scope='col' colspan='4' class='collapsable border-left border-right') Network 
+						th(scope='col' colspan='5' class='collapsable border-left border-right') Development
+						th(scope='col' colspan='4' class='collapsable border-left border-right') Network
 						th(scope='col') Total
 					tr
 						th(scope='col' colspan="2")
@@ -24,15 +24,15 @@ block content
 							th(
 								scope='col'
 								class=thClass
-							) 
+							)
 								- let href = '?order['+currentSortBy+']=' + (order[sortBy] === 'desc' ? 'asc' : 'desc' );
 								- let classLink = 'link' + (sortBy === currentSortBy ? '-active' : '-primary') + ' ' + (order[sortBy] === 'desc' ? 'asc' : 'desc');
 									a(
 										href=href
 										class=classLink
 									)= name
-								
-						//- PRICE INDEX							
+
+						//- PRICE INDEX
 						+thead('currentStatistic.priceIndex', 'Index', 'index border-left')
 						+thead('currentStatistic.priceUSD', 'Price', 'not-index')
 						+thead('currentStatistic.marketCapUSD', 'Market Cap', 'not-index')
@@ -52,10 +52,10 @@ block content
 						+thead('currentStatistic.githubRepositoriesSize', 'Size', 'not-index border-right')
 
 						//- NETWORK INDEX
-						th(scope='col' class='index border-left') Index
-						th(scope='col' class='not-index') Transactions
-						th(scope='col' class='not-index') Nodes
-						th(scope='col' class='not-index border-right') Size
+						+thead('currentStatistic.networkIndex', 'Index', 'index border-left')
+						+thead('currentStatistic.transactionsCount', 'Transactions', 'index border-left')
+						+thead('currentStatistic.nodesCount', 'Nodes', 'index border-left')
+						+thead('currentStatistic.networkSize', 'Size', 'index border-left')
 
 						//- TOTAL INDEX
 						+thead('currentStatistic.totalIndex', 'Index', 'index border-left')
@@ -92,10 +92,10 @@ block content
 								+tcell('not-index border-right', coin.currentStatistic.githubRepositoriesSize, coin.currentStatistic.githubRepositoriesSizeDelta, '0b')
 
 								//- NETWORK INDEX
-								td(class='index border-left') TBD
-								td(class='not-index') TBD
-								td(class='not-index') TBD
-								td(class='not-index border-right') TBD
+								+tcell('index border-left', coin.currentStatistic.network, coin.currentStatistic.networkIndex, '0,0.00')
+								+tcell('not-index', coin.currentStatistic.transactionsCount, coin.currentStatistic.transactionsCountDelta, '0,0')
+								+tcell('not-index', coin.currentStatistic.nodesCount, coin.currentStatistic.nodesCountDelta, '0,0')
+								+tcell('not-index border-right', coin.currentStatistic.networkSize, coin.currentStatistic.networkSizeDelta, '0b')
 
 								//- TOTAL INDEX
 								+tcell('index border-left', coin.currentStatistic.totalIndex, coin.currentStatistic.totalIndexDelta, '0,0')

@@ -56,6 +56,7 @@ app.get('/coin/:slug', (req, res) => {
     let priceData = [];
     let socialData = [];
     let developmentData = [];
+    let networkData = [];
 
     promises.push(axios.get(API_COIN_URL+req.params.slug));
     promises.push(axios.get(API_STATISTIC_URL+req.params.slug));
@@ -76,9 +77,19 @@ app.get('/coin/:slug', (req, res) => {
                     t: statistic.timestamp,
                     y: statistic.developmentIndex
                 });
+	            networkData.push({
+		            t: statistic.timestamp,
+		            y: statistic.networkIndex
+	            });
             });
 
-            res.render('singleCoin', {coin: coin, priceData: priceData, socialData: socialData, developmentData: developmentData});
+            res.render('singleCoin', {
+                coin: coin,
+                priceData: priceData,
+                socialData: socialData,
+                developmentData: developmentData,
+                networkData: networkData
+            });
         }));
 });
 

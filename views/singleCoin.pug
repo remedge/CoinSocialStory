@@ -5,63 +5,106 @@ block content
         let priceData = JSON.parse('!{JSON.stringify(priceData)}');
         let socialData = JSON.parse('!{JSON.stringify(socialData)}');
         let developmentData = JSON.parse('!{JSON.stringify(developmentData)}');
+        let networkData = JSON.parse('!{JSON.stringify(networkData)}');
+
+        let graphOptions = {
+            responsive: true,
+            tooltips: {
+                mode: 'index',
+                intersect: false,
+            },
+            scales: {
+                xAxes: [{
+                    type: 'time',
+                    time: {
+                        // format: timeFormat,
+                        round: 'day',
+                        tooltipFormat: 'll HH:mm'
+                    },
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Date'
+                    }
+                }],
+                yAxes: [{
+                    display: true,
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'value'
+                    }
+                }]
+            }
+        };
 
         window.onload = function () {
-            var ctxParams = {
-                type: 'line',
-                data: {
-                    datasets: [{
-                        data: priceData,
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    scales: {
-                        xAxes: [{
-                            type: 'time',
-                            time: {
-                                round: 'day'
-                            }
-                        }],
-                        yAxes: [{
-                            scaleLabel: {
-                                display: true
-                            },
-                            ticks: {
-                                beginAtZero: true
-                            }
-                        }]
-                    },
-                    legend: {
-                        display: false
-                    },
-                    animation: {
-                        duration: 0
-                    },
-                    hover: {
-                        animationDuration: 0
-                    },
-                    responsiveAnimationDuration: 0,
-                    elements: {
-                        line: {
-                            tension: 0 // disables bezier curves
-                        }
-                    }
-                }
-            }
-
             var priceCtx = document.getElementById("priceChart");
             var socialCtx = document.getElementById("socialChart");
             var developmentCtx = document.getElementById("developmentChart");
+            var networkCtx = document.getElementById("networkChart");
 
-            ctxParams.data.datasets = [{ data: priceData, borderWidth: 1}]
-            var priceChart = new Chart(priceCtx, ctxParams);
+            var priceChart = new Chart(priceCtx, {
+                type: 'line',
+                data: {
+                    datasets: [{
+                        label: 'Price index',
+                        data: priceData,
+                        borderWidth: 0,
+                        type: 'line',
+                        pointRadius: 0,
+                        fill: true,
+                        lineTension: 0
+                    }]
+                },
+                options: graphOptions
+            });
 
-            ctxParams.data.datasets = [{ data: socialData, borderWidth: 1}]
-            var socialChart = new Chart(socialCtx, ctxParams);
+            var socialChart = new Chart(socialCtx, {
+                type: 'line',
+                data: {
+                    datasets: [{
+                        label: 'Social index',
+                        data: socialData,
+                        borderWidth: 0,
+                        type: 'line',
+                        pointRadius: 0,
+                        fill: true,
+                        lineTension: 0
+                    }]
+                },
+                options: graphOptions
+            });
 
-            ctxParams.data.datasets = [{ data: developmentData, borderWidth: 1}]
-            var developmentChart = new Chart(developmentCtx, ctxParams);
+            var developmentChart = new Chart(developmentCtx, {
+                type: 'line',
+                data: {
+                    datasets: [{
+                        label: 'Development index',
+                        data: developmentData,
+                        borderWidth: 0,
+                        type: 'line',
+                        pointRadius: 0,
+                        fill: true,
+                        lineTension: 0
+                    }]
+                },
+                options: graphOptions
+            });
+
+            var networkChart = new Chart(networkCtx, {
+                type: 'line',
+                data: {
+                    datasets: [{
+                        label: 'Network index',
+                            data: networkData,
+                            borderWidth: 0,
+                            type: 'line',
+                            pointRadius: 0,
+                            fill: true,
+                            lineTension: 0
+                        }]
+                },
+                options: graphOptions
+            });
         }
 
     .container
@@ -176,9 +219,34 @@ block content
                 .card.border-primary.mb-3(style='max-width: 18rem;')
                     .card-header Network Index
                     .card-body.text-primary
-                        h5.card-title #{network}
+                        h5.card-title= numeral(coin.currentStatistic.networkIndex).format('0,0[.]00')
+                        br
+                        span(class='' + (coin.currentStatistic.networkIndexDelta < 0 ? 'param-down' : 'param-up'))= numeral(coin.currentStatistic.networkIndexDelta).format('+0,0.00 %')
                         p.card-text
                             | Network index indicates activity of coin's network.
+            .col-8
+                table.table.table-striped.table-hover
+                    thead.thead-light
+                        tr
+                            th(scope='col' colspan='4')
+                                p Network Activity
+                                div
+                                    <canvas id="networkChart" height="100"></canvas>
+                        tr
+                            th(scope='col') Transactions
+                            th(scope='col') Nodes
+                            th(scope='col') Size
+                    tbody
+                        tr
+                            td #{numeral(coin.currentStatistic.transactionsCount).format('0,0')}
+                                br
+                                span(class='' + (coin.currentStatistic.transactionsCountDelta < 0 ? 'param-down' : 'param-up'))= numeral(coin.currentStatistic.transactionsCountDelta).format('+0,0.00 %')
+                            td #{numeral(coin.currentStatistic.nodesCount).format('0,0')}
+                                br
+                                span(class='' + (coin.currentStatistic.nodesCountDelta < 0 ? 'param-down' : 'param-up'))= numeral(coin.currentStatistic.nodesCountDelta).format('+0,0.00 %')
+                            td #{numeral(coin.currentStatistic.networkSize).format('0,0')}
+                                br
+                                span(class='' + (coin.currentStatistic.networkSizeDelta < 0 ? 'param-down' : 'param-up'))= numeral(coin.currentStatistic.networkSizeDelta).format('+0,0.00 %')
 
         .row
             .col-12
@@ -188,14 +256,14 @@ block content
                             h5.mb-0
                                 button.btn.btn-link(data-toggle='collapse', data-target='#collapseHistory', aria-expanded='true', aria-controls='collapseHistory')
                                     | History of the
-                                    b #{title}
+                                    b  #{coin.title}
                         #collapseHistory.collapse.show(aria-labelledby='headingHistory', data-parent='#accordion')
                             .card-body
-                                | Text about #{title} not ready yet. You can help us with it: drop an email to
+                                | Text about #{title} not ready yet. You can help us with it: drop an email to&nbsp;
                                 a(href="mailto:coinsocialstory@gmail.com") coinsocialstory@gmail.com
                                 |  ✨
         br
-        if links
+        if coin.links
             h6 Links for
                 b #{title}
                 | coin

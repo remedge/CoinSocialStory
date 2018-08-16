@@ -259,14 +259,20 @@ block content
                                     b  #{coin.title}
                         #collapseHistory.collapse.show(aria-labelledby='headingHistory', data-parent='#accordion')
                             .card-body
-                                | The text is not ready yet. You can help us with it by dropping an email to&nbsp;
-                                a(href="mailto:coinsocialstory@gmail.com") coinsocialstory@gmail.com
-                                |  ✨
+                                if coin.description
+                                    p !{coin.description}
+                                    | If you want to share additional information about the cryptocurrency, you can drop the mail to: 
+                                    a(href="mailto:coinsocialstory@gmail.com") coinsocialstory@gmail.com
+                                    |  ✨
+                                else
+                                    | The text is not ready yet. You can help us with it by dropping an email to: 
+                                    a(href="mailto:coinsocialstory@gmail.com") coinsocialstory@gmail.com
+                                    |  ✨
         br
         if coin.links
-            h6 Links for
-                b #{title}
-                | coin
+            h6
+                b #{coin.title} 
+                | social media
             ul.list-group
                 each link in coin.links
                     li.list-group-item

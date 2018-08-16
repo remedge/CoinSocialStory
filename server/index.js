@@ -53,7 +53,12 @@ app.get('/coin/:slug', (req, res) => {
     let promises = [];
 
     let coin = {};
-    let priceData = [];
+    let priceData = {
+	    index: [],
+	    price: [],
+	    marketCap: [],
+	    volume: []
+    };
     let socialData = [];
     let developmentData = [];
     let networkData = [];
@@ -65,10 +70,22 @@ app.get('/coin/:slug', (req, res) => {
         .then(axios.spread(function (coinResponse, statisticResponse) {
             coin = coinResponse.data;
             statisticResponse.data.forEach(function(statistic) {
-                priceData.push({
+                priceData.index.push({
                     t: statistic.timestamp,
                     y: statistic.priceIndex
                 });
+	            priceData.price.push({
+		            t: statistic.timestamp,
+		            y: statistic.priceUSD
+	            });
+	            priceData.marketCap.push({
+		            t: statistic.timestamp,
+		            y: statistic.marketCapUSD
+	            });
+	            priceData.volume.push({
+		            t: statistic.timestamp,
+		            y: statistic.volume24hUSD
+	            });
                 socialData.push({
                     t: statistic.timestamp,
                     y: statistic.socialIndex

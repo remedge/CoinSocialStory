@@ -79,9 +79,9 @@ block content
 							mixin tcell(tdClass, value, delta, format)
 								td(class=tdClass)
 									div(class='hour ' + (delta.hour == 0 ? 'param-no-change' : delta.hour < 0 ? 'param-down' : 'param-up'))= numeral(delta.hour).format('+0.00%')
-									div(class='day d-none ' + (delta.hour == 0 ? 'param-no-change' : delta.day < 0 ? 'param-down' : 'param-up'))= numeral(delta.day).format('+0.00%')
-									div(class='week d-none ' + (delta.hour == 0 ? 'param-no-change' : delta.week < 0 ? 'param-down' : 'param-up'))= numeral(delta.week).format('+0.00%')
-									div(class='month d-none ' + (delta.hour == 0 ? 'param-no-change' : delta.month < 0 ? 'param-down' : 'param-up'))= numeral(delta.month).format('+0.00%')
+									div(class='day  ' + (delta.day == 0 ? 'param-no-change' : delta.day < 0 ? 'param-down' : 'param-up'))= numeral(delta.day).format('+0.00%')
+									div(class='week  ' + (delta.week == 0 ? 'param-no-change' : delta.week < 0 ? 'param-down' : 'param-up'))= numeral(delta.week).format('+0.00%')
+									div(class='month  ' + (delta.month == 0 ? 'param-no-change' : delta.month < 0 ? 'param-down' : 'param-up'))= numeral(delta.month).format('+0.00%')
 									div(class='param-value')=numeral(value).format(format)
 
 							if coin.currentStatistic

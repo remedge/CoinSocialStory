@@ -18,16 +18,18 @@ block content
 				thead.thead-light
 					tr
 						th(scope='col') #
-						th(scope='col')
-							a(href='?order[title]=' + (order['title'] === 'desc' ? 'asc' : 'desc') class='link' + ((order['title'] === 'desc' || (order['title'] === 'asc')) ? '-active' : '-primary') + ' ' + (order['title'] === 'desc' ? 'asc' : 'desc')) Name&nbsp;&nbsp;
-						th(scope='col' colspan='3' class='collapsable border-left border-right') Price
+						th(scope='col border-right')
+							a(href='?order[title]=' + (order['title'] === 'desc' ? 'asc' : 'desc') class='link' + ((order['title'] === 'desc' || (order['title'] === 'asc')) ? '-active' : '-primary') + ' ' + (order['title'] === 'desc' ? 'asc' : 'desc')) Name
+						th(scope='col' class='collapsable border-left')
 
+						th(scope='col' colspan='3' class='collapsable border-left border-right') Trading
 						th(scope='col' colspan='4' class='collapsable border-left border-right') Social
 						th(scope='col' colspan='5' class='collapsable border-left border-right') Development
 						th(scope='col' colspan='4' class='collapsable border-left border-right') Network
 						th(scope='col') Total
 					tr
-						th(scope='col' colspan="2")
+						th(scope='col' colspan="1")
+						th(scope='col' colspan="1")
 
 						mixin thead(currentSortBy, name, thClass)
 							th(
@@ -41,12 +43,13 @@ block content
 										class=classLink
 									)= name
 
-						//- PRICE INDEX
-						+thead('currentStatistic.priceUSD', 'Price', 'not-index border-left')
-						+thead('currentStatistic.tradingPairs', 'Markets', 'not-index border-left')
+						//- PRICE
+						+thead('currentStatistic.priceUSD', 'Price', 'index border-left border-left')
+
+						//- TRADING INDEX
 						+thead('currentStatistic.priceIndex', 'Index', 'index border-left')
-						//+thead('currentStatistic.marketCapUSD', 'Market Cap', 'not-index')
-						//+thead('currentStatistic.volume24hUSD', '24h Volume', 'not-index border-right')
+						+thead('currentStatistic.tradingPairs', 'Markets', 'not-index')
+						+thead('currentStatistic.volume24hUSD', '24h Volume', 'not-index border-right')
 
 						//- SOCIAL INDEX
 						+thead('currentStatistic.socialIndex', 'Index', 'index border-left')
@@ -63,9 +66,9 @@ block content
 
 						//- NETWORK INDEX
 						+thead('currentStatistic.networkIndex', 'Index', 'index border-left')
-						+thead('currentStatistic.transactionsCount', 'Transactions', 'not-index border-left')
-						+thead('currentStatistic.nodesCount', 'Nodes', 'not-index border-left')
-						+thead('currentStatistic.networkSize', 'Size', 'not-index border-left')
+						+thead('currentStatistic.transactionsCount', 'Transactions', 'not-index')
+						+thead('currentStatistic.nodesCount', 'Nodes', 'not-index')
+						+thead('currentStatistic.networkSize', 'Size', 'not-index border-right')
 
 						//- TOTAL INDEX
 						+thead('currentStatistic.totalIndex', 'Index', 'index border-left')
@@ -86,12 +89,14 @@ block content
 									div(class='param-value')=numeral(value).format(format)
 
 							if coin.currentStatistic
-								//- PRICE INDEX
-								+tcell('not-index border-left font-weight-bold', coin.currentStatistic.priceUSD, coin.currentStatistic.priceUSDDelta, '$0,0')
-								+tcell('non-index border-left', coin.currentStatistic.tradingPairs, coin.currentStatistic.tradingPairsDelta, '0,0[.]00')
+								//- PRICE
+								+tcell('index border-left border-right font-weight-bold', coin.currentStatistic.priceUSD, coin.currentStatistic.priceUSDDelta, '$0,0')
+
+								//- TRADING INDEX
 								+tcell('index border-left font-weight-bold', coin.currentStatistic.priceIndex, coin.currentStatistic.priceIndexDelta, '0,0[.]00')
+								+tcell('not-index', coin.currentStatistic.tradingPairs, coin.currentStatistic.tradingPairsDelta, '0,0[.]00')
+								+tcell('not-index border-right', coin.currentStatistic.volume24hUSD, coin.currentStatistic.volume24hUSDDelta, '$0,0[.]00a')
 								//+tcell('not-index', coin.currentStatistic.marketCapUSD, coin.currentStatistic.marketCapUSDDelta, '$0,0[.]00a')
-								//+tcell('not-index', coin.currentStatistic.volume24hUSD, coin.currentStatistic.volume24hUSDDelta, '$0,0[.]00a')
 
 								//- SOCIAL INDEX
 								+tcell('index border-left font-weight-bold',	coin.currentStatistic.socialIndex, coin.currentStatistic.socialIndexDelta, '0,0.00')
@@ -117,8 +122,6 @@ block content
 							else
 								td="-"
 								td="-"
-								//td="-"
-								//td="-"
 
 								td="-"
 								td="-"

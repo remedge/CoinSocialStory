@@ -1,7 +1,7 @@
 function collapseNotIndex() {
  	var notIndex = document.getElementsByClassName('not-index');
  	var heads = document.getElementsByClassName('collapsable');
- 	var colspan = ['2', '4', '5', '4'];
+ 	var colspan = ['3', '4', '5', '4'];
 	Array.prototype.slice(notIndex);
 	Array.prototype.slice(heads);
 

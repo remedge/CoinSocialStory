@@ -20,7 +20,7 @@ block content
 						th(scope='col') #
 						th(scope='col')
 							a(href='?order[title]=' + (order['title'] === 'desc' ? 'asc' : 'desc') class='link' + ((order['title'] === 'desc' || (order['title'] === 'asc')) ? '-active' : '-primary') + ' ' + (order['title'] === 'desc' ? 'asc' : 'desc')) Name&nbsp;&nbsp;
-						th(scope='col' colspan='2' class='collapsable border-left border-right') Price
+						th(scope='col' colspan='3' class='collapsable border-left border-right') Price
 
 						th(scope='col' colspan='4' class='collapsable border-left border-right') Social
 						th(scope='col' colspan='5' class='collapsable border-left border-right') Development
@@ -43,6 +43,7 @@ block content
 
 						//- PRICE INDEX
 						+thead('currentStatistic.priceUSD', 'Price', 'not-index border-left')
+						+thead('currentStatistic.tradingPairs', 'Markets', 'not-index border-left')
 						+thead('currentStatistic.priceIndex', 'Index', 'index border-left')
 						//+thead('currentStatistic.marketCapUSD', 'Market Cap', 'not-index')
 						//+thead('currentStatistic.volume24hUSD', '24h Volume', 'not-index border-right')
@@ -87,6 +88,7 @@ block content
 							if coin.currentStatistic
 								//- PRICE INDEX
 								+tcell('not-index border-left font-weight-bold', coin.currentStatistic.priceUSD, coin.currentStatistic.priceUSDDelta, '$0,0')
+								+tcell('non-index border-left', coin.currentStatistic.tradingPairs, coin.currentStatistic.tradingPairsDelta, '0,0[.]00')
 								+tcell('index border-left font-weight-bold', coin.currentStatistic.priceIndex, coin.currentStatistic.priceIndexDelta, '0,0[.]00')
 								//+tcell('not-index', coin.currentStatistic.marketCapUSD, coin.currentStatistic.marketCapUSDDelta, '$0,0[.]00a')
 								//+tcell('not-index', coin.currentStatistic.volume24hUSD, coin.currentStatistic.volume24hUSDDelta, '$0,0[.]00a')
@@ -114,7 +116,7 @@ block content
 								+tcell('index border-left font-weight-bold', coin.currentStatistic.totalIndex, coin.currentStatistic.totalIndexDelta, '0,0')
 							else
 								td="-"
-								//td="-"
+								td="-"
 								//td="-"
 								//td="-"
 

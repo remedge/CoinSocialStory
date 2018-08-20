@@ -2,8 +2,17 @@ extends layout.pug
 
 block content
 	.container-fluid
-		button.btn.btn-primary(id='buttonCollapsePercent' onclick='collapsePercent()', role='button') %
-		button.btn.btn-primary(onclick='collapseNotIndex()', role='button') index
+		div(class="float-left")
+			button.btn.btn-primary(onclick='collapseNotIndex()', role='button') index
+		div(class='float-right btn-group btn-group-toggle btn-space' data-toggle='buttons')
+			label(class='btn btn-secondary active' onclick='showPeriod("hour")') Hour
+				input(type='radio' name='options' id='hourStat')
+			label(class='btn btn-secondary' onclick='showPeriod("day")') Day
+				input(type='radio' name='options' id='dayStat')
+			label(class='btn btn-secondary' onclick='showPeriod("week")') Week
+				input(type='radio' name='options' id='weekStat')
+			label(class='btn btn-secondary' onclick='showPeriod("month")') Month
+				input(type='radio' name='options' id='monthStat')
 		.table-responsive
 			table.table.table-hover
 				thead.thead-light
@@ -11,7 +20,7 @@ block content
 						th(scope='col') #
 						th(scope='col')
 							a(href='?order[title]=' + (order['title'] === 'desc' ? 'asc' : 'desc') class='link' + ((order['title'] === 'desc' || (order['title'] === 'asc')) ? '-active' : '-primary') + ' ' + (order['title'] === 'desc' ? 'asc' : 'desc')) Name&nbsp;&nbsp;
-						th(scope='col' colspan='4' class='collapsable border-left border-right') Price
+						th(scope='col' colspan='2' class='collapsable border-left border-right') Price
 
 						th(scope='col' colspan='4' class='collapsable border-left border-right') Social
 						th(scope='col' colspan='5' class='collapsable border-left border-right') Development
@@ -33,10 +42,10 @@ block content
 									)= name
 
 						//- PRICE INDEX
+						+thead('currentStatistic.priceUSD', 'Price', 'not-index border-left')
 						+thead('currentStatistic.priceIndex', 'Index', 'index border-left')
-						+thead('currentStatistic.priceUSD', 'Price', 'not-index')
-						+thead('currentStatistic.marketCapUSD', 'Market Cap', 'not-index')
-						+thead('currentStatistic.volume24hUSD', '24h Volume', 'not-index border-right')
+						//+thead('currentStatistic.marketCapUSD', 'Market Cap', 'not-index')
+						//+thead('currentStatistic.volume24hUSD', '24h Volume', 'not-index border-right')
 
 						//- SOCIAL INDEX
 						+thead('currentStatistic.socialIndex', 'Index', 'index border-left')
@@ -68,42 +77,46 @@ block content
 								a(href='/coin/' + url)= coin.title
 
 							mixin tcell(tdClass, value, delta, format)
-								td(class=tdClass + ' ' + (delta < 0 ? 'td-param-down' : 'td-param-up'))= numeral(value).format(format)
-									div(class='' + (delta < 0 ? 'param-down' : 'param-up'))= numeral(delta).format('+0.00%')
+								td(class=tdClass)
+									div(class='hour ' + (delta.hour == 0 ? 'param-no-change' : delta.hour < 0 ? 'param-down' : 'param-up'))= numeral(delta.hour).format('+0.00%')
+									div(class='day d-none ' + (delta.hour == 0 ? 'param-no-change' : delta.day < 0 ? 'param-down' : 'param-up'))= numeral(delta.day).format('+0.00%')
+									div(class='week d-none ' + (delta.hour == 0 ? 'param-no-change' : delta.week < 0 ? 'param-down' : 'param-up'))= numeral(delta.week).format('+0.00%')
+									div(class='month d-none ' + (delta.hour == 0 ? 'param-no-change' : delta.month < 0 ? 'param-down' : 'param-up'))= numeral(delta.month).format('+0.00%')
+									div(class='param-value')=numeral(value).format(format)
 
 							if coin.currentStatistic
 								//- PRICE INDEX
-								+tcell('index border-left', coin.currentStatistic.priceIndex, coin.currentStatistic.priceIndexDelta, '0,0[.]00')
-								+tcell('not-index', coin.currentStatistic.priceUSD, coin.currentStatistic.priceUSDDelta, '$0,0')
-								+tcell('not-index', coin.currentStatistic.marketCapUSD, coin.currentStatistic.marketCapUSDDelta, '$0,0[.]00a')
-								+tcell('not-index', coin.currentStatistic.volume24hUSD, coin.currentStatistic.volume24hUSDDelta, '$0,0[.]00a')
+								+tcell('not-index border-left font-weight-bold', coin.currentStatistic.priceUSD, coin.currentStatistic.priceUSDDelta, '$0,0')
+								+tcell('index border-left font-weight-bold', coin.currentStatistic.priceIndex, coin.currentStatistic.priceIndexDelta, '0,0[.]00')
+								//+tcell('not-index', coin.currentStatistic.marketCapUSD, coin.currentStatistic.marketCapUSDDelta, '$0,0[.]00a')
+								//+tcell('not-index', coin.currentStatistic.volume24hUSD, coin.currentStatistic.volume24hUSDDelta, '$0,0[.]00a')
 
 								//- SOCIAL INDEX
-								+tcell('index border-left',	coin.currentStatistic.socialIndex, coin.currentStatistic.socialIndexDelta, '0,0.00')
+								+tcell('index border-left font-weight-bold',	coin.currentStatistic.socialIndex, coin.currentStatistic.socialIndexDelta, '0,0.00')
 								+tcell('not-index',	coin.currentStatistic.twitterFollowers, coin.currentStatistic.twitterFollowersDelta, '0,0')
 								+tcell('not-index',	coin.currentStatistic.tweetsNReplies, coin.currentStatistic.tweetsNRepliesDelta, '0,0')
 								+tcell('not-index border-right', coin.currentStatistic.redditFollowers, coin.currentStatistic.redditFollowersDelta, '0,0')
 
 								//- DEVELOPMENT INDEX
-								+tcell('index border-left', coin.currentStatistic.developmentIndex, coin.currentStatistic.developmentIndexDelta, '0,0')
+								+tcell('index border-left font-weight-bold', coin.currentStatistic.developmentIndex, coin.currentStatistic.developmentIndexDelta, '0,0')
 								+tcell('not-index',	coin.currentStatistic.githubRepositoriesCount, coin.currentStatistic.githubRepositoriesCountDelta, '0,0')
 								+tcell('not-index',	coin.currentStatistic.githubRepositoriesWatchers, coin.currentStatistic.githubRepositoriesWatchersDelta, '0,0')
 								+tcell('not-index',	coin.currentStatistic.githubForks, coin.currentStatistic.githubForksDelta, '0,0')
 								+tcell('not-index border-right', coin.currentStatistic.githubRepositoriesSize, coin.currentStatistic.githubRepositoriesSizeDelta, '0b')
 
 								//- NETWORK INDEX
-								+tcell('index border-left', coin.currentStatistic.network, coin.currentStatistic.networkIndex, '0,0.00')
+								+tcell('index border-left font-weight-bold', coin.currentStatistic.networkIndex, coin.currentStatistic.networkIndexDelta, '0,0.00')
 								+tcell('not-index', coin.currentStatistic.transactionsCount, coin.currentStatistic.transactionsCountDelta, '0,0')
 								+tcell('not-index', coin.currentStatistic.nodesCount, coin.currentStatistic.nodesCountDelta, '0,0')
 								+tcell('not-index border-right', coin.currentStatistic.networkSize, coin.currentStatistic.networkSizeDelta, '0b')
 
 								//- TOTAL INDEX
-								+tcell('index border-left', coin.currentStatistic.totalIndex, coin.currentStatistic.totalIndexDelta, '0,0')
+								+tcell('index border-left font-weight-bold', coin.currentStatistic.totalIndex, coin.currentStatistic.totalIndexDelta, '0,0')
 							else
 								td="-"
-								td="-"
-								td="-"
-								td="-"
+								//td="-"
+								//td="-"
+								//td="-"
 
 								td="-"
 								td="-"

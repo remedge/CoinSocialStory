@@ -117,7 +117,7 @@ block content
                         .card-body.text-primary
                             h5.card-title= numeral(coin.currentStatistic.priceIndex).format('0,0[.]00')
                             br
-                            span(class='' + (coin.currentStatistic.priceIndexDelta < 0 ? 'param-down' : 'param-up'))= numeral(coin.currentStatistic.priceIndexDelta).format('+0,0.00 %')
+                            span(class='' + (coin.currentStatistic.priceIndexDelta.hour < 0 ? 'param-down' : 'param-up'))= numeral(coin.currentStatistic.priceIndexDelta.hour).format('+0,0.00 %')
                             p.card-text
                                 | Price index indicates market activity of coin.
             .col-8
@@ -136,13 +136,13 @@ block content
                         tr
                             td #{numeral(coin.currentStatistic.priceUSD).format('$0,0')}
                                 br
-                                span(class='' + (coin.currentStatistic.priceUSDDelta < 0 ? 'param-down' : 'param-up'))= numeral(coin.currentStatistic.priceUSDDelta).format('+0,0.00 %')
+                                span(class='' + (coin.currentStatistic.priceUSDDelta.hour < 0 ? 'param-down' : 'param-up'))= numeral(coin.currentStatistic.priceUSDDelta.hour).format('+0,0.00 %')
                             td #{numeral(coin.currentStatistic.marketCapUSD).format('$0,0')}
                                 br
-                                span(class='' + (coin.currentStatistic.marketCapUSDDelta < 0 ? 'param-down' : 'param-up'))= numeral(coin.currentStatistic.marketCapUSDDelta).format('+0,0.00 %')
+                                span(class='' + (coin.currentStatistic.marketCapUSDDelta.hour < 0 ? 'param-down' : 'param-up'))= numeral(coin.currentStatistic.marketCapUSDDelta.hour).format('+0,0.00 %')
                             td #{numeral(coin.currentStatistic.volume24hUSD).format('$0,0')}
                                 br
-                                span(class='' + (coin.currentStatistic.volume24hUSDDelta < 0 ? 'param-down' : 'param-up'))= numeral(coin.currentStatistic.volume24hUSDDelta).format('+0,0.00 %')
+                                span(class='' + (coin.currentStatistic.volume24hUSDDelta.hour < 0 ? 'param-down' : 'param-up'))= numeral(coin.currentStatistic.volume24hUSDDelta.hour).format('+0,0.00 %')
 
         .row
             .col-4
@@ -151,7 +151,7 @@ block content
                     .card-body.text-primary
                         h5.card-title= numeral(coin.currentStatistic.socialIndex).format('0,0[.]00')
                         br
-                        span(class='' + (coin.currentStatistic.socialIndexDelta < 0 ? 'param-down' : 'param-up'))= numeral(coin.currentStatistic.socialIndexDelta).format('+0,0.00 %')
+                        span(class='' + (coin.currentStatistic.socialIndexDelta.hour < 0 ? 'param-down' : 'param-up'))= numeral(coin.currentStatistic.socialIndexDelta.hour).format('+0,0.00 %')
                         p.card-text
                             | Social index indicates social activity of coin's community.
             .col-8
@@ -170,13 +170,13 @@ block content
                         tr
                             td #{numeral(coin.currentStatistic.twitterFollowers).format('0,0')}
                                 br
-                                span(class='' + (coin.currentStatistic.twitterFollowersDelta < 0 ? 'param-down' : 'param-up'))= numeral(coin.currentStatistic.twitterFollowersDelta).format('+0,0.00 %')
+                                span(class='' + (coin.currentStatistic.twitterFollowersDelta.hour < 0 ? 'param-down' : 'param-up'))= numeral(coin.currentStatistic.twitterFollowersDelta.hour).format('+0,0.00 %')
                             td #{numeral(coin.currentStatistic.tweetsNReplies).format('0,0')}
                                 br
-                                span(class='' + (coin.currentStatistic.tweetsNRepliesDelta < 0 ? 'param-down' : 'param-up'))= numeral(coin.currentStatistic.tweetsNRepliesDelta).format('+0,0.00 %')
+                                span(class='' + (coin.currentStatistic.tweetsNRepliesDelta.hour < 0 ? 'param-down' : 'param-up'))= numeral(coin.currentStatistic.tweetsNRepliesDelta.hour).format('+0,0.00 %')
                             td #{numeral(coin.currentStatistic.redditFollowers).format('0,0')}
                                 br
-                                span(class='' + (coin.currentStatistic.redditFollowersDelta < 0 ? 'param-down' : 'param-up'))= numeral(coin.currentStatistic.redditFollowersDelta).format('+0,0.00 %')
+                                span(class='' + (coin.currentStatistic.redditFollowersDelta.hour < 0 ? 'param-down' : 'param-up'))= numeral(coin.currentStatistic.redditFollowersDelta.hour).format('+0,0.00 %')
         .row
             .col-4
                 .card.border-primary.mb-3(style='max-width: 18rem;')
@@ -184,7 +184,7 @@ block content
                     .card-body.text-primary
                         h5.card-title= numeral(coin.currentStatistic.developmentIndex).format('0,0[.]00')
                         br
-                        span(class='' + (coin.currentStatistic.developmentIndexDelta < 0 ? 'param-down' : 'param-up'))= numeral(coin.currentStatistic.developmentIndexDelta).format('+0,0.00 %')
+                        span(class='' + (coin.currentStatistic.developmentIndexDelta.hour < 0 ? 'param-down' : 'param-up'))= numeral(coin.currentStatistic.developmentIndexDelta.hour).format('+0,0.00 %')
                         p.card-text
                             | Development index indicates development activity of coin's community.
             .col-8
@@ -204,16 +204,16 @@ block content
                         tr
                             td #{numeral(coin.currentStatistic.githubRepositoriesCount).format('0,0')}
                                 br
-                                span(class='' + (coin.currentStatistic.githubRepositoriesCountDelta < 0 ? 'param-down' : 'param-up'))= numeral(coin.currentStatistic.githubRepositoriesCountDelta).format('+0,0.00 %')
+                                span(class='' + (coin.currentStatistic.githubRepositoriesCountDelta.hour < 0 ? 'param-down' : 'param-up'))= numeral(coin.currentStatistic.githubRepositoriesCountDelta.hour).format('+0,0.00 %')
                             td #{numeral(coin.currentStatistic.githubRepositoriesWatchers).format('0,0')}
                                 br
-                                span(class='' + (coin.currentStatistic.githubRepositoriesWatchersDelta < 0 ? 'param-down' : 'param-up'))= numeral(coin.currentStatistic.githubRepositoriesWatchersDelta).format('+0,0.00 %')
+                                span(class='' + (coin.currentStatistic.githubRepositoriesWatchersDelta.hour < 0 ? 'param-down' : 'param-up'))= numeral(coin.currentStatistic.githubRepositoriesWatchersDelta.hour).format('+0,0.00 %')
                             td #{numeral(coin.currentStatistic.githubForks).format('0,0')}
                                 br
-                                span(class='' + (coin.currentStatistic.githubForksDelta < 0 ? 'param-down' : 'param-up'))= numeral(coin.currentStatistic.githubForksDelta).format('+0,0.00 %')
+                                span(class='' + (coin.currentStatistic.githubForksDelta.hour < 0 ? 'param-down' : 'param-up'))= numeral(coin.currentStatistic.githubForksDelta.hour).format('+0,0.00 %')
                             td #{numeral(coin.currentStatistic.githubRepositoriesSize).format('0,0')}
                                 br
-                                span(class='' + (coin.currentStatistic.githubRepositoriesSizeDelta < 0 ? 'param-down' : 'param-up'))= numeral(coin.currentStatistic.githubRepositoriesSizeDelta).format('+0,0.00 %')
+                                span(class='' + (coin.currentStatistic.githubRepositoriesSizeDelta.hour < 0 ? 'param-down' : 'param-up'))= numeral(coin.currentStatistic.githubRepositoriesSizeDelta.hour).format('+0,0.00 %')
         .row
             .col-4
                 .card.border-primary.mb-3(style='max-width: 18rem;')
@@ -221,7 +221,7 @@ block content
                     .card-body.text-primary
                         h5.card-title= numeral(coin.currentStatistic.networkIndex).format('0,0[.]00')
                         br
-                        span(class='' + (coin.currentStatistic.networkIndexDelta < 0 ? 'param-down' : 'param-up'))= numeral(coin.currentStatistic.networkIndexDelta).format('+0,0.00 %')
+                        span(class='' + (coin.currentStatistic.networkIndexDelta.hour < 0 ? 'param-down' : 'param-up'))= numeral(coin.currentStatistic.networkIndexDelta.hour).format('+0,0.00 %')
                         p.card-text
                             | Network index indicates activity of coin's network.
             .col-8
@@ -240,13 +240,13 @@ block content
                         tr
                             td #{numeral(coin.currentStatistic.transactionsCount).format('0,0')}
                                 br
-                                span(class='' + (coin.currentStatistic.transactionsCountDelta < 0 ? 'param-down' : 'param-up'))= numeral(coin.currentStatistic.transactionsCountDelta).format('+0,0.00 %')
+                                span(class='' + (coin.currentStatistic.transactionsCountDelta.hour < 0 ? 'param-down' : 'param-up'))= numeral(coin.currentStatistic.transactionsCountDelta.hour).format('+0,0.00 %')
                             td #{numeral(coin.currentStatistic.nodesCount).format('0,0')}
                                 br
-                                span(class='' + (coin.currentStatistic.nodesCountDelta < 0 ? 'param-down' : 'param-up'))= numeral(coin.currentStatistic.nodesCountDelta).format('+0,0.00 %')
+                                span(class='' + (coin.currentStatistic.nodesCountDelta.hour < 0 ? 'param-down' : 'param-up'))= numeral(coin.currentStatistic.nodesCountDelta.hour).format('+0,0.00 %')
                             td #{numeral(coin.currentStatistic.networkSize).format('0,0')}
                                 br
-                                span(class='' + (coin.currentStatistic.networkSizeDelta < 0 ? 'param-down' : 'param-up'))= numeral(coin.currentStatistic.networkSizeDelta).format('+0,0.00 %')
+                                span(class='' + (coin.currentStatistic.networkSizeDelta.hour < 0 ? 'param-down' : 'param-up'))= numeral(coin.currentStatistic.networkSizeDelta.hour).format('+0,0.00 %')
 
         .row
             .col-12
